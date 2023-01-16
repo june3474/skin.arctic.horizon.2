@@ -92,7 +92,7 @@
             <content target="$VAR[Path_CollectionNode_Target]" sortby="$VAR[View_Combined_SortBy]" sortorder="ascending">$INFO[Container($PARAM[id]2).ListItem.FolderPath]</content>
             <visible>Control.IsVisible($PARAM[id]2)</visible>
             <onback>SetFocus($PARAM[id]2)</onback>
-            <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id]3)</onfocus>
+            <onfocus>ClearProperty(TMDbHelper.WidgetContainer)</onfocus>
             <animation effect="fade" start="100" end="10" time="200" delay="400" condition="Container($PARAM[id]3).IsUpdating">Conditional</animation>
         </include>
         <control type="group">
