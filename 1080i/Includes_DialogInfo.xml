@@ -431,7 +431,7 @@
                 <focusposition>1</focusposition>
                 <movement>1</movement>
                 <onclick>Dialog.Close(12003)</onclick>
-                <onclick>PlayMedia($INFO[Container(9802).ListItem.FileNameAndPath])</onclick>
+                <onclick>PlayMedia($ESCINFO[Container(9802).ListItem.FileNameAndPath],playlist_type_hint=1)</onclick>
                 <include content="Animation_Reposition">
                     <param name="id">9802</param>
                     <param name="slide_y">-grid_x16</param>
@@ -635,7 +635,7 @@
                     <font>font_huge_plot</font>
                     <label fallback="19055">$PARAM[label]$INFO[Window(Home).Property(ResetScroll)]</label>
                     <pagecontrol>61</pagecontrol>
-                    <autoscroll delay="8000" time="4000" repeat="12000">false</autoscroll>
+                    <autoscroll>false</autoscroll>
                 </include>
                 <control type="scrollbar" id="61">
                     <centerright>-grid_x04</centerright>
