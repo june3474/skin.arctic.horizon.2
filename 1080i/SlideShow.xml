@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <window>
-  <onload condition="System.HasAddon(script.service.slideshow-bgm) + System.AddonIsEnabled(script.service.slideshow-bgm)">RunAddon(script.service.slideshow-bgm)</onload>
+  <onload condition="System.HasAddon(script.slideshow-bgm) + System.AddonIsEnabled(script.slideshow-bgm)">RunAddon(script.slideshow-bgm)</onload>
   <controls>
     </controls>
 </window>
