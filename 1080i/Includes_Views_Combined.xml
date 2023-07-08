@@ -63,7 +63,7 @@
     </variable>
 
     <include name="View_Combined_Row">
-        <include content="$PARAM[include]">
+        <include content="$PARAM[include]" condition="!Window.IsVisible(pictures)">
             <param name="id" value="$PARAM[id]3" />
             <height>divider_bottom</height>
             <bottom>40</bottom>
@@ -77,6 +77,22 @@
             <visible>Control.IsVisible($PARAM[id]2)</visible>
             <onback>SetFocus($PARAM[id]2)</onback>
             <onfocus>SetProperty(TMDbHelper.WidgetContainer,$PARAM[id]3)</onfocus>
+            <animation effect="fade" start="100" end="10" time="200" delay="400" condition="Container($PARAM[id]3).IsUpdating">Conditional</animation>
+        </include>
+        <include content="$PARAM[include]" condition="Window.IsVisible(pictures)">
+            <param name="id" value="$PARAM[id]3" />
+            <height>divider_bottom</height>
+            <bottom>40</bottom>
+            <ondown>$PARAM[id]2</ondown>
+            <onup>menu</onup>
+            <visible>Container($PARAM[id]2).ListItem.IsFolder</visible>
+            <onclick condition="Container($PARAM[id]3).ListItem.IsFolder">Container.Update($INFO[Container($PARAM[id]3).ListItem.FolderPath])</onclick>
+            <onclick condition="Container($PARAM[id]3).ListItem.IsFolder">SetFocus(50)</onclick>
+            <onclick condition="!Container($PARAM[id]3).ListItem.IsFolder">PlayMedia($INFO[Container($PARAM[id]3).ListItem.FolderPath])</onclick>
+            <content target="$VAR[Path_CollectionNode_Target]" sortby="$VAR[View_Combined_SortBy]" sortorder="ascending">$INFO[Container($PARAM[id]2).ListItem.FolderPath]</content>
+            <visible>Control.IsVisible($PARAM[id]2)</visible>
+            <onback>SetFocus($PARAM[id]2)</onback>
+            <onfocus>ClearProperty(TMDbHelper.WidgetContainer)</onfocus>
             <animation effect="fade" start="100" end="10" time="200" delay="400" condition="Container($PARAM[id]3).IsUpdating">Conditional</animation>
         </include>
         <control type="group">
