@@ -28,7 +28,7 @@
             <left>grid_x04</left>
             <right>grid_x04</right>
             <control type="group">
-                <visible>[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | [String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Episode)] | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album)]</visible>
+                <visible>[$EXP[Exp_IsMovieType] | $EXP[Exp_StringIsEqual_ListItemDBType_TVShow] | [String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Episode)] | $EXP[Exp_StringIsEqual_ListItemDBType_Season] | $EXP[Exp_StringIsEqual_ListItemDBType_Set] | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album)]</visible>
                 <height>grid_x02</height>
                 <control type="label">
                     <font>font_tiny</font>
@@ -51,7 +51,7 @@
                     <align>left</align>
                     <left>grid_x68</left>
                     <visible>$PARAM[detailed]</visible>
-                    <visible>[String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album) | String.IsEqual(ListItem.DBType,artist)]</visible>
+                    <visible>[String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album) | $EXP[Exp_StringIsEqual_ListItemDBType_Artist]]</visible>
                 </control>
                 <control type="label">
                     <font>font_tiny</font>
@@ -68,10 +68,9 @@
                     <visible>![String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album)]</visible>
                 </control>
             </control>
-
             <control type="group">
                 <height>grid_x02</height>
-                <visible>![String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | [String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Episode)] | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album)]</visible>
+                <visible>![$EXP[Exp_IsMovieType] | $EXP[Exp_StringIsEqual_ListItemDBType_TVShow] | [String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Episode)] | $EXP[Exp_StringIsEqual_ListItemDBType_Season] | $EXP[Exp_StringIsEqual_ListItemDBType_Set] | String.IsEqual(ListItem.DBType,song) | String.IsEqual(ListItem.DBType,album)]</visible>
                 <control type="label">
                     <font>font_tiny</font>
                     <textcolor>main_fg_30</textcolor>
@@ -79,7 +78,6 @@
                     <align>left</align>
                 </control>
             </control>
-
             <control type="image">
                 <texture colordiffuse="main_fg_12">common/white.png</texture>
                 <height>1</height>
@@ -87,7 +85,6 @@
             </control>
         </control>
     </include>
-
     <include name="View_List_NewTemplate">
         <param name="id">501</param>
         <param name="icon">$INFO[ListItem.Icon]</param>
@@ -115,7 +112,6 @@
                 <include>Dimension_View</include>
                 <control type="group">
                     <top>$PARAM[top]</top>
-
                     <include content="Object_Control" condition="$PARAM[hasimage]">
                         <param name="control">group</param>
                         <include content="Object_Right" condition="$PARAM[flipside]">
@@ -132,7 +128,6 @@
                             <param name="diffuse">$PARAM[diffuse]</param>
                         </include>
                     </include>
-
                     <control type="group">
                         <include content="Object_Right" condition="$PARAM[flipside]">
                             <param name="right">$PARAM[width]</param>
@@ -177,12 +172,10 @@
                             </include>
                         </control>
                     </control>
-
                 </control>
             </control>
         </definition>
     </include>
-
     <include name="View_501_Square_List">
         <include content="View_List_NewTemplate">
             <param name="id">501</param>
@@ -198,7 +191,6 @@
             <param name="reposition_include">Animation_Reposition</param>
         </include>
     </include>
-
     <include name="View_511_Landscape_List">
         <include content="View_List_NewTemplate">
             <param name="id">511</param>
@@ -216,7 +208,6 @@
             <param name="reposition_include">Animation_Reposition</param>
         </include>
     </include>
-
     <include name="View_521_Poster_List">
         <include content="View_List_NewTemplate">
             <param name="id">521</param>
@@ -232,7 +223,6 @@
             <param name="reposition_include">Animation_Reposition</param>
         </include>
     </include>
-
     <include name="View_507_Square_Infolist">
         <include content="View_List_NewTemplate">
             <param name="id">507</param>
@@ -253,7 +243,6 @@
             <param name="spacing">40</param>
         </include>
     </include>
-
     <include name="View_517_Landscape_Infolist">
         <include content="View_List_NewTemplate">
             <param name="id">517</param>
@@ -274,7 +263,6 @@
             <param name="spacing">40</param>
         </include>
     </include>
-
     <include name="View_527_Poster_Infolist">
         <include content="View_List_NewTemplate">
             <param name="id">527</param>
@@ -295,7 +283,6 @@
             <param name="spacing">40</param>
         </include>
     </include>
-
     <include name="View_581_BigPoster_List">
         <include content="View_List_NewTemplate">
             <param name="id">581</param>
@@ -315,7 +302,6 @@
             <param name="reposition_include">Animation_Reposition</param>
         </include>
     </include>
-
     <include name="View_508_Square_Playlist">
         <include content="View_List_NewTemplate">
             <param name="id">508</param>
@@ -348,7 +334,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_551_Basic_Playlist">
         <control type="group">
             <visible>Control.IsVisible(551)</visible>
@@ -376,7 +361,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_List_MediaInfo">
         <param name="flipside">false</param>
         <definition>
@@ -414,7 +398,6 @@
                             </include>
                         </control>
                     </control>
-
                     <include content="Info_Panel">
                         <param name="title">false</param>
                         <param name="shortline">true</param>
@@ -427,7 +410,6 @@
             </control>
         </definition>
     </include>
-
     <include name="_View_557_MediaInfo_Playlist">
         <param name="flipside">false</param>
         <param name="info_include">View_Wall_MediaInfo</param>
@@ -470,7 +452,6 @@
             </control>
         </definition>
     </include>
-
     <include name="View_557_MediaInfo_Playlist">
         <param name="flipside">false</param>
         <definition>
@@ -484,7 +465,6 @@
             </include>
         </definition>
     </include>
-
     <include name="_View_558_MediaInfo_List">
         <param name="flipside">false</param>
         <param name="info_include">View_List_MediaInfo</param>
@@ -513,7 +493,6 @@
             </include>
         </definition>
     </include>
-
     <include name="View_558_MediaInfo_List">
         <param name="flipside">false</param>
         <definition>
@@ -527,7 +506,4 @@
             </include>
         </definition>
     </include>
-
-
-
 </includes>

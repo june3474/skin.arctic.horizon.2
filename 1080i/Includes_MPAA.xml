@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
     <variable name="MPAA_Labels">
         <value condition="String.IsEqual(ListItem.MPAA,Rated E)">E</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated G)">G</value>
@@ -91,7 +90,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated M/18)">M/18</value>
         <value>$INFO[ListItem.MPAA]</value>
     </variable>
-
     <variable name="MPAA_Australia">
         <value condition="String.IsEqual(ListItem.MPAA,Rated E) | String.IsEqual(ListItem.MPAA,E) | String.IsEqual(ListItem.MPAA,Australia E)">Australia E.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated G) | String.IsEqual(ListItem.MPAA,G) | String.IsEqual(ListItem.MPAA,Australia G)">Australia G.png</value>
@@ -182,7 +180,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Australia ,.png]</value>
     </variable>
-
     <variable name="MPAA_Brazil">
         <value condition="String.IsEqual(ListItem.MPAA,Rated 10) | String.IsEqual(ListItem.MPAA,10) | String.IsEqual(ListItem.MPAA,Brazil 10)">Brazil 10.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated 12) | String.IsEqual(ListItem.MPAA,12) | String.IsEqual(ListItem.MPAA,Brazil 12)">Brazil 12.png</value>
@@ -273,7 +270,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Brazil ,.png]</value>
     </variable>
-
     <variable name="MPAA_Canada">
         <value condition="String.IsEqual(ListItem.MPAA,Rated G) | String.IsEqual(ListItem.MPAA,G) | String.IsEqual(ListItem.MPAA,Canada G)">Canada G.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated PG) | String.IsEqual(ListItem.MPAA,PG) | String.IsEqual(ListItem.MPAA,Canada PG)">Canada PG.png</value>
@@ -364,7 +360,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Canada ,.png]</value>
     </variable>
-
     <variable name="MPAA_Denmark">
         <value condition="String.IsEqual(ListItem.MPAA,Rated 11) | String.IsEqual(ListItem.MPAA,11) | String.IsEqual(ListItem.MPAA,Denmark 11)">Denmark 11.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated 15) | String.IsEqual(ListItem.MPAA,15) | String.IsEqual(ListItem.MPAA,Denmark 15)">Denmark 15.png</value>
@@ -455,7 +450,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Denmark ,.png]</value>
     </variable>
-
     <variable name="MPAA_Deutschland">
         <value condition="String.IsEqual(ListItem.MPAA,Rated FSK 0) | String.IsEqual(ListItem.MPAA,FSK 0) | String.IsEqual(ListItem.MPAA,Deutschland FSK 0)">Deutschland FSK 0.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated FSK 12) | String.IsEqual(ListItem.MPAA,FSK 12) | String.IsEqual(ListItem.MPAA,Deutschland FSK 12)">Deutschland FSK 12.png</value>
@@ -546,7 +540,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Deutschland ,.png]</value>
     </variable>
-
     <variable name="MPAA_España">
         <value condition="String.IsEqual(ListItem.MPAA,Rated X) | String.IsEqual(ListItem.MPAA,X) | String.IsEqual(ListItem.MPAA,España X)">España X.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated 12) | String.IsEqual(ListItem.MPAA,12) | String.IsEqual(ListItem.MPAA,España 12)">España 12.png</value>
@@ -637,7 +630,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,España ,.png]</value>
     </variable>
-
     <variable name="MPAA_Finland">
         <value condition="String.IsEqual(ListItem.MPAA,Rated 12) | String.IsEqual(ListItem.MPAA,12) | String.IsEqual(ListItem.MPAA,Finland 12)">Finland 12.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated 16) | String.IsEqual(ListItem.MPAA,16) | String.IsEqual(ListItem.MPAA,Finland 16)">Finland 16.png</value>
@@ -728,7 +720,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Finland ,.png]</value>
     </variable>
-
     <variable name="MPAA_France">
         <value condition="String.IsEqual(ListItem.MPAA,Rated TV-18) | String.IsEqual(ListItem.MPAA,TV-18) | String.IsEqual(ListItem.MPAA,France TV-18)">France TV-18.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated TV-10) | String.IsEqual(ListItem.MPAA,TV-10) | String.IsEqual(ListItem.MPAA,France TV-10)">France TV-10.png</value>
@@ -819,7 +810,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,France ,.png]</value>
     </variable>
-
     <variable name="MPAA_Hong Kong">
         <value condition="String.IsEqual(ListItem.MPAA,Rated 1) | String.IsEqual(ListItem.MPAA,1) | String.IsEqual(ListItem.MPAA,Hong Kong 1)">Hong Kong 1.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated 2) | String.IsEqual(ListItem.MPAA,2) | String.IsEqual(ListItem.MPAA,Hong Kong 2)">Hong Kong 2.png</value>
@@ -910,7 +900,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Hong Kong ,.png]</value>
     </variable>
-
     <variable name="MPAA_Hungary">
         <value condition="String.IsEqual(ListItem.MPAA,Rated X) | String.IsEqual(ListItem.MPAA,X) | String.IsEqual(ListItem.MPAA,Hungary X)">Hungary X.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated 12) | String.IsEqual(ListItem.MPAA,12) | String.IsEqual(ListItem.MPAA,Hungary 12)">Hungary 12.png</value>
@@ -1001,7 +990,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Hungary ,.png]</value>
     </variable>
-
     <variable name="MPAA_India">
         <value condition="String.IsEqual(ListItem.MPAA,Rated A) | String.IsEqual(ListItem.MPAA,A) | String.IsEqual(ListItem.MPAA,India A)">India A.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated S) | String.IsEqual(ListItem.MPAA,S) | String.IsEqual(ListItem.MPAA,India S)">India S.png</value>
@@ -1092,7 +1080,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,India ,.png]</value>
     </variable>
-
     <variable name="MPAA_Ireland">
         <value condition="String.IsEqual(ListItem.MPAA,Rated G) | String.IsEqual(ListItem.MPAA,G) | String.IsEqual(ListItem.MPAA,Ireland G)">Ireland G.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated PG) | String.IsEqual(ListItem.MPAA,PG) | String.IsEqual(ListItem.MPAA,Ireland PG)">Ireland PG.png</value>
@@ -1183,7 +1170,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Ireland ,.png]</value>
     </variable>
-
     <variable name="MPAA_Italia">
         <value condition="String.IsEqual(ListItem.MPAA,Rated T) | String.IsEqual(ListItem.MPAA,T) | String.IsEqual(ListItem.MPAA,Italia T)">Italia T.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated VM14) | String.IsEqual(ListItem.MPAA,VM14) | String.IsEqual(ListItem.MPAA,Italia VM14)">Italia VM14.png</value>
@@ -1274,7 +1260,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Italia ,.png]</value>
     </variable>
-
     <variable name="MPAA_Japan">
         <value condition="String.IsEqual(ListItem.MPAA,Rated G) | String.IsEqual(ListItem.MPAA,G) | String.IsEqual(ListItem.MPAA,Japan G)">Japan G.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated PG12) | String.IsEqual(ListItem.MPAA,PG12) | String.IsEqual(ListItem.MPAA,Japan PG12)">Japan PG12.png</value>
@@ -1365,7 +1350,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Japan ,.png]</value>
     </variable>
-
     <variable name="MPAA_Korea">
         <value condition="String.IsEqual(ListItem.MPAA,Rated R) | String.IsEqual(ListItem.MPAA,R) | String.IsEqual(ListItem.MPAA,Korea R)">Korea R.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated 12) | String.IsEqual(ListItem.MPAA,12) | String.IsEqual(ListItem.MPAA,Korea 12)">Korea 12.png</value>
@@ -1456,7 +1440,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Korea ,.png]</value>
     </variable>
-
     <variable name="MPAA_Netherlands">
         <value condition="String.IsEqual(ListItem.MPAA,Rated 12) | String.IsEqual(ListItem.MPAA,12) | String.IsEqual(ListItem.MPAA,Netherlands 12)">Netherlands 12.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated 16) | String.IsEqual(ListItem.MPAA,16) | String.IsEqual(ListItem.MPAA,Netherlands 16)">Netherlands 16.png</value>
@@ -1547,7 +1530,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Netherlands ,.png]</value>
     </variable>
-
     <variable name="MPAA_New Zealand">
         <value condition="String.IsEqual(ListItem.MPAA,Rated G) | String.IsEqual(ListItem.MPAA,G) | String.IsEqual(ListItem.MPAA,New Zealand G)">New Zealand G.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated M) | String.IsEqual(ListItem.MPAA,M) | String.IsEqual(ListItem.MPAA,New Zealand M)">New Zealand M.png</value>
@@ -1638,7 +1620,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,New Zealand ,.png]</value>
     </variable>
-
     <variable name="MPAA_Norway">
         <value condition="String.IsEqual(ListItem.MPAA,Rated 12) | String.IsEqual(ListItem.MPAA,12) | String.IsEqual(ListItem.MPAA,Norway 12)">Norway 12.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated 18) | String.IsEqual(ListItem.MPAA,18) | String.IsEqual(ListItem.MPAA,Norway 18)">Norway 18.png</value>
@@ -1729,7 +1710,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Norway ,.png]</value>
     </variable>
-
     <variable name="MPAA_Portugal">
         <value condition="String.IsEqual(ListItem.MPAA,Rated A) | String.IsEqual(ListItem.MPAA,A) | String.IsEqual(ListItem.MPAA,Portugal A)">Portugal A.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated M3) | String.IsEqual(ListItem.MPAA,M3) | String.IsEqual(ListItem.MPAA,Portugal M3) | String.IsEqual(ListItem.MPAA,Rated M/3) | String.IsEqual(ListItem.MPAA,M/3) | String.IsEqual(ListItem.MPAA,Portugal M/3)">Portugal M3.png</value>
@@ -1820,7 +1800,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Portugal ,.png]</value>
     </variable>
-
     <variable name="MPAA_Russia">
         <value condition="String.IsEqual(ListItem.MPAA,Rated E) | String.IsEqual(ListItem.MPAA,E) | String.IsEqual(ListItem.MPAA,Australia E)">Australia E.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated G) | String.IsEqual(ListItem.MPAA,G) | String.IsEqual(ListItem.MPAA,USA G)">USA G.png</value>
@@ -1911,7 +1890,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Russia ,.png]</value>
     </variable>
-
     <variable name="MPAA_Schweiz">
         <value condition="String.IsEqual(ListItem.MPAA,Rated E) | String.IsEqual(ListItem.MPAA,E) | String.IsEqual(ListItem.MPAA,Australia E)">Australia E.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated G) | String.IsEqual(ListItem.MPAA,G) | String.IsEqual(ListItem.MPAA,USA G)">USA G.png</value>
@@ -2002,7 +1980,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Schweiz ,.png]</value>
     </variable>
-
     <variable name="MPAA_Taiwan">
         <value condition="String.IsEqual(ListItem.MPAA,Rated E) | String.IsEqual(ListItem.MPAA,E) | String.IsEqual(ListItem.MPAA,Australia E)">Australia E.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated G) | String.IsEqual(ListItem.MPAA,G) | String.IsEqual(ListItem.MPAA,USA G)">USA G.png</value>
@@ -2093,7 +2070,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Taiwan ,.png]</value>
     </variable>
-
     <variable name="MPAA_UK">
         <value condition="String.IsEqual(ListItem.MPAA,Rated PG) | String.IsEqual(ListItem.MPAA,PG) | String.IsEqual(ListItem.MPAA,UK PG)">UK PG.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated X) | String.IsEqual(ListItem.MPAA,X) | String.IsEqual(ListItem.MPAA,UK X)">UK X.png</value>
@@ -2184,7 +2160,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated M18) | String.IsEqual(ListItem.MPAA,M18) | String.IsEqual(ListItem.MPAA,Portugal M18) | String.IsEqual(ListItem.MPAA,Rated M/18) | String.IsEqual(ListItem.MPAA,M/18) | String.IsEqual(ListItem.MPAA,Portugal M/18)">Portugal M18.png</value>
         <value>$INFO[ListItem.MPAA,UK ,.png]</value>
     </variable>
-
     <variable name="MPAA_USA">
         <value condition="String.IsEqual(ListItem.MPAA,Rated G) | String.IsEqual(ListItem.MPAA,G) | String.IsEqual(ListItem.MPAA,USA G)">USA G.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated PG) | String.IsEqual(ListItem.MPAA,PG) | String.IsEqual(ListItem.MPAA,USA PG)">USA PG.png</value>
@@ -2275,7 +2250,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,USA ,.png]</value>
     </variable>
-
     <variable name="MPAA_Vietnam">
         <value condition="String.IsEqual(ListItem.MPAA,Rated C13) | String.IsEqual(ListItem.MPAA,C13) | String.IsEqual(ListItem.MPAA,Vietnam C13)">Vietnam C13.png</value>
         <value condition="String.IsEqual(ListItem.MPAA,Rated C16) | String.IsEqual(ListItem.MPAA,C16) | String.IsEqual(ListItem.MPAA,Vietnam C16)">Vietnam C16.png</value>
@@ -2366,7 +2340,6 @@
         <value condition="String.IsEqual(ListItem.MPAA,Rated AA) | String.IsEqual(ListItem.MPAA,AA) | String.IsEqual(ListItem.MPAA,UK AA)">UK AA.png</value>
         <value>$INFO[ListItem.MPAA,Vietnam ,.png]</value>
     </variable>
-
     <variable name="MPAA_ImageConvert">
         <value condition="Skin.String(MPAA_Country,Australia)">$VAR[MPAA_Australia]</value>
         <value condition="Skin.String(MPAA_Country,Brazil)">$VAR[MPAA_Brazil]</value>
@@ -2394,5 +2367,4 @@
         <value condition="Skin.String(MPAA_Country,USA)">$VAR[MPAA_USA]</value>
         <value condition="Skin.String(MPAA_Country,Vietnam)">$VAR[MPAA_Vietnam]</value>
     </variable>
-
 </includes>

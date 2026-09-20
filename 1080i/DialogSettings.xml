@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <controls>
-        <include condition="!Window.IsVisible(videoosd) + !String.IsEqual(Window(Home).Property(DialogSettings.Style),mediafilter)">Object_Overlay</include>
-
+        <include condition="!$EXP[Exp_WindowVisible_VideoOSD] + !String.IsEqual(Window(Home).Property(DialogSettings.Style),mediafilter)">Object_Overlay</include>
         <!-- Standard -->
         <include content="Dialog_Background" condition="!String.IsEqual(Window(Home).Property(DialogSettings.Style),mediafilter)">
             <visible>!Window.IsVisible(DialogSubtitles.xml)</visible>
             <visible>!Window.IsVisible(DialogSlider.xml)</visible>
             <include>Animation_SlideIn_Dialog</include>
-            <include condition="Window.IsVisible(videoosd)">Dimension_DialogSelect_OSD</include>
-            <include condition="!Window.IsVisible(videoosd)">Dimension_DialogSelect</include>
+            <include condition="$EXP[Exp_WindowVisible_VideoOSD]">Dimension_DialogSelect_OSD</include>
+            <include condition="!$EXP[Exp_WindowVisible_VideoOSD]">Dimension_DialogSelect</include>
             <include>Dialog_Overlay_Buttons</include>
             <include content="Dialog_Header">
                 <param name="id" value="2" />
-                <include content="Object_Align" condition="Window.IsVisible(videoosd)">
+                <include content="Object_Align" condition="$EXP[Exp_WindowVisible_VideoOSD]">
                     <param name="align">left</param>
                 </include>
             </include>
@@ -52,8 +51,6 @@
                 </control>
             </include>
         </include>
-
-
         <!-- Media Filter -->
         <include content="Dialog_Background" condition="String.IsEqual(Window(Home).Property(DialogSettings.Style),mediafilter)">
             <include content="Animation_SlideIn_Dialog">
@@ -114,48 +111,39 @@
                         </include>
                     </control>
                 </control>
-
             </include>
         </include>
-
-
         <include content="Dialog_Settings_Button">
             <param name="id" value="7" />
             <param name="control" value="button" />
             <description>Default Setting Button</description>
         </include>
-
         <include content="Dialog_Settings_Button">
             <param name="id" value="8" />
             <param name="control" value="radiobutton" />
             <description>Default Setting Button</description>
         </include>
-
         <include content="Dialog_Settings_Button">
             <param name="id" value="9" />
             <param name="control" value="spincontrolex" />
             <description>Default Setting Button</description>
         </include>
-
         <include content="Dialog_Settings_Button">
             <param name="id" value="11" />
             <param name="control" value="image" />
             <description>Default Setting Button</description>
             <visible>false</visible>
         </include>
-
         <include content="Dialog_Settings_Button">
             <param name="id" value="12" />
             <param name="control" value="edit" />
             <description>Default Setting Button</description>
         </include>
-
         <include content="Dialog_Settings_Button">
             <param name="id" value="13" />
             <param name="control" value="sliderex" />
             <description>Default Setting Button</description>
         </include>
-
         <include content="Dialog_Settings_Label">
             <param name="id" value="14" />
             <param name="control" value="label" />

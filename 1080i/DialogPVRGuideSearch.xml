@@ -2,7 +2,6 @@
 <window>
     <defaultcontrol>9</defaultcontrol>
     <controls>
-
         <include>Object_Overlay</include>
         <include content="Dialog_Background">
             <include>Animation_SlideIn_Dialog</include>
@@ -12,7 +11,6 @@
                 <param name="id" value="9901" />
                 <label>$LOCALIZE[137]</label>
             </include>
-
             <!-- Left Group -->
             <control type="group">
                 <right>dialog_buttongroup_w</right>
@@ -47,7 +45,6 @@
                         <include content="Object_Separator">
                             <centerleft>50%</centerleft>
                         </include>
-
                         <control type="grouplist" id="8100">
                             <width>50%</width>
                             <orientation>vertical</orientation>
@@ -179,8 +176,6 @@
                     </control>
                 </include>
             </control>
-
-
             <!-- Right Buttons -->
             <control type="group">
                 <right>0</right>

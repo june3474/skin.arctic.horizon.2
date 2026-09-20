@@ -6,18 +6,13 @@
     <include>Action_Blur_Onload</include>
     <controls>
         <include>Defs_TMDbHelper_Loader</include>
-
         <include content="View_Main">
             <param name="include_views" value="View_Main_MyPlaylist" />
         </include>
-
         <include content="Object_Options_Menu">
             <param name="grouplist_items" value="Items_MyPlaylist" />
             <param name="visible" value="!Window.IsVisible(DialogSelect.xml)" />
             <param name="use_mouse_focus">true</param>
         </include>
-
-
     </controls>
-
 </window>

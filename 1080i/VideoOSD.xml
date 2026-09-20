@@ -7,18 +7,15 @@
     <onload>SetProperty(UID,$ESCINFO[Player.Title]$INFO[Player.Time(ss)])</onload>
     <onunload>CancelAlarm(osd_timeout,true)</onunload>
     <controls>
-
         <include content="Object_Hidden_Button">
             <param name="id" value="99997" />
             <onfocus>SetFocus(6100)</onfocus>
-            <onfocus condition="Window.IsVisible(videoosd)">Action(Close)</onfocus>
+            <onfocus condition="$EXP[Exp_WindowVisible_VideoOSD]">Action(Close)</onfocus>
         </include>
-
         <control type="group">
             <visible>!Window.IsActive(DialogPlayerProcessInfo.xml)</visible>
             <visible>!Window.IsVisible(DialogSlider.xml)</visible>
             <include>Animation_OSD_ExpandInfo</include>
-
             <control type="group">
                 <animation effect="fade" time="200" start="100" end="0" condition="$EXP[Exp_OSD_ExpandInfo]" reversible="false">Conditional</animation>
                 <animation effect="fade" time="200" delay="200" end="100" start="0" condition="!$EXP[Exp_OSD_ExpandInfo]" reversible="false">Conditional</animation>
@@ -34,7 +31,6 @@
                     <onright>6500</onright>
                     <ondown condition="$EXP[Exp_OSD_HasPlaylist]">ActivateWindow(1140)</ondown>
                     <ondown condition="![$EXP[Exp_OSD_HasPlaylist]]">ActivateWindow(videobookmarks)</ondown>
-
                     <include content="OSD_Button">
                         <param name="autoclose" value="true" />
                         <param name="visible" value="true" />
@@ -43,23 +39,22 @@
                         <param name="id" value="6100" />
                         <param name="groupid" value="6199" />
                         <onclick>PlayerControl(Play)</onclick>
-                        <onfocus condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onfocus>
-                        <onunfocus condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onunfocus>
+                        <onfocus condition="$EXP[Exp_PlayerForwarding] | $EXP[Exp_PlayerRewinding]">PlayerControl(Play)</onfocus>
+                        <onunfocus condition="$EXP[Exp_PlayerForwarding] | $EXP[Exp_PlayerRewinding]">PlayerControl(Play)</onunfocus>
                         <onup>SetFocus(6101)</onup>
                     </include>
-
                     <!-- Button 2 -->
-                    <include content="OSD_Button" condition="!VideoPlayer.Content(livetv)">
+                    <include content="OSD_Button" condition="!$EXP[Exp_VideoPlayerContentLiveTV]">
                         <param name="autoclose" value="true" />
                         <param name="visible" value="true" />
                         <param name="icon" value="$VAR[Image_OSD_Back]" />
                         <param name="id" value="6200" />
                         <param name="groupid" value="6299" />
-                        <onclick condition="!Player.Paused">Seek(-10)</onclick>
-                        <onclick condition="Player.Paused">Seek(-1)</onclick>
+                        <onclick condition="!$EXP[Exp_PlayerPaused]">Seek(-10)</onclick>
+                        <onclick condition="$EXP[Exp_PlayerPaused]">Seek(-1)</onclick>
                         <onup>8200</onup>
                     </include>
-                    <include content="OSD_Button" condition="VideoPlayer.Content(livetv)">
+                    <include content="OSD_Button" condition="$EXP[Exp_VideoPlayerContentLiveTV]">
                         <param name="autoclose" value="true" />
                         <param name="visible" value="true" />
                         <param name="icon" value="special://skin/extras/icons/list-ol.png" />
@@ -69,19 +64,18 @@
                         <onclick>ActivateWindow(pvrosdchannels)</onclick>
                         <onup>8200</onup>
                     </include>
-
                     <!-- Button 3 -->
-                    <include content="OSD_Button" condition="!VideoPlayer.Content(livetv)">
+                    <include content="OSD_Button" condition="!$EXP[Exp_VideoPlayerContentLiveTV]">
                         <param name="autoclose" value="true" />
                         <param name="visible" value="true" />
                         <param name="icon" value="$VAR[Image_OSD_Forward]" />
                         <param name="id" value="6300" />
                         <param name="groupid" value="6399" />
-                        <onclick condition="!Player.Paused">Seek(10)</onclick>
-                        <onclick condition="Player.Paused">PlayerControl(FrameAdvance(1))</onclick>
+                        <onclick condition="!$EXP[Exp_PlayerPaused]">Seek(10)</onclick>
+                        <onclick condition="$EXP[Exp_PlayerPaused]">PlayerControl(FrameAdvance(1))</onclick>
                         <onup>8200</onup>
                     </include>
-                    <include content="OSD_Button" condition="VideoPlayer.Content(livetv)">
+                    <include content="OSD_Button" condition="$EXP[Exp_VideoPlayerContentLiveTV]">
                         <param name="autoclose" value="true" />
                         <param name="visible" value="true" />
                         <param name="icon" value="special://skin/extras/icons/list.png" />
@@ -91,7 +85,6 @@
                         <onclick>ActivateWindow(TVGuide)</onclick>
                         <onup>8200</onup>
                     </include>
-
                     <include content="OSD_Button">
                         <param name="autoclose" value="true" />
                         <param name="visible" value="true" />
@@ -102,10 +95,9 @@
                         <onclick condition="String.IsEqual(VideoPlayer.PlaylistPosition,VideoPlayer.PlaylistLength) | Skin.HasSetting(OSD.AlwaysDisplayStop)">PlayerControl(Stop)</onclick>
                         <onup>8200</onup>
                     </include>
-
                     <include content="OSD_Button">
                         <param name="autoclose" value="true" />
-                        <param name="visible" value="PVR.CanRecordPlayingChannel + VideoPlayer.Content(livetv)" />
+                        <param name="visible" value="PVR.CanRecordPlayingChannel + $EXP[Exp_VideoPlayerContentLiveTV]" />
                         <param name="icon" value="special://skin/extras/icons/circle.png" />
                         <param name="id" value="6900" />
                         <param name="groupid" value="6990" />
@@ -119,9 +111,7 @@
                         <textoffsetx>0</textoffsetx>
                         <onclick>PVR.ToggleRecordPlayingChannel</onclick>
                     </include>
-
                 </control>
-
                 <!-- Playback Speed Display -->
                 <include content="OSD_Menu_Back">
                     <param name="arrow_pos" value="410" />
@@ -145,10 +135,10 @@
                             <onup>6100</onup>
                             <ondown>6100</ondown>
                             <height>160</height>
-                            <onleft condition="Player.Paused">PlayerControl(Play)</onleft>
-                            <onright condition="Player.Paused">PlayerControl(Play)</onright>
-                            <onright condition="!Player.Forwarding32x">PlayerControl(Forward)</onright>
-                            <onleft condition="!Player.Rewinding32x">PlayerControl(Rewind)</onleft>
+                            <onleft condition="$EXP[Exp_PlayerPaused]">PlayerControl(Play)</onleft>
+                            <onright condition="$EXP[Exp_PlayerPaused]">PlayerControl(Play)</onright>
+                            <onright condition="!$EXP[Exp_PlayerForwarding]32x">PlayerControl(Forward)</onright>
+                            <onleft condition="!$EXP[Exp_PlayerRewinding]32x">PlayerControl(Rewind)</onleft>
                         </include>
                         <include content="OSD_TempoControl">
                             <param name="istempo">false</param>
@@ -156,7 +146,6 @@
                         </include>
                     </control>
                 </include>
-
                 <!-- Right Side Buttons -->
                 <control type="grouplist" id="6001">
                     <centerbottom>70</centerbottom>
@@ -169,7 +158,6 @@
                     <onleft>6900</onleft>
                     <onright>6100</onright>
                     <ondown>ActivateWindow(1141)</ondown>
-
                     <include content="OSD_Button">
                         <param name="autoclose" value="true" />
                         <param name="visible" value="true" />
@@ -177,26 +165,19 @@
                         <param name="visible" value="true" />
                         <param name="id" value="6500" />
                         <param name="groupid" value="6599" />
-
-
                         <onup>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[137] Wikipedia,Home)</onup>
                         <onup>SetProperty(CustomDialogSettingsItems,Items_OSD_Wikipedia,Home)</onup>
                         <onup>ActivateWindow(1118)</onup>
-
-                        <onclick condition="VideoPlayer.Content(livetv)">Action(Down)</onclick>
-
-                        <onclick condition="!VideoPlayer.Content(livetv)">SetProperty(OSDExtendedInfo,1,Home)</onclick>
-                        <onclick condition="!VideoPlayer.Content(livetv) + !Player.Paused + !Skin.HasSetting(OSD.DisablePauseOnInfo)">Pause</onclick>
-                        <onclick condition="!VideoPlayer.Content(livetv)">Action(Close)</onclick>
-
+                        <onclick condition="$EXP[Exp_VideoPlayerContentLiveTV]">Action(Down)</onclick>
+                        <onclick condition="!$EXP[Exp_VideoPlayerContentLiveTV]">SetProperty(OSDExtendedInfo,1,Home)</onclick>
+                        <onclick condition="!$EXP[Exp_VideoPlayerContentLiveTV] + !$EXP[Exp_PlayerPaused] + !Skin.HasSetting(OSD.DisablePauseOnInfo)">Pause</onclick>
+                        <onclick condition="!$EXP[Exp_VideoPlayerContentLiveTV]">Action(Close)</onclick>
                         <onfocus>SetProperty(TMDbHelper.WinProp.Player.Title,'"$INFO[Player.Title]"',Home)</onfocus>
                         <onfocus>SetProperty(TMDbHelper.WinProp.VideoPlayer.TvShowTitle,'"$INFO[VideoPlayer.TvShowTitle]"',Home)</onfocus>
-
-                        <onclick condition="VideoPlayer.Content(movies) + !String.IsEmpty(VideoPlayer.IMDBNumber) + String.StartsWith(VideoPlayer.IMDBNumber,tt)">RunScript(plugin.video.themoviedb.helper,recommendations=oninfo,tmdb_type=movie,imdb_id=$INFO[VideoPlayer.IMDBNumber],window_id=1191)</onclick>
-                        <onclick condition="VideoPlayer.Content(movies) + !String.IsEmpty(VideoPlayer.IMDBNumber) + !String.StartsWith(VideoPlayer.IMDBNumber,tt)">RunScript(plugin.video.themoviedb.helper,recommendations=oninfo,tmdb_type=movie,tmdb_id=$INFO[VideoPlayer.IMDBNumber],window_id=1191)</onclick>
-                        <onclick condition="VideoPlayer.Content(movies) + String.IsEmpty(VideoPlayer.IMDBNumber)">RunScript(plugin.video.themoviedb.helper,recommendations=oninfo,tmdb_type=movie,query=$WINPROP[Player.Title],window_id=1191)</onclick>
-                        <onclick condition="VideoPlayer.Content(episodes)">RunScript(plugin.video.themoviedb.helper,recommendations=oninfo,tmdb_type=tv,query=$WINPROP[VideoPlayer.TvShowTitle],episode_year=$INFO[VideoPlayer.Year],window_id=1191)</onclick>
-
+                        <onclick condition="$EXP[Exp_VideoPlayerContentMovies] + !String.IsEmpty(VideoPlayer.IMDBNumber) + String.StartsWith(VideoPlayer.IMDBNumber,tt)">RunScript(plugin.video.themoviedb.helper,recommendations=oninfo,tmdb_type=movie,imdb_id=$INFO[VideoPlayer.IMDBNumber],window_id=1191)</onclick>
+                        <onclick condition="$EXP[Exp_VideoPlayerContentMovies] + !String.IsEmpty(VideoPlayer.IMDBNumber) + !String.StartsWith(VideoPlayer.IMDBNumber,tt)">RunScript(plugin.video.themoviedb.helper,recommendations=oninfo,tmdb_type=movie,tmdb_id=$INFO[VideoPlayer.IMDBNumber],window_id=1191)</onclick>
+                        <onclick condition="$EXP[Exp_VideoPlayerContentMovies] + String.IsEmpty(VideoPlayer.IMDBNumber)">RunScript(plugin.video.themoviedb.helper,recommendations=oninfo,tmdb_type=movie,query=$WINPROP[Player.Title],window_id=1191)</onclick>
+                        <onclick condition="$EXP[Exp_VideoPlayerContentEpisodes]">RunScript(plugin.video.themoviedb.helper,recommendations=oninfo,tmdb_type=tv,query=$WINPROP[VideoPlayer.TvShowTitle],episode_year=$INFO[VideoPlayer.Year],window_id=1191)</onclick>
                     </include>
                     <include content="OSD_Button">
                         <param name="autoclose" value="true" />
@@ -214,8 +195,8 @@
                         <aligny>top</aligny>
                         <textoffsetx>0</textoffsetx>
                         <onclick>ActivateWindow(osdaudiosettings)</onclick>
-                        <onup condition="!Skin.HasSetting(OSD.DisablePopUpDialogs)">SetFocus(6601)</onup>
-                        <onup condition="Skin.HasSetting(OSD.DisablePopUpDialogs)">ActivateWindow(1143)</onup>
+                        <onup condition="!$EXP[Exp_SkinSetting_OSDDisablePopups]">SetFocus(6601)</onup>
+                        <onup condition="$EXP[Exp_SkinSetting_OSDDisablePopups]">ActivateWindow(1143)</onup>
                     </include>
                     <include content="OSD_Button">
                         <param name="autoclose" value="true" />
@@ -232,8 +213,8 @@
                         <aligny>top</aligny>
                         <textoffsetx>0</textoffsetx>
                         <onclick>ActivateWindow(osdsubtitlesettings)</onclick>
-                        <onup condition="!Skin.HasSetting(OSD.DisablePopUpDialogs)">SetFocus(6701)</onup>
-                        <onup condition="Skin.HasSetting(OSD.DisablePopUpDialogs)">ActivateWindow(1144)</onup>
+                        <onup condition="!$EXP[Exp_SkinSetting_OSDDisablePopups]">SetFocus(6701)</onup>
+                        <onup condition="$EXP[Exp_SkinSetting_OSDDisablePopups]">ActivateWindow(1144)</onup>
                     </include>
                     <include content="OSD_Button">
                         <param name="autoclose" value="true" />
@@ -246,9 +227,8 @@
                         <onup>SetFocus(7800)</onup>
                     </include>
                 </control>
-
                 <!-- Audio Tracks -->
-                <include content="OSD_Stream_Selector" condition="!Skin.HasSetting(OSD.DisablePopUpDialogs)">
+                <include content="OSD_Stream_Selector" condition="!$EXP[Exp_SkinSetting_OSDDisablePopups]">
                     <param name="id" value="6601" />
                     <param name="buttonid" value="6600" />
                     <param name="stream_type" value="audio" />
@@ -260,9 +240,8 @@
                     <visible>!Integer.IsEqual(Container(6601).NumItems,0) | Container(6601).IsUpdating</visible>
                     <animation effect="fade" start="100" end="0" condition="Integer.IsEqual(Container(6601).NumItems,0)">Conditional</animation>
                 </include>
-
                 <!-- Subtitles -->
-                <include content="OSD_Stream_Selector" condition="!Skin.HasSetting(OSD.DisablePopUpDialogs)">
+                <include content="OSD_Stream_Selector" condition="!$EXP[Exp_SkinSetting_OSDDisablePopups]">
                     <param name="id" value="6701" />
                     <param name="buttonid" value="6700" />
                     <param name="stream_type" value="subtitle" />
@@ -277,7 +256,6 @@
                     <visible>!Integer.IsEqual(Container(6701).NumItems,0) | Container(6701).IsUpdating</visible>
                     <animation effect="fade" start="100" end="0" condition="Integer.IsEqual(Container(6701).NumItems,0)">Conditional</animation>
                 </include>
-
                 <!-- Settings -->
                 <include content="OSD_Menu_Back">
                     <param name="arrow_pos" value="70" />
@@ -285,7 +263,7 @@
                     <visible>!Window.IsVisible(videobookmarks)</visible>
                     <visible>!Window.IsVisible(pvrchannelguide)</visible>
                     <visible>!Window.IsVisible(DialogSettings.xml)</visible>
-                    <visible>[Control.HasFocus(6800) + !Skin.HasSetting(OSD.DisablePopUpDialogs)] | ControlGroup(6801).HasFocus() | Control.HasFocus(7800)</visible>
+                    <visible>[Control.HasFocus(6800) + !$EXP[Exp_SkinSetting_OSDDisablePopups]] | ControlGroup(6801).HasFocus() | Control.HasFocus(7800)</visible>
                     <include>Animation_SlideIn_Dialog</include>
                     <right>40</right>
                     <width>480</width>
@@ -348,12 +326,12 @@
                             <onup>6805</onup>
                             <ondown>6800</ondown>
                             <height>160</height>
-                            <onleft condition="Player.Paused">PlayerControl(Play)</onleft>
-                            <onright condition="Player.Paused">PlayerControl(Play)</onright>
+                            <onleft condition="$EXP[Exp_PlayerPaused]">PlayerControl(Play)</onleft>
+                            <onright condition="$EXP[Exp_PlayerPaused]">PlayerControl(Play)</onright>
                             <onleft condition="Player.TempoEnabled">PlayerControl(TempoDown)</onleft>
                             <onright condition="Player.TempoEnabled">PlayerControl(TempoUp)</onright>
-                            <onright condition="!Player.TempoEnabled + !Player.Forwarding32x">PlayerControl(Forward)</onright>
-                            <onleft condition="!Player.TempoEnabled + !Player.Rewinding32x">PlayerControl(Rewind)</onleft>
+                            <onright condition="!Player.TempoEnabled + !$EXP[Exp_PlayerForwarding]32x">PlayerControl(Forward)</onright>
+                            <onleft condition="!Player.TempoEnabled + !$EXP[Exp_PlayerRewinding]32x">PlayerControl(Rewind)</onleft>
                         </include>
                         <include content="OSD_TempoControl">
                             <param name="istempo">Player.TempoEnabled</param>
@@ -367,9 +345,7 @@
                     </control>
                 </include>
             </control>
-
         </control>
-
         <include content="OSD_CastInfo_HintText">
             <param name="label">$VAR[Label_OSD_HintText]</param>
             <visible>!Window.IsVisible(DialogSlider.xml)</visible>
@@ -380,7 +356,6 @@
             <visible>!Window.IsVisible(1144)</visible>
             <visible>ControlGroup(6000).HasFocus() | ControlGroup(6001).HasFocus()</visible>
         </include>
-
         <control type="progress">
             <centerleft>50%</centerleft>
             <width>1840</width>
@@ -394,7 +369,6 @@
             <visible>Control.HasFocus(8200)</visible>
             <visible>!Pvr.IsPlayingTv</visible>
         </control>
-
         <control type="progress">
             <centerleft>50%</centerleft>
             <width>1840</width>
@@ -408,7 +382,6 @@
             <visible>Control.HasFocus(8200)</visible>
             <visible>Pvr.IsPlayingTv</visible>
         </control>
-
         <control type="slider" id="8200">
             <centerleft>50%</centerleft>
             <width>1760</width>

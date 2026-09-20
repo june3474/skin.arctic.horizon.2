@@ -69,14 +69,12 @@
                             </item>
                         </content>
                     </control>
-
                     <!-- Right Settings -->
                     <include content="Dialog_SettingsCategory_RightGroup">
                         <param name="info_label" value="$INFO[Container(3).ListItem.Label2]" />
                         <control type="grouplist" id="5">
                             <onleft>3</onleft>
                             <bottom>grid_x08</bottom>
-
                             <!-- Home -->
                             <include content="Dialog_Settings_Label" description="Home Label">
                                 <param name="id">1000</param>
@@ -126,7 +124,6 @@
                                 <onclick>SetProperty(CustomDialogPresetItems,Items_DialogPreset_MenuStyles,Home)</onclick>
                                 <onclick>ActivateWindow(1115)</onclick>
                             </include>
-
                             <include content="Dialog_Settings_Label" description="Home Label">
                                 <param name="id">1006</param>
                                 <label>$LOCALIZE[31103]</label>
@@ -140,11 +137,9 @@
                                 <visible>Container(3).HasFocus(1)</visible>
                                 <onclick condition="Skin.HasSetting(Widgets.ExpandedHeader)">Skin.Reset(Widgets.ExpandedHeader)</onclick>
                                 <onclick condition="Skin.HasSetting(Widgets.ExpandedHeader)">Skin.Reset(Widgets.ExpandedFooter)</onclick>
-
                                 <onclick condition="!Skin.HasSetting(Widgets.ExpandedHeader)">Skin.SetBool(Widgets.ExpandedHeader)</onclick>
                                 <onclick condition="!Skin.HasSetting(Widgets.ExpandedHeader)">Skin.SetBool(Widgets.ExpandedFooter)</onclick>
                             </include>
-
                             <include content="Dialog_Settings_Button">
                                 <param name="id">1013</param>
                                 <param name="control" value="radiobutton" />
@@ -153,7 +148,6 @@
                                 <onclick>Skin.ToggleSetting(Home.CleanWidgets)</onclick>
                                 <selected>!Skin.HasSetting(Home.CleanWidgets)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Button" description="Show more widget">
                                 <param name="id">1009</param>
                                 <param name="control">radiobutton</param>
@@ -162,14 +156,13 @@
                                 <selected>Skin.HasSetting(Home.EnableShowMoreWidget)</selected>
                                 <onclick>Skin.ToggleSetting(Home.EnableShowMoreWidget)</onclick>
                             </include>
-
                             <include content="Dialog_Settings_Button" description="PVR Widgets Focus">
                                 <param name="id">1010</param>
                                 <param name="control">radiobutton</param>
                                 <label>$LOCALIZE[31247]</label>
                                 <visible>Container(3).HasFocus(1)</visible>
                                 <onclick>Skin.ToggleSetting(Widgets.OpaqueFocus)</onclick>
-                                <selected>Skin.HasSetting(Widgets.OpaqueFocus)</selected>
+                                <selected>$EXP[Exp_SkinSetting_WidgetsOpaqueFocus]</selected>
                             </include>
                             <include content="Dialog_Settings_Button">
                                 <param name="id">1011</param>
@@ -180,7 +173,6 @@
                                 <onclick>Skin.ToggleSetting(Widgets.FullScreenContext)</onclick>
                                 <selected>Skin.HasSetting(Widgets.FullScreenContext)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Label" description="Expert">
                                 <param name="id">1090</param>
                                 <label>$LOCALIZE[10039]</label>
@@ -192,7 +184,6 @@
                                 <visible>Container(3).HasFocus(1)</visible>
                                 <onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
                             </include>
-
                             <!-- Appearance -->
                             <include content="Dialog_Settings_Label" description="LooknFeel Label">
                                 <param name="id">2000</param>
@@ -319,10 +310,8 @@
                                 <label>$LOCALIZE[31221]</label>
                                 <visible>Container(3).HasFocus(2)</visible>
                                 <onclick>Skin.ToggleSetting(Glass.BorderOutline)</onclick>
-                                <selected>Skin.HasSetting(Glass.BorderOutline)</selected>
+                                <selected>$EXP[Exp_SkinSetting_GlassBorderOutline]</selected>
                             </include>
-
-
                             <!-- Navigation -->
                             <include content="Dialog_Settings_Label" description="Navigation">
                                 <param name="id">3000</param>
@@ -366,7 +355,7 @@
                                 <label>$LOCALIZE[31339]</label>
                                 <visible>Container(3).HasFocus(3)</visible>
                                 <onclick>Skin.ToggleSetting(DialogInfo.FocusButtons)</onclick>
-                                <selected>Skin.HasSetting(DialogInfo.FocusButtons)</selected>
+                                <selected>S$EXP[Exp_DialogInfoFocusButtons]</selected>
                             </include>
                             <include content="Dialog_Settings_Button">
                                 <param name="id">3005</param>
@@ -397,7 +386,6 @@
                                 <onclick>Skin.ToggleSetting(KioskMode.Viewtypes)</onclick>
                                 <selected>!Skin.HasSetting(KioskMode.Viewtypes)</selected>
                             </include>
-
                             <!-- Furniture -->
                             <include content="Dialog_Settings_Label" description="Header">
                                 <param name="id">4000</param>
@@ -410,7 +398,7 @@
                                 <label>$LOCALIZE[31277]</label>
                                 <visible>Container(3).HasFocus(4)</visible>
                                 <onclick>Skin.ToggleSetting(Furniture.DisableLeftHeader)</onclick>
-                                <selected>!Skin.HasSetting(Furniture.DisableLeftHeader)</selected>
+                                <selected>!$EXP[Exp_FurnitureDisableLeftHeader]</selected>
                                 <!-- Reset window -->
                                 <onclick>SetProperty(ReplaceWindow,skinsettings,Home)</onclick>
                                 <onclick>ReplaceWindow(1197)</onclick>
@@ -421,7 +409,7 @@
                                 <label>$LOCALIZE[31278] / $LOCALIZE[31244]</label>
                                 <visible>Container(3).HasFocus(4)</visible>
                                 <onclick>Skin.ToggleSetting(Furniture.DisableRightHeader)</onclick>
-                                <selected>!Skin.HasSetting(Furniture.DisableRightHeader)</selected>
+                                <selected>!$EXP[Exp_FurnitureDisableRightHeader]</selected>
                                 <!-- Reset window -->
                                 <onclick>SetProperty(ReplaceWindow,skinsettings,Home)</onclick>
                                 <onclick>ReplaceWindow(1197)</onclick>
@@ -432,8 +420,8 @@
                                 <label>-  $LOCALIZE[13014]</label>
                                 <visible>Container(3).HasFocus(4)</visible>
                                 <onclick>Skin.ToggleSetting(Furniture.UseMinimalClock)</onclick>
-                                <selected>Skin.HasSetting(Furniture.UseMinimalClock)</selected>
-                                <enable>!Skin.HasSetting(Furniture.DisableRightHeader) | !Skin.HasSetting(Furniture.DisableLeftHeader)</enable>
+                                <selected>$EXP[Exp_FurnitureUseMinimalClock]</selected>
+                                <enable>!$EXP[Exp_FurnitureDisableRightHeader] | !$EXP[Exp_FurnitureDisableLeftHeader]</enable>
                                 <!-- Reset window -->
                                 <onclick>SetProperty(ReplaceWindow,skinsettings,Home)</onclick>
                                 <onclick>ReplaceWindow(1197)</onclick>
@@ -446,7 +434,7 @@
                                 <onclick condition="!Skin.String(WeatherClock,Small)">Skin.SetString(WeatherClock,Small)</onclick>
                                 <onclick condition="Skin.String(WeatherClock,Small)">Skin.Reset(WeatherClock)</onclick>
                                 <selected>Skin.String(WeatherClock,Small)</selected>
-                                <enable>!Skin.HasSetting(Furniture.DisableRightHeader) + !Skin.HasSetting(Furniture.UseMinimalClock)</enable>
+                                <enable>!$EXP[Exp_FurnitureDisableRightHeader] + !$EXP[Exp_FurnitureUseMinimalClock]</enable>
                             </include>
                             <include content="Dialog_Settings_Button" description="Profile image">
                                 <param name="id">4005</param>
@@ -454,11 +442,11 @@
                                 <label>-  $LOCALIZE[31195]</label>
                                 <visible>Container(3).HasFocus(4)</visible>
                                 <onclick>Skin.ToggleSetting(Home.ShowProfileImage)</onclick>
-                                <selected>Skin.HasSetting(Home.ShowProfileImage)</selected>
+                                <selected>$EXP[Exp_SkinSetting_HomeShowProfileImage]</selected>
                                 <!-- Reset window -->
                                 <onclick>SetProperty(ReplaceWindow,skinsettings,Home)</onclick>
                                 <onclick>ReplaceWindow(1197)</onclick>
-                                <enable>!Skin.HasSetting(Furniture.DisableRightHeader) + !Skin.HasSetting(Furniture.UseMinimalClock)</enable>
+                                <enable>!$EXP[Exp_FurnitureDisableRightHeader] + !$EXP[Exp_FurnitureUseMinimalClock]</enable>
                             </include>
                             <include content="Dialog_Settings_Label" description="Footer">
                                 <param name="id">4006</param>
@@ -547,7 +535,6 @@
                                 <selected>!Skin.HasSetting(Codecs.DisableMediaProviderIcons)</selected>
                                 <enable>!Skin.HasSetting(Furniture.DisableLeftFooter)</enable>
                             </include>
-
                             <!-- Behaviour / Playback -->
                             <include content="Dialog_Settings_Label" description="Behaviour">
                                 <param name="id">5000</param>
@@ -586,7 +573,7 @@
                                 <label>$LOCALIZE[31272]</label>
                                 <visible>Container(3).HasFocus(5)</visible>
                                 <onclick>Skin.ToggleSetting(Views.DisableBigPosterRowAutoInfo)</onclick>
-                                <selected>!Skin.HasSetting(Views.DisableBigPosterRowAutoInfo)</selected>
+                                <selected>!$EXP[Exp_SkinSetting_ViewsDisableBigPosterRowAutoInfo]</selected>
                             </include>
                             <include content="Dialog_Settings_Button" description="Plugin init">
                                 <param name="id">5011</param>
@@ -632,7 +619,7 @@
                                 <label>$LOCALIZE[31378]</label>
                                 <visible>Container(3).HasFocus(5)</visible>
                                 <onclick>Skin.ToggleSetting(OSD.DisablePopUpDialogs)</onclick>
-                                <selected>!Skin.HasSetting(OSD.DisablePopUpDialogs)</selected>
+                                <selected>!$EXP[Exp_SkinSetting_OSDDisablePopups]</selected>
                             </include>
                             <include content="Dialog_Settings_Button" description="Trailer button plays fullscreen">
                                 <param name="id">5009</param>
@@ -650,15 +637,12 @@
                                 <onclick>Skin.ToggleSetting(OSD.DisablePauseOnInfo)</onclick>
                                 <selected>!Skin.HasSetting(OSD.DisablePauseOnInfo)</selected>
                             </include>
-
-
                             <!-- Details -->
                             <include content="Dialog_Settings_Label" description="Details">
                                 <param name="id">6000</param>
                                 <label>$LOCALIZE[19033]</label>
                                 <visible>Container(3).HasFocus(6)</visible>
                             </include>
-
                             <include content="Dialog_Settings_Button" description="CustomDialog Indicators">
                                 <param name="id">6001</param>
                                 <label>$LOCALIZE[31234]</label>
@@ -691,7 +675,6 @@
                                 <onclick>SetProperty(CustomDialogSettingsTitle,$LOCALIZE[31269],Home)</onclick>
                                 <onclick>ActivateWindow(1118)</onclick>
                             </include>
-
                             <include content="Dialog_Settings_Button" description="TMDbHelper for PVR">
                                 <param name="id">6005</param>
                                 <param name="control" value="radiobutton" />
@@ -708,7 +691,6 @@
                                 <onclick>Skin.ToggleSetting(Views.DisableBigLandscapeText)</onclick>
                                 <selected>!Skin.HasSetting(Views.DisableBigLandscapeText)</selected>
                             </include>
-
                             <!-- Dependencies -->
                             <include content="Dialog_Settings_Label" description="Dependencies">
                                 <param name="id">7000</param>
@@ -726,7 +708,6 @@
                                 <onclick condition="System.AddonIsEnabled(plugin.video.themoviedb.helper) + System.HasAddon(plugin.video.themoviedb.helper)">Addon.OpenSettings(plugin.video.themoviedb.helper)</onclick>
                                 <selected>System.AddonIsEnabled(plugin.video.themoviedb.helper) + System.HasAddon(plugin.video.themoviedb.helper)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Button">
                                 <param name="id">7002</param>
                                 <param name="control" value="radiobutton" />
@@ -738,7 +719,6 @@
                                 <onclick condition="System.AddonIsEnabled(script.skinshortcuts) + System.HasAddon(script.skinshortcuts)">Addon.OpenSettings(script.skinshortcuts)</onclick>
                                 <selected>System.AddonIsEnabled(script.skinshortcuts) + System.HasAddon(script.skinshortcuts)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Button">
                                 <param name="id">7003</param>
                                 <param name="control" value="radiobutton" />
@@ -750,7 +730,6 @@
                                 <onclick condition="System.AddonIsEnabled(script.skinvariables) + System.HasAddon(script.skinvariables)">Addon.OpenSettings(script.skinvariables)</onclick>
                                 <selected>System.AddonIsEnabled(script.skinvariables) + System.HasAddon(script.skinvariables)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Button">
                                 <param name="id">7004</param>
                                 <param name="control" value="radiobutton" />
@@ -762,7 +741,6 @@
                                 <onclick condition="System.AddonIsEnabled(script.texturemaker) + System.HasAddon(script.texturemaker)">Addon.OpenSettings(script.texturemaker)</onclick>
                                 <selected>System.AddonIsEnabled(script.texturemaker) + System.HasAddon(script.texturemaker)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Button">
                                 <param name="id">7005</param>
                                 <param name="control" value="radiobutton" />
@@ -774,7 +752,6 @@
                                 <onclick condition="System.AddonIsEnabled(script.artistslideshow) + System.HasAddon(script.artistslideshow)">Addon.OpenSettings(script.artistslideshow)</onclick>
                                 <selected>System.AddonIsEnabled(script.artistslideshow) + System.HasAddon(script.artistslideshow)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Button">
                                 <param name="id">7006</param>
                                 <param name="control" value="radiobutton" />
@@ -786,7 +763,6 @@
                                 <onclick condition="System.AddonIsEnabled(resource.images.arctic.waves) + System.HasAddon(resource.images.arctic.waves)">Addon.OpenSettings(resource.images.arctic.waves)</onclick>
                                 <selected>System.AddonIsEnabled(resource.images.arctic.waves) + System.HasAddon(resource.images.arctic.waves)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Button">
                                 <param name="id">7007</param>
                                 <param name="control" value="radiobutton" />
@@ -798,7 +774,6 @@
                                 <onclick condition="System.AddonIsEnabled(resource.images.moviegenreicons.transparent) + System.HasAddon(resource.images.moviegenreicons.transparent)">Addon.OpenSettings(resource.images.moviegenreicons.transparent)</onclick>
                                 <selected>System.AddonIsEnabled(resource.images.moviegenreicons.transparent) + System.HasAddon(resource.images.moviegenreicons.transparent)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Button">
                                 <param name="id">7008</param>
                                 <param name="control" value="radiobutton" />
@@ -810,7 +785,6 @@
                                 <onclick condition="System.AddonIsEnabled(resource.images.moviegenreicons.horizon) + System.HasAddon(resource.images.moviegenreicons.horizon)">Addon.OpenSettings(resource.images.moviegenreicons.horizon)</onclick>
                                 <selected>System.AddonIsEnabled(resource.images.moviegenreicons.horizon) + System.HasAddon(resource.images.moviegenreicons.horizon)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Button">
                                 <param name="id">7009</param>
                                 <param name="control" value="radiobutton" />
@@ -822,7 +796,6 @@
                                 <onclick condition="System.AddonIsEnabled(resource.images.weatherfanart.multi) + System.HasAddon(resource.images.weatherfanart.multi)">Addon.OpenSettings(resource.images.weatherfanart.multi)</onclick>
                                 <selected>System.AddonIsEnabled(resource.images.weatherfanart.multi) + System.HasAddon(resource.images.weatherfanart.multi)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Button">
                                 <param name="id">7010</param>
                                 <param name="control" value="radiobutton" />
@@ -834,7 +807,6 @@
                                 <onclick condition="System.AddonIsEnabled(resource.images.moviecountryicons.maps) + System.HasAddon(resource.images.moviecountryicons.maps)">Addon.OpenSettings(resource.images.moviecountryicons.maps)</onclick>
                                 <selected>System.AddonIsEnabled(resource.images.moviecountryicons.maps) + System.HasAddon(resource.images.moviecountryicons.maps)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Button">
                                 <param name="id">7011</param>
                                 <param name="control" value="radiobutton" />
@@ -846,7 +818,6 @@
                                 <onclick condition="System.AddonIsEnabled(resource.images.studios.white) + System.HasAddon(resource.images.studios.white)">Addon.OpenSettings(resource.images.studios.white)</onclick>
                                 <selected>System.AddonIsEnabled(resource.images.studios.white) + System.HasAddon(resource.images.studios.white)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Button">
                                 <param name="id">7030</param>
                                 <param name="control" value="radiobutton" />
@@ -858,7 +829,6 @@
                                 <onclick condition="System.AddonIsEnabled(service.upnext) + System.HasAddon(service.upnext)">Addon.OpenSettings(service.upnext)</onclick>
                                 <selected>System.AddonIsEnabled(service.upnext) + System.HasAddon(service.upnext)</selected>
                             </include>
-
                             <include content="Dialog_Settings_Label" description="Debug">
                                 <param name="id">7090</param>
                                 <label>$LOCALIZE[14260]</label>
@@ -880,7 +850,6 @@
                                 <onclick>Skin.ToggleSetting(DebugGrid)</onclick>
                                 <selected>Skin.HasSetting(DebugGrid)</selected>
                             </include>
-
                             <!-- Thanks -->
                             <include content="Dialog_Settings_Label" description="Thanks">
                                 <param name="id" value="8000" />
@@ -899,7 +868,6 @@
                             </control>
                         </control>
                     </include>
-
                 </include>
             </include>
         </include>
@@ -907,5 +875,4 @@
             <param name="powermenu_button">true</param>
         </include>
     </controls>
-
 </window>

@@ -35,7 +35,6 @@
                     <textcolor>$VAR[ColorHighlight]</textcolor>
                     <font>font_head_black</font>
                 </control>
-
                 <control type="group">
                     <left>44</left>
                     <top>44</top>
@@ -83,7 +82,6 @@
                         </control>
                     </control>
                 </control>
-
                 <control type="grouplist">
                     <height>grid_x06</height>
                     <bottom>0</bottom>

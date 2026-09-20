@@ -9,18 +9,13 @@
         <include>Defs_TMDbHelper_Loader</include>
         <include>Background_ExtraFanart</include>
         <include>Background_Main</include>
-
         <include content="Hub_Grouplist">
             <param name="t_window_id">1121</param>
             <param name="l_window_id">1120</param>
             <param name="r_window_id">1122</param>
-
             <param name="mainwidget_content">plugin://plugin.video.themoviedb.helper/?info=trakt_trending&amp;tmdb_type=tv&amp;nextpage=false&amp;widget=true</param>
-
             <param name="submenu_label">TMDbHelper</param>
             <param name="submenu_content">plugin://plugin.video.themoviedb.helper/?info=dir_tv</param>
-
-
             <include content="Hub_Widget_SideStack">
                 <param name="id">500</param>
                 <param name="label">Trakt</param>
@@ -52,7 +47,6 @@
                 <param name="target">videos</param>
             </include> -->
         </include>
-
         <include content="Widget_SideStack_NodeList">
             <param name="id">5000</param>
             <param name="nodeid">5002</param>
@@ -83,9 +77,7 @@
             <param name="nodeid">5502</param>
             <content target="videos" sortby="random">plugin://plugin.video.themoviedb.helper/?info=dir_tvdb_award_categories&amp;tvdb_id=5</content>
         </include> -->
-
         <include>Hub_Furniture</include>
-
         <include content="Hub_Menu" condition="!Skin.HasSetting(Hubs.DisableQuickSwitch)">
             <include content="Object_Hidden_Button">
                 <param name="id" value="399" />
@@ -98,12 +90,10 @@
                 <onclick>ActivateWindow(videos,plugin://plugin.video.themoviedb.helper/?info=user_discover&amp;tmdb_type=tv,return)</onclick>
             </include>
         </include>
-
         <include content="Object_Hidden_Button" condition="Skin.HasSetting(Hubs.DisableQuickSwitch)">
             <param name="id" value="399" />
             <onfocus>SetFocus(4900)</onfocus>
         </include>
-
         <control type="group">
             <visible>!$EXP[Exp_InfoDialogs]</visible>
             <include content="Furniture_Top_Left" condition="Skin.HasSetting(Hubs.DisableQuickSwitch)">

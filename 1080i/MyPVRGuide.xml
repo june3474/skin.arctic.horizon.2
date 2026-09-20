@@ -4,7 +4,6 @@
     <defaultcontrol always="true">10</defaultcontrol>
     <menucontrol>9000</menucontrol>
     <include>Action_Blur_Onload</include>
-
     <controls>
         <include>Defs_TMDbHelper_Loader</include>
         <include>Background_Main</include>
@@ -21,7 +20,6 @@
                 <include>View_053_PVRGuide_Pane_LargeRow</include>
             </control>
         </control>
-
         <!-- Menu bar -->
         <include>View_PVR_GroupSwitcher</include>
         <include>View_Furniture_Top</include>
@@ -35,7 +33,5 @@
             <param name="id" value="9900" />
             <onfocus>menu</onfocus>
         </include>
-
     </controls>
-
 </window>

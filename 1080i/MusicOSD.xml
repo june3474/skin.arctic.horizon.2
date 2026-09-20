@@ -6,13 +6,10 @@
     <onunload>ClearProperty(OSDArtistDetails,Home)</onunload>
     <onunload>CancelAlarm(osd_timeout,true)</onunload>
     <controls>
-
         <control type="group" id="6002">
-
             <visible allowhiddenfocus="true">!Window.IsVisible(1142)</visible>
             <animation effect="fade" start="0" end="100" time="300" delay="200">Visible</animation>
             <animation effect="fade" end="0" start="100" time="150">Hidden</animation>
-
             <!-- Left Side Buttons -->
             <control type="grouplist" id="6000">
                 <centerbottom>70</centerbottom>
@@ -73,7 +70,6 @@
                     <onfocus condition="!String.IsEmpty(Window(Home).Property(ResetScroll))">ClearProperty(ResetScroll,home)</onfocus>
                 </include>
             </control>
-
             <!-- Right Side Buttons -->
             <control type="grouplist" id="6001">
                 <centerbottom>70</centerbottom>
@@ -124,9 +120,7 @@
                     <onclick>ActivateWindow(1119)</onclick>
                     <onfocus>SetProperty(OSDArtistDetails,1,Home)</onfocus>
                 </include>
-
             </control>
-
             <control type="group">
                 <visible>!String.IsEmpty(Window(Home).Property(OSDArtistDetails))</visible>
                 <visible>!Window.IsVisible(1142)</visible>
@@ -148,7 +142,6 @@
                     <pagecontrol>9803</pagecontrol>
                     <bottom>-20</bottom>
                 </control>
-
                 <include content="View_Furniture_Scrollbar_V">
                     <param name="id">9803</param>
                     <param name="onleft">SetFocus(6001)</param>
@@ -161,15 +154,11 @@
                 </include>
             </control>
         </control>
-
-
-
         <include content="OSD_CastInfo_HintText">
             <param name="label">$LOCALIZE[31346]</param>
             <visible>!Window.IsVisible(1142)</visible>
             <visible>!Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
         </include>
-
         <control type="progress">
             <centerleft>50%</centerleft>
             <width>1840</width>
@@ -182,7 +171,6 @@
             <midtexture />
             <visible>Control.HasFocus(8200)</visible>
         </control>
-
         <control type="slider" id="8200">
             <centerleft>50%</centerleft>
             <width>1760</width>

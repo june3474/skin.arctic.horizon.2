@@ -2,11 +2,9 @@
 <window>
     <defaultcontrol always="true">1297</defaultcontrol>
     <controls>
-
         <include content="Background_Main">
             <param name="plain_background">true</param>
         </include>
-
         <control type="image" id="1298">
             <fadetime>800</fadetime>
             <width>1</width>
@@ -15,7 +13,6 @@
             <left>-1000</left>
             <texture />
         </control>
-
         <control type="list" id="1297">
             <content sortby="random">$VAR[Defs_ScreensaverWidget]</content>
             <autoscroll time="20000">true</autoscroll>
@@ -23,7 +20,6 @@
             <itemlayout />
             <focusedlayout />
         </control>
-
         <control type="image">
             <fadetime>800</fadetime>
             <width>1920</width>
@@ -32,7 +28,6 @@
             <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="true">Conditional</animation>
             <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="true">Conditional</animation>
         </control>
-
         <control type="image">
             <visible>!Integer.IsOdd(ListItem.CurrentItem)</visible>
             <texture flipx="false">background/vignetted.png</texture>
@@ -45,7 +40,6 @@
             <animation effect="fade" start="0" end="100" time="400">Visible</animation>
             <animation effect="fade" start="100" end="0" time="400">Hidden</animation>
         </control>
-
         <control type="group">
             <left>view_pad</left>
             <width>680</width>
@@ -71,7 +65,6 @@
                 <align>center</align>
             </control>
         </control>
-
         <control type="group">
             <right>view_pad</right>
             <width>680</width>

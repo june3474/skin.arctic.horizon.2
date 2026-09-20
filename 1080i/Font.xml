@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fonts>
-
 <!--
     =====================================================
-
     Typographic Scale is Pentatonic
     n=5 r=2 f0=32 for bold/black
-
     regular is 2pts lower as feels taller than bold
     quantise plotbox linespacing to 40px grid
-
     Large title uses octave of double row (n=5 and n=10)
-
     =====================================================
      (3)    (4)    (5)     1      2      3      4      5
      18  >  24  >  28  >  32  >  37  >  42  >  49  >  56
     hint   tiny   mini   main   midi   head   huge   info
     =====================================================
 -->
-
     <fontset id="Default" unicode="false">
-
         <!-- Title fonts -->
         <font>
             <name>font_info_black</name>
@@ -44,7 +37,6 @@
             <size>56</size>
             <linespacing>0.9</linespacing>
         </font>
-
         <!-- Black Fonts -->
         <font>
             <name>font_huge_black</name>
@@ -82,7 +74,6 @@
             <filename>RobotoCondensed-Black.ttf</filename>
             <size>18</size>
         </font>
-
         <!-- Bold Fonts -->
         <font>
             <name>font_huge_bold</name>
@@ -119,7 +110,6 @@
             <filename>RobotoCondensed-Bold.ttf</filename>
             <size>18</size>
         </font>
-
         <!-- Standard Fonts -->
         <font>
             <name>font_midi</name>
@@ -147,7 +137,6 @@
             <size>16</size>
             <linespacing>1.05</linespacing>
         </font>
-
         <!-- Textbox Fonts -->
         <font>
             <name>font_huge_plot</name>
@@ -173,14 +162,12 @@
             <linespacing>1.24</linespacing>
             <size>26</size>
         </font>
-
         <!-- Font for codec flag -->
         <font>
             <name>font_videocodec_bold</name>
             <filename>Nick-Titling.ttf</filename>
             <size>22</size>
         </font>
-
         <!-- Music visualisation scrolling text -->
         <font>
             <name>font_musicvis_biggest</name>
@@ -197,14 +184,12 @@
             <filename>RobotoCondensed-Light.ttf</filename>
             <size>80</size>
         </font>
-
         <!-- Keyboard Symbol Font -->
         <font>
             <name>font_main_iconic</name>
             <filename>iconmonstr-iconic-font.ttf</filename>
             <size>30</size>
         </font>
-
         <!-- Kodi Logo Font -->
         <font>
             <name>font_logo</name>
@@ -216,7 +201,6 @@
             <filename>Questrial-Regular.ttf</filename>
             <size>44</size>
         </font>
-
         <!-- Required for system -->
         <font>
             <name>font13</name>
@@ -228,7 +212,6 @@
             <filename>RobotoCondensed-Bold.ttf</filename>
             <size>130</size>
         </font>
-
         <!-- Testing Fonts -->
         <font>
             <name>font_debug</name>
@@ -237,10 +220,7 @@
             <aspect>0.8</aspect>
         </font>
     </fontset>
-
-
     <fontset id="NotoRoboto - Arabic / Hebrew" unicode="true">
-
         <!-- Title fonts -->
         <font>
             <name>font_info_black</name>
@@ -264,7 +244,6 @@
             <size>56</size>
             <linespacing>0.9</linespacing>
         </font>
-
         <!-- Black Fonts -->
         <font>
             <name>font_huge_black</name>
@@ -302,7 +281,6 @@
             <filename>RobotoNotoCondensed-Black.ttf</filename>
             <size>18</size>
         </font>
-
         <!-- Bold Fonts -->
         <font>
             <name>font_huge_bold</name>
@@ -339,7 +317,6 @@
             <filename>RobotoNotoCondensed-Bold.ttf</filename>
             <size>18</size>
         </font>
-
         <!-- Standard Fonts -->
         <font>
             <name>font_midi</name>
@@ -367,7 +344,6 @@
             <size>16</size>
             <linespacing>1.05</linespacing>
         </font>
-
         <!-- Textbox Fonts -->
         <font>
             <name>font_huge_plot</name>
@@ -393,14 +369,12 @@
             <linespacing>1.24</linespacing>
             <size>26</size>
         </font>
-
         <!-- Font for codec flag -->
         <font>
             <name>font_videocodec_bold</name>
             <filename>Nick-Titling.ttf</filename>
             <size>22</size>
         </font>
-
         <!-- Music visualisation scrolling text -->
         <font>
             <name>font_musicvis_biggest</name>
@@ -417,14 +391,12 @@
             <filename>RobotoNotoCondensed-Light.ttf</filename>
             <size>80</size>
         </font>
-
         <!-- Keyboard Symbol Font -->
         <font>
             <name>font_main_iconic</name>
             <filename>iconmonstr-iconic-font.ttf</filename>
             <size>30</size>
         </font>
-
         <!-- Kodi Logo Font -->
         <font>
             <name>font_logo</name>
@@ -436,7 +408,6 @@
             <filename>Questrial-Regular.ttf</filename>
             <size>44</size>
         </font>
-
         <!-- Required for system -->
         <font>
             <name>font13</name>
@@ -448,7 +419,6 @@
             <filename>RobotoNotoCondensed-Bold.ttf</filename>
             <size>130</size>
         </font>
-
         <!-- Testing Fonts -->
         <font>
             <name>font_debug</name>
@@ -457,10 +427,7 @@
             <aspect>0.8</aspect>
         </font>
     </fontset>
-
-
     <fontset id="CJK - Chinese / Japanese / Korean" unicode="true">
-
         <!-- Title fonts -->
         <font>
             <name>font_info_black</name>
@@ -488,7 +455,6 @@
             <size>56</size>
             <linespacing>0.9</linespacing>
         </font>
-
         <!-- Black Fonts -->
         <font>
             <name>font_huge_black</name>
@@ -533,7 +499,6 @@
             <aspect>0.89</aspect>
             <size>18</size>
         </font>
-
         <!-- Bold Fonts -->
         <font>
             <name>font_huge_bold</name>
@@ -577,7 +542,6 @@
             <aspect>0.89</aspect>
             <size>18</size>
         </font>
-
         <!-- Standard Fonts -->
         <font>
             <name>font_midi</name>
@@ -610,7 +574,6 @@
             <size>16</size>
             <linespacing>1.05</linespacing>
         </font>
-
         <!-- Textbox Fonts -->
         <font>
             <name>font_huge_plot</name>
@@ -640,14 +603,12 @@
             <linespacing>1.24</linespacing>
             <size>26</size>
         </font>
-
         <!-- Font for codec flag -->
         <font>
             <name>font_videocodec_bold</name>
             <filename>Nick-Titling.ttf</filename>
             <size>22</size>
         </font>
-
         <!-- Music visualisation scrolling text -->
         <font>
             <name>font_musicvis_biggest</name>
@@ -667,14 +628,12 @@
             <aspect>0.89</aspect>
             <size>80</size>
         </font>
-
         <!-- Keyboard Symbol Font -->
         <font>
             <name>font_main_iconic</name>
             <filename>iconmonstr-iconic-font.ttf</filename>
             <size>30</size>
         </font>
-
         <!-- Kodi Logo Font -->
         <font>
             <name>font_logo</name>
@@ -686,7 +645,6 @@
             <filename>Questrial-Regular.ttf</filename>
             <size>44</size>
         </font>
-
         <!-- Required for system -->
         <font>
             <name>font13</name>
@@ -700,7 +658,6 @@
             <aspect>0.89</aspect>
             <size>130</size>
         </font>
-
         <!-- Testing Fonts -->
         <font>
             <name>font_debug</name>
@@ -709,6 +666,4 @@
             <aspect>0.8</aspect>
         </font>
     </fontset>
-
 </fonts>
-

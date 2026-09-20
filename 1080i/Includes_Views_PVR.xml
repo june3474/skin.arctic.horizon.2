@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
     <!-- Common Parts -->
     <include name="View_PVR_GroupSwitcher">
         <include content="Furniture_Topbar_Group">
@@ -16,25 +15,21 @@
                     <param name="color_nf" value="main_fg" />
                     <left>-20</left>
                     <right>0</right>
-
                     <ondown condition="!Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(10)">SetFocus(10,0,absolute)</ondown>
                     <ondown condition="!Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(50)">SetFocus(50,0,absolute)</ondown>
                     <ondown condition="!Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(51)">SetFocus(51,0,absolute)</ondown>
                     <ondown condition="!Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(52)">SetFocus(52,0,absolute)</ondown>
                     <ondown condition="!Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(53)">SetFocus(53,0,absolute)</ondown>
-
                     <onup condition="!Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(10)">SetFocus(10,99999,absolute)</onup>
                     <onup condition="!Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(50)">SetFocus(50,99999,absolute)</onup>
                     <onup condition="!Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(51)">SetFocus(51,99999,absolute)</onup>
                     <onup condition="!Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(52)">SetFocus(52,99999,absolute)</onup>
                     <onup condition="!Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(53)">SetFocus(53,99999,absolute)</onup>
-
                     <ondown condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(10)">10</ondown>
                     <ondown condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(50)">50</ondown>
                     <ondown condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(51)">51</ondown>
                     <ondown condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(52)">52</ondown>
                     <ondown condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(53)">53</ondown>
-
                     <onup condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(10)">10</onup>
                     <onup condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(50)">50</onup>
                     <onup condition="Window.IsVisible(MyPVRGuide.xml) + Control.IsVisible(51)">51</onup>
@@ -44,7 +39,6 @@
             </control>
         </include>
     </include>
-
     <include name="View_PVR_GlassPanel">
         <param name="channelwidth" default="480" />
         <param name="epg_bottom" default="0" />
@@ -78,7 +72,6 @@
             </control>
         </definition>
     </include>
-
     <include name="View_PVR_PeekInfo">
         <control type="group">
             <height>180</height>
@@ -121,7 +114,6 @@
             </control>
         </control>
     </include>
-
     <include name="View_PVR_FullInfo">
         <control type="group">
             <visible>Control.IsVisible(51) | Control.IsVisible(52)</visible>
@@ -158,8 +150,6 @@
             </include>
         </control>
     </include>
-
-
     <!-- EPG -->
     <include name="View_PVRGuide_Standard">
         <param name="channelwidth" default="480" />
@@ -197,7 +187,6 @@
             </include>
         </definition>
     </include>
-
     <include name="View_051_PVRGuide_Info_SmallRow">
         <control type="group">
             <visible>Control.IsVisible(51)</visible>
@@ -209,7 +198,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_050_PVRGuide_Full_SmallRow">
         <control type="group">
             <visible>Control.IsVisible(50)</visible>
@@ -221,7 +209,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_052_PVRGuide_Info_LargeRow">
         <control type="group">
             <visible>Control.IsVisible(52)</visible>
@@ -236,8 +223,6 @@
             </include>
         </control>
     </include>
-
-
     <include name="View_010_PVRGuide_Peek_SmallRow">
         <control type="group">
             <visible>Control.IsVisible(10)</visible>
@@ -251,7 +236,6 @@
             <include>View_PVR_PeekInfo</include>
         </control>
     </include>
-
     <include name="View_053_PVRGuide_Pane_LargeRow">
         <control type="group">
             <visible>Control.IsVisible(53)</visible>
@@ -268,8 +252,6 @@
             </include>
         </control>
     </include>
-
-
     <!-- CHANNELS -->
     <include name="View_PVRChannels_Standard">
         <param name="channelheight" default="80" />
@@ -357,7 +339,6 @@
             </include>
         </definition>
     </include>
-
     <include name="View_054_PVRChannels_Full_SmallRow">
         <control type="group">
             <visible>Control.IsVisible(54)</visible>
@@ -370,7 +351,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_050_PVRChannels_Pane_LargeRow">
         <include content="Object_GlassPanel">
             <visible>Control.IsVisible(50)</visible>
@@ -392,7 +372,6 @@
             </include>
         </include>
     </include>
-
     <include name="View_051_PVRChannels_Info_SmallRow">
         <control type="group">
             <visible>Control.IsVisible(51)</visible>
@@ -405,7 +384,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_052_PVRChannels_Info_LargeRow">
         <control type="group">
             <visible>Control.IsVisible(52)</visible>
@@ -421,7 +399,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_053_PVRChannels_Peek_SmallRow">
         <control type="group">
             <visible>Control.IsVisible(53)</visible>
@@ -436,8 +413,6 @@
             <include>View_PVR_PeekInfo</include>
         </control>
     </include>
-
-
     <!-- Recordings / Timers / Search -->
     <include name="View_PVR_RecordingInfo">
         <param name="id" default="50" />
@@ -476,13 +451,10 @@
             </control>
         </definition>
     </include>
-
     <include name="View_PVR_RecordingSubList">
         <visible>Container(50).ListItem.IsFolder</visible>
         <content>$INFO[Container(50).ListItem.FolderPath]</content>
     </include>
-
-
     <include name="View_PVR_RecordingDetails">
         <control type="group">
             <visible>!Container(50).ListItem.IsFolder + [!String.IsEmpty(ListItem.ChannelName) | !String.IsEmpty(ListItem.Title)]</visible>
@@ -575,7 +547,6 @@
             </control>
         </control>
     </include>
-
     <include name="View_PVR_RecordingList">
         <definition>
             <control type="group">

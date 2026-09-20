@@ -73,7 +73,6 @@
                     </include>
                 </control>
             </control>
-
             <!-- Middle Options -->
             <control type="group">
                 <left>680</left>
@@ -110,8 +109,6 @@
                     </control>
                 </control>
             </control>
-
-
             <!-- Right Buttons -->
             <include content="Dialog_Group">
                 <control type="group">
@@ -131,9 +128,7 @@
                     </control>
                 </control>
             </include>
-
         </include>
-
         <include>Furniture_Top</include>
     </controls>
 </window>

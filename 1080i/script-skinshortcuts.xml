@@ -9,14 +9,11 @@
             <right>80</right>
             <height>800</height>
             <centertop>dialog_tall_centertop</centertop>
-
             <control type="group">
                 <left>80</left>
                 <include>Dialog_Overlay</include>
                 <include>Object_Separator</include>
             </control>
-
-
             <control type="group">
                 <width>640</width>
                 <control type="group">
@@ -91,9 +88,6 @@
                     </control>
                 </control>
             </control>
-
-
-
             <control type="group">
                 <left>640</left>
                 <include>Dialog_Overlay</include>
@@ -104,7 +98,6 @@
                     <control type="grouplist" id="9100">
                         <onleft>304</onleft>
                         <orientation>vertical</orientation>
-
                         <!-- Enable / Disable -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="313" />
@@ -114,7 +107,6 @@
                             <altlabel>$LOCALIZE[24021]</altlabel>
                             <usealttexture>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</usealttexture>
                         </include>
-
                         <!-- Standard: Choose Shortcut -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="401" />
@@ -128,7 +120,6 @@
                             <visible>!String.EndsWith(Window.Property(groupname),.1)</visible>
                             <visible>!String.IsEqual(Window.Property(groupname),searchmenu)</visible>
                         </include>
-
                         <!-- Widget: Choose Widget -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="4001" />
@@ -141,7 +132,6 @@
                             <visible>String.EndsWith(Window.Property(groupname),.1) | String.EndsWith(Window.Property(groupname),.3) | String.EndsWith(Window.Property(groupname),.4) | String.EndsWith(Window.Property(groupname),.5)</visible>
                             <include>Action_SkinShortcuts_ContentType_AutoSetOnUnFocus</include>
                         </include>
-
                         <!-- Custom Hub Widget: Choose Widget -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="4201" />
@@ -154,7 +144,6 @@
                             <visible>String.EndsWith(Window.Property(groupname),.2)</visible>
                             <include>Action_SkinShortcuts_ContentType_AutoSetOnUnFocus</include>
                         </include>
-
                         <!-- Search Widget: Choose Widget -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="4101" />
@@ -167,7 +156,6 @@
                             <visible>String.IsEqual(Window.Property(groupname),searchmenu)</visible>
                             <include>Action_SkinShortcuts_ContentType_AutoSetOnUnFocus</include>
                         </include>
-
                         <!-- Standard: Action -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="307" />
@@ -183,7 +171,6 @@
                             <visible>!String.EndsWith(Window.Property(groupname),.4)</visible>
                             <visible>!String.EndsWith(Window.Property(groupname),.5)</visible>
                         </include>
-
                         <!-- Widget: Action -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="4307" />
@@ -197,7 +184,6 @@
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <visible>String.EndsWith(Window.Property(groupname),.1) | String.EndsWith(Window.Property(groupname),.3) | String.EndsWith(Window.Property(groupname),.4) | String.EndsWith(Window.Property(groupname),.5)</visible>
                         </include>
-
                         <!-- Custom Hub Widget: Action -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="5307" />
@@ -211,7 +197,6 @@
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <visible>String.EndsWith(Window.Property(groupname),.2)</visible>
                         </include>
-
                         <!-- Custom Hub Node 1: Customise Node -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="4408" />
@@ -225,7 +210,6 @@
                             <visible>String.EndsWith(Window.Property(groupname),.2)</visible>
                             <visible>String.IsEqual(Container(211).ListItem.Property(Path),CustomNode1)</visible>
                         </include>
-
                         <!-- Custom Hub Node 2: Customise Node -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="4409" />
@@ -239,7 +223,6 @@
                             <visible>String.EndsWith(Window.Property(groupname),.2)</visible>
                             <visible>String.IsEqual(Container(211).ListItem.Property(Path),CustomNode2)</visible>
                         </include>
-
                         <!-- Custom Hub Node 3: Customise Node -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="4410" />
@@ -253,7 +236,6 @@
                             <visible>String.EndsWith(Window.Property(groupname),.2)</visible>
                             <visible>String.IsEqual(Container(211).ListItem.Property(Path),CustomNode3)</visible>
                         </include>
-
                         <!-- Custom Hub: Open Customise Hub -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="9920" />
@@ -266,7 +248,6 @@
                             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                             <visible>String.IsEqual(Container(211).ListItem.Property(Path),ActivateWindow(1132))</visible>
                         </include>
-
                         <!-- Standard: Label -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="305" />
@@ -276,7 +257,6 @@
                             <label2>$INFO[Container(211).ListItem.Label]</label2>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                         </include>
-
                         <!-- Standard: Icon -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="306" />
@@ -291,7 +271,6 @@
                             <visible>!String.EndsWith(Window.Property(groupname),.5)</visible>
                             <visible>!String.IsEqual(Window.Property(groupname),searchmenu)</visible>
                         </include>
-
                         <!-- Standard: Open Customise Submenu -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="405" />
@@ -301,7 +280,6 @@
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                         </include>
-
                         <!-- Standard: Open Customise Widgets -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="406" />
@@ -312,7 +290,6 @@
                             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                         </include>
-
                         <!-- Fullscreen Widget: Choose Widget -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="9312" />
@@ -326,7 +303,6 @@
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                         </include>
-
                         <!-- Submenu Bumper: Choose Widget -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="9916" />
@@ -341,7 +317,6 @@
                             <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                         </include>
-
                         <!-- Standard: Choose End Row Action -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="9915" />
@@ -356,7 +331,6 @@
                             <visible>!Skin.HasSetting(Home.VerticalMenu)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                         </include>
-
                         <!-- Standard: Choose Top Row Action -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="9925" />
@@ -371,7 +345,6 @@
                             <visible>!Skin.HasSetting(Home.VerticalMenu)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                         </include>
-
                         <!-- Widget Options: Aspect -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="9901" />
@@ -382,7 +355,6 @@
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <visible>String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)</visible>
                         </include>
-
                         <!-- Widget Options: Content Type -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="9902" />
@@ -394,7 +366,6 @@
                             <visible>String.EndsWith(Window.Property(groupname),.5) | String.EndsWith(Window.Property(groupname),.4) | String.EndsWith(Window.Property(groupname),.3) | String.EndsWith(Window.Property(groupname),.2) | String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)</visible>
                             <include>Action_SkinShortcuts_ContentType_AutoSetOnFocus</include>
                         </include>
-
                         <!-- Widget Options: Sort By -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="9903" />
@@ -405,7 +376,6 @@
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <visible>String.EndsWith(Window.Property(groupname),.5) | String.EndsWith(Window.Property(groupname),.4) | String.EndsWith(Window.Property(groupname),.3) | String.EndsWith(Window.Property(groupname),.2) | String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)</visible>
                         </include>
-
                         <!-- Widget Options: Sort Direction -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="9904" />
@@ -416,7 +386,6 @@
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <visible>String.EndsWith(Window.Property(groupname),.5) | String.EndsWith(Window.Property(groupname),.4) | String.EndsWith(Window.Property(groupname),.3) | String.EndsWith(Window.Property(groupname),.2) | String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)</visible>
                         </include>
-
                         <!-- Widget Options: Expand Info (Both Options) -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="9905" />
@@ -434,7 +403,6 @@
                             <visible>String.EndsWith(Window.Property(groupname),.1)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(widgetAspect),Button) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Apps) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Text) + !String.IsEqual(Container(211).ListItem.Property(list),Submenu) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Lovefilm) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Feature Banner) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Feature Poster) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Feature Landscape)</visible>
                         </include>
-
                         <!-- Widget Options: Expand Info (Plot Only) -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="9909" />
@@ -450,7 +418,6 @@
                             <visible>String.IsEqual(Window.Property(groupname),searchmenu)</visible>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(widgetAspect),Button) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Apps) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Text) + !String.IsEqual(Container(211).ListItem.Property(list),Submenu) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Lovefilm) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Feature Banner) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Feature Poster) + !String.IsEqual(Container(211).ListItem.Property(widgetAspect),Feature Landscape)</visible>
                         </include>
-
                         <!-- Widget Options: Autoscroll -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="9908" />
@@ -465,7 +432,6 @@
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <visible>String.EndsWith(Window.Property(groupname),.1)</visible>
                         </include>
-
                         <!-- Widget Options: Limit -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="9907" />
@@ -476,8 +442,6 @@
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                             <visible>String.EndsWith(Window.Property(groupname),.1) | String.IsEqual(Window.Property(groupname),searchmenu)</visible>
                         </include>
-
-
                         <!-- Reset -->
                         <include content="Dialog_Settings_Button">
                             <param name="id" value="308" />
@@ -485,12 +449,10 @@
                             <description>Reset</description>
                             <visible>!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)</visible>
                         </include>
-
                     </control>
                 </control>
             </control>
         </include>
-
         <include content="Object_Overlay">
             <param name="windowanimation">false</param>
             <include>Animation_FadeIn</include>
@@ -511,7 +473,6 @@
                 <bottom>grid_x04</bottom>
                 <onleft>9100</onleft>
                 <onright>9100</onright>
-
                 <!-- Fullscreen Widget: Choose Widget -->
                 <include content="Dialog_Settings_Button">
                     <param name="id" value="312" />
@@ -524,7 +485,6 @@
                     <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                 </include>
-
                 <!-- Fullscreen Widget: Content Type -->
                 <include content="Dialog_Settings_Button">
                     <param name="id" value="9912" />
@@ -538,7 +498,6 @@
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                 </include>
-
                 <!-- Fullscreen Widget: Style -->
                 <include content="Dialog_Settings_Button">
                     <param name="id" value="9918" />
@@ -551,7 +510,6 @@
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                 </include>
-
                 <!-- Fullscreen Widget: Sort By -->
                 <include content="Dialog_Settings_Button">
                     <param name="id" value="9913" />
@@ -565,7 +523,6 @@
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                 </include>
-
                 <!-- Fullscreen Widget: Sort Direction -->
                 <include content="Dialog_Settings_Button">
                     <param name="id" value="9914" />
@@ -579,7 +536,6 @@
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                 </include>
-
                 <!-- Fullscreen Widget: Limit -->
                 <include content="Dialog_Settings_Button">
                     <param name="id" value="9917" />
@@ -593,7 +549,6 @@
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                 </include>
-
                 <!-- Fullscreen Widget: Autoscroll -->
                 <include content="Dialog_Settings_Button">
                     <param name="id" value="9919" />
@@ -610,7 +565,6 @@
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31102])</visible>
                     <visible>!String.IsEqual(Container(211).ListItem.Property(WidgetPath),Weather)</visible>
                 </include>
-
                 <!-- Submenu Bumper: Choose Widget -->
                 <include content="Dialog_Settings_Button">
                     <param name="id" value="9906" />
@@ -625,7 +579,6 @@
                     <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31229])</visible>
                 </include>
-
                 <!-- Submenu Bumper: Choose Widget -->
                 <include content="Dialog_Settings_Button">
                     <param name="id" value="9961" />
@@ -642,7 +595,6 @@
                     <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                     <visible>String.IsEqual(Window(Home).Property(SkinShortcutsDialogType),$LOCALIZE[31229])</visible>
                 </include>
-
                 <!-- Custom Hub: Choose Fullscreen Widget -->
                 <include content="Dialog_Settings_Button">
                     <param name="id" value="9922" />
@@ -683,19 +635,15 @@
                 </include>
             </control>
         </include>
-
         <control type="group">
             <include>Furniture_Top</include>
         </control>
-
         <!-- Hidden Buttons -->
         <control type="label" id="500"><visible>false</visible><width>1</width><height>1</height></control>
         <control type="button" id="404"><visible allowhiddenfocus="true">false</visible><width>1</width><height>1</height></control>
         <control type="button" id="408"><visible allowhiddenfocus="true">false</visible><width>1</width><height>1</height></control>
         <control type="button" id="409"><visible allowhiddenfocus="true">false</visible><width>1</width><height>1</height></control>
         <control type="button" id="410"><visible allowhiddenfocus="true">false</visible><width>1</width><height>1</height></control>
-
-
         <control type="list" id="9211">
             <width>1</width>
             <height>1</height>
@@ -706,6 +654,5 @@
                 <include>skinshortcuts-template-dialog-lookup</include>
             </content>
         </control>
-
     </controls>
 </window>

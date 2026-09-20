@@ -2,12 +2,12 @@
 <window>
     <defaultcontrol>120</defaultcontrol>
     <controls>
-        <include condition="!Window.IsVisible(videoosd)">Object_Overlay</include>
+        <include condition="!$EXP[Exp_WindowVisible_VideoOSD]">Object_Overlay</include>
         <include content="Dialog_Background">
             <visible>!Window.IsVisible(DialogSlider.xml)</visible>
             <include>Animation_SlideIn_Dialog</include>
-            <include condition="Window.IsVisible(videoosd)">Dimension_DialogSelect_OSD</include>
-            <include condition="!Window.IsVisible(videoosd)">Dimension_Info</include>
+            <include condition="$EXP[Exp_WindowVisible_VideoOSD]">Dimension_DialogSelect_OSD</include>
+            <include condition="!$EXP[Exp_WindowVisible_VideoOSD]">Dimension_Info</include>
             <include>Dialog_Overlay_Buttons</include>
             <control type="group">
                 <left>settings_category_w</left>
@@ -17,7 +17,7 @@
             <include content="Dialog_Header" description="Service Name">
                 <param name="id" value="100" />
                 <align>left</align>
-                <include content="Object_Top" condition="!Window.IsVisible(videoosd)">
+                <include content="Object_Top" condition="!$EXP[Exp_WindowVisible_VideoOSD]">
                     <param name="top">-160</param>
                 </include>
             </include>
@@ -25,7 +25,6 @@
                 <control type="group">
                     <right>0</right>
                     <width>dialog_button_w</width>
-
                     <control type="grouplist" id="9000">
                         <onleft>61</onleft>
                         <itemgap>20</itemgap>
@@ -39,8 +38,6 @@
                             <height>grid_x08</height>
                         </control>
                     </control>
-
-
                     <control type="image" id="110" description="Service Logo">
                         <height>dialog_button_w</height>
                         <bottom>0</bottom>
@@ -48,7 +45,6 @@
                     </control>
                 </control>
             </include>
-
             <control type="group">
                 <top>grid_x04</top>
                 <bottom>grid_x04</bottom>
@@ -57,7 +53,6 @@
                     <onright>120</onright>
                     <width>settings_category_w</width>
                 </include>
-
                 <control type="group">
                     <left>settings_category_w</left>
                     <right>dialog_buttongroup_w</right>
@@ -69,7 +64,6 @@
                         <onright>61</onright>
                         <pagecontrol>61</pagecontrol>
                     </include>
-
                     <control type="label" id="130" description="Textbox">
                         <height>40</height>
                         <font>font_tiny</font>
@@ -77,7 +71,6 @@
                         <textoffsetx>30</textoffsetx>
                         <top>-40</top>
                     </control>
-
                     <control type="label" description="Filename">
                         <height>40</height>
                         <font>font_tiny</font>
@@ -87,7 +80,6 @@
                         <bottom>-40</bottom>
                     </control>
                 </control>
-
                 <control type="label" id="140" description="Textbox">
                     <height>40</height>
                     <font>font_tiny</font>
@@ -95,7 +87,6 @@
                     <textoffsetx>30</textoffsetx>
                     <bottom>-40</bottom>
                 </control>
-
                 <include content="Dialog_Scrollbar">
                     <onright>9000</onright>
                     <onleft>120</onleft>
@@ -103,7 +94,5 @@
                 </include>
             </control>
         </include>
-
-
     </controls>
 </window>

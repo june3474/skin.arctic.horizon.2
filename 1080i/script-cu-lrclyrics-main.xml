@@ -38,7 +38,6 @@
                 </control>
             </control>
         </include>
-
         <!-- ** Required ** Do not change <id> or <type> (name of the used scraper and optionally the number of found lyrics) -->
         <control type="label" id="200">
             <description>Scraper label</description>

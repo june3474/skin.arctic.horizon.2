@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
     <include name="Object_Left"><left>$PARAM[left]</left></include>
     <include name="Object_Right"><right>$PARAM[right]</right></include>
     <include name="Object_Top"><top>$PARAM[top]</top></include>
@@ -59,13 +58,11 @@
             <nested />
         </content>
     </include>
-
     <include name="Object_Control">
         <control type="$PARAM[control]" id="$PARAM[id]">
             <nested />
         </control>
     </include>
-
     <include name="Object_Hidden_Button">
         <param name="control" default="button" />
         <definition>
@@ -82,7 +79,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_Hidden_List">
         <param name="control" default="list" />
         <definition>
@@ -97,7 +93,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_Shadow_40">
         <param name="colordiffuse" default="shadow_hard" />
         <param name="pad" default="-40" />
@@ -109,7 +104,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_Glow_40">
         <param name="pad" default="-40" />
         <param name="affix">v</param>
@@ -123,7 +117,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_ItemBack">
         <param name="selected" default="false" />
         <param name="shadow_include" default="Texture_Shadow_40" />
@@ -142,8 +135,6 @@
             </include>
         </definition>
     </include>
-
-
     <include name="Object_RatingOverlay_Position_Thin">
         <left>30</left>
         <centertop>0</centertop>
@@ -187,7 +178,6 @@
     <include name="Object_RatingOverlay">
         <include condition="Skin.HasSetting(Indicator.Ratings)">_Object_RatingOverlay</include>
     </include>
-
     <include name="Object_StarRating">
         <param name="selected" default="false" />
         <definition>
@@ -205,7 +195,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_AlphabetLetter_Label">
         <param name="textcolor_fo" default="main_fg_100" />
         <param name="textcolor_nf" default="main_fg_30" />
@@ -230,7 +219,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_AlphabetLetter">
         <definition>
             <include content="Object_AlphabetLetter_Label">
@@ -247,7 +235,6 @@
             </include>
         </definition>
     </include>
-
     <include name="Object_NavButton_Horz">
         <param name="flipx">false</param>
         <param name="centertop">50%</param>
@@ -287,7 +274,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_NavButton">
         <param name="flipy">false</param>
         <param name="centerleft">50%</param>
@@ -303,7 +289,6 @@
                 <include content="Object_CenterTop" condition="!$PARAM[flipy]">
                     <param name="centertop">40</param>
                 </include>
-
                 <control type="image">
                     <texture flipy="$PARAM[flipy]" colordiffuse="main_fg_80">special://skin/extras/icons/angle-up.png</texture>
                     <width>40</width>
@@ -321,7 +306,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_WallFade">
         <param name="altvisible_top" default="false" />
         <param name="altvisible_bottom" default="false" />
@@ -369,7 +353,6 @@
                 <visible>Container($PARAM[id]).HasNext | $PARAM[altvisible_bottom]</visible>
                 <nested />
             </control>
-
             <include content="Object_Control" condition="$PARAM[direction_buttons]">
                 <param name="control">group</param>
                 <centertop>70</centertop>
@@ -383,7 +366,6 @@
                 <visible>Container($PARAM[id]).HasPrevious | $PARAM[altvisible_top]</visible>
                 <nested />
             </include>
-
             <include content="Object_Control" condition="$PARAM[direction_buttons]">
                 <param name="control">group</param>
                 <centerbottom>70</centerbottom>
@@ -399,7 +381,6 @@
             </include>
         </definition>
     </include>
-
     <include name="Object_ShadowSpot">
         <param name="darker">false</param>
         <definition>
@@ -425,7 +406,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_BusySpinner">
         <param name="colordiffuse" default="main_fg" />
         <param name="label" default="$LOCALIZE[31023]" />
@@ -456,7 +436,7 @@
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                     <texture>$PARAM[icon]</texture>
                     <colordiffuse>$PARAM[colordiffuse]_70</colordiffuse>
-                    <visible>![Container.Scrolling + $EXP[Exp_AlphabetTypes_Only]]</visible>
+                    <visible>!$EXP[Exp_ContainerScrollingAlphabet]</visible>
                     <animation effect="fade" start="0" end="100" time="200" delay="1200" reversible="true">Visible</animation>
                     <animation effect="fade" start="100" end="0" time="200" delay="400" reversible="true">Hidden</animation>
                 </control>
@@ -474,7 +454,6 @@
                         <animation effect="fade" condition="$PARAM[spinspinner]" start="0" end="100" pulse="true" time="1000">Conditional</animation>
                     </control>
                 </include>
-
                 <include content="Object_Control" condition="$PARAM[hasprogress]">
                     <param name="control" value="group" />
                     <description>Busy animation</description>
@@ -492,7 +471,6 @@
                         </include>
                     </control>
                 </include>
-
                 <include content="Object_Control" condition="$PARAM[haslabel]">
                     <param name="control" value="label" />
                     <bottom>-40</bottom>
@@ -506,7 +484,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_BigPoster">
         <param name="icon" default="$VAR[Image_Poster]" />
         <param name="fadetime" default="300" />
@@ -530,14 +507,13 @@
                     <texture diffuse="$PARAM[diffuse]">$PARAM[icon]</texture>
                     <visible>$PARAM[icon_visible]</visible>
                 </include>
-                <include content="Object_Control" condition="Skin.HasSetting(Glass.BorderOutline)">
+                <include content="Object_Control" condition="$EXP[Exp_SkinSetting_GlassBorderOutline]">
                     <param name="control" value="image" />
                     <texture colordiffuse="overlay_line" border="12">common/box-outline.png</texture>
                 </include>
             </control>
         </definition>
     </include>
-
     <include name="Object_GlassPanel">
         <param name="colordiffuse" default="panel_fg_12" />
         <param name="texture" default="common/panel-256-box.png" />
@@ -552,14 +528,13 @@
                     <texture colordiffuse="$PARAM[colordiffuse]" border="12">$PARAM[texture]</texture>
                 </include>
                 <nested />
-                <include content="Object_Control" condition="Skin.HasSetting(Glass.BorderOutline) + $PARAM[condition]">
+                <include content="Object_Control" condition="$EXP[Exp_SkinSetting_GlassBorderOutline] + $PARAM[condition]">
                     <param name="control" value="image" />
                     <texture colordiffuse="overlay_line" border="12">common/box-outline.png</texture>
                 </include>
             </include>
         </definition>
     </include>
-
     <include name="Object_InfoCircle_Horizontal">
         <param name="bordersize" default="2" />
         <param name="max">400</param>
@@ -605,7 +580,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_InfoCircle_Image">
         <param name="bordersize">2</param>
         <param name="aspectratio">scale</param>
@@ -619,7 +593,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_InfoCircle">
         <param name="bordersize">2</param>
         <param name="aspectratio">scale</param>
@@ -662,7 +635,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_StartUp_Logo">
         <control type="grouplist">
             <height>128</height>
@@ -737,7 +709,6 @@
             </control>
         </control>
     </include>
-
     <include name="Object_MenuButton">
         <param name="icon" default="$VAR[Image_MuteBug]" />
         <param name="overlay" default="true" />
@@ -766,7 +737,7 @@
                     <aspectratio>keep</aspectratio>
                     <bordersize>$PARAM[bordersize]</bordersize>
                     <texture colordiffuse="dialog_fg_70" flipy="$PARAM[flipy]">$PARAM[icon]</texture>
-                    <visible>![Container.Scrolling + $EXP[Exp_AlphabetTypes_Only]]</visible>
+                    <visible>!$EXP[Exp_ContainerScrollingAlphabet]</visible>
                     <animation effect="fade" start="0" end="100" time="200" delay="1200" reversible="true">Visible</animation>
                     <animation effect="fade" start="100" end="0" time="200" delay="400" reversible="true">Hidden</animation>
                 </include>
@@ -777,7 +748,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>font_main_black</font>
-                    <visible>Container.Scrolling + $EXP[Exp_AlphabetTypes_Only]</visible>
+                    <visible>$EXP[Exp_ContainerScrollingAlphabet]</visible>
                     <animation effect="fade" start="0" end="100" time="200" delay="400" reversible="true">Visible</animation>
                     <animation effect="fade" start="100" end="0" time="200" delay="1200" reversible="true">Hidden</animation>
                 </include>
@@ -792,7 +763,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_Indicator">
         <param name="affix" default="" />
         <param name="listitem" default="ListItem" />
@@ -825,7 +795,7 @@
                 <control type="image">
                     <texture colordiffuse="ff333333">$VAR[Image_Overlay_Backing$PARAM[affix],,-bg.png]</texture>
                 </control>
-                <include content="Object_Control" condition="!Skin.HasSetting(Indicator.DisableProgress)">
+                <include content="Object_Control" condition="!$EXP[Exp_SkinSetting_IndicatorDisableProgress]">
                     <param name="control">image</param>
                     <include content="Dimension_Padding"><param name="pad" value="0" /></include>
                     <texture colordiffuse="$VAR[ColorWatchedProgress]">$VAR[Defs_PercentPlayed$PARAM[affix],progress/circle/p,.png]</texture>
@@ -846,7 +816,7 @@
                     <visible>String.IsEqual($PARAM[listitem].Overlay,OverlayWatched.png) | [!String.IsEmpty($PARAM[listitem].PlayCount) + !Integer.IsEqual($PARAM[listitem].PlayCount,0) + !String.IsEqual($PARAM[listitem].DBType,song) + !String.IsEqual($PARAM[listitem].DBType,album) + !String.IsEqual($PARAM[listitem].DBType,artist) + !String.IsEqual($PARAM[listitem].DBType,image) + !String.IsEqual($PARAM[listitem].DBType,addon)]</visible>
                     <visible>Integer.IsEqual($PARAM[listitem].Property(UnWatchedEpisodes),0)  | Skin.HasSetting(Indicator.DisableEpisodes)</visible>
                     <visible>!$PARAM[listitem].IsRecording + !$PARAM[listitem].HasTimer</visible>
-                    <visible>!$PARAM[listitem].IsResumable | Skin.HasSetting(Indicator.DisableProgress)</visible>
+                    <visible>!$PARAM[listitem].IsResumable | $EXP[Exp_SkinSetting_IndicatorDisableProgress]</visible>
                     <visible>![!String.IsEmpty($PARAM[listitem].Property(role)) + [String.IsEqual($PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[listitem].DBType,season)] + !Skin.HasSetting(Indicator.DisableEpisodes)]</visible>
                 </control>
                 <control type="label">
@@ -856,7 +826,7 @@
                     <textcolor>panel_fg_100</textcolor>
                     <label>$INFO[$PARAM[listitem].Property(UnWatchedEpisodes)]</label>
                     <visible>[!Integer.IsEqual($PARAM[listitem].Property(UnWatchedEpisodes),0) + [String.IsEqual($PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[listitem].DBType,season) | String.IsEqual($PARAM[listitem].DBType,episode)] + !Skin.HasSetting(Indicator.DisableEpisodes)]</visible>
-                    <visible>!$PARAM[listitem].IsResumable | Skin.HasSetting(Indicator.DisableProgress)</visible>
+                    <visible>!$PARAM[listitem].IsResumable | $EXP[Exp_SkinSetting_IndicatorDisableProgress]</visible>
                     <visible>![!String.IsEmpty($PARAM[listitem].Property(role)) + [String.IsEqual($PARAM[listitem].DBType,tvshow) | String.IsEqual($PARAM[listitem].DBType,episode) | String.IsEqual($PARAM[listitem].DBType,season)] + !Skin.HasSetting(Indicator.DisableEpisodes)]</visible>
                 </control>
                 <control type="label">
@@ -870,7 +840,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_Indicator_List">
         <param name="affix" default="" />
         <param name="listitem" default="ListItem" />
@@ -905,7 +874,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_Discover_Button">
         <param name="width" default="100%" />
         <definition>
@@ -952,7 +920,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_Indicator_Preview">
         <param name="affix" default="" />
         <param name="listitem" default="ListItem" />
@@ -1020,7 +987,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_Info_Button_Left">
         <control type="group">
             <visible>$PARAM[visible]</visible>
@@ -1114,7 +1080,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_Info_Button_Circle">
         <param name="visible" default="true" />
         <param name="control" default="button" />
@@ -1157,7 +1122,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_Options_Menu_Popup">
         <param name="icon" default="special://skin/extras/icons/kodi.png" />
         <param name="header" default="$LOCALIZE[33063]" />
@@ -1232,7 +1196,6 @@
                     <param name="nib_pos">$PARAM[nib_pos]</param>
                     <param name="use_side_nib">$PARAM[use_side_nib]</param>
                 </include>
-
                 <control type="image">
                     <bottom>-24</bottom>
                     <centerright>50%</centerright>
@@ -1280,7 +1243,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_Options_Menu">
         <param name="icon" default="special://skin/extras/icons/kodi.png" />
         <param name="header" default="$LOCALIZE[33063]" />
@@ -1308,10 +1270,10 @@
                 </include>
                 <include content="Furniture_MenuButton" condition="$PARAM[has_button_overlay] + ![$PARAM[use_side_nib]]">
                     <param name="icon" value="$PARAM[menuicon]" />
-                    <visible>!Window.IsVisible(DialogBusy.xml)</visible>
-                    <visible>!Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
-                    <visible>!Window.IsVisible(DialogNotification.xml)</visible>
-                    <visible>!Window.IsVisible(DialogVolumeBar.xml) | Player.Muted</visible>
+                    <visible>!$EXP[Exp_WindowVisible_DialogBusy]</visible>
+                    <visible>!$EXP[Exp_WindowVisible_DialogExtendedProgressBar]</visible>
+                    <visible>!$EXP[Exp_WindowVisible_DialogNotification]</visible>
+                    <visible>!Window.IsVisible(DialogVolumeBar.xml) | $EXP[Exp_PlayerMuted]</visible>
                 </include>
                 <include content="Object_MenuButton" condition="$PARAM[has_button_overlay] + $PARAM[use_side_nib]">
                     <param name="profileimage">$EXP[Exp_HasProfileImage]</param>
@@ -1343,10 +1305,8 @@
                 <param name="action_include">$PARAM[action_include]</param>
                 <nested />
             </include>
-
         </definition>
     </include>
-
     <include name="Object_MenuBar_Item">
         <param name="selected" default="false" />
         <param name="haslabel" default="true" />
@@ -1365,7 +1325,6 @@
             </include>
         </definition>
     </include>
-
     <include name="_Object_MenuBar_Item">
         <param name="selected" default="false" />
         <param name="haslabel" default="true" />
@@ -1408,7 +1367,6 @@
             </include>
         </definition>
     </include>
-
     <include name="Object_MenuBar_List">
         <param name="control" default="list" />
         <param name="focus_w" default="360" />
@@ -1451,7 +1409,7 @@
                             <width>80</width>
                             <visible>![Control.HasFocus($PARAM[id]) | $PARAM[altfocus]]</visible>
                             <control type="group">
-                                <visible>!Control.HasFocus(302)</visible>
+                                <visible>!$EXP[Exp_Control302_HasFocus]</visible>
                                 <control type="image">
                                     <aspectratio>keep</aspectratio>
                                     <bordersize>4</bordersize>
@@ -1467,7 +1425,7 @@
                                 </control>
                             </control>
                             <control type="group">
-                                <visible>Control.HasFocus(302)</visible>
+                                <visible>$EXP[Exp_Control302_HasFocus]</visible>
                                 <control type="group">
                                     <width>60</width>
                                     <centerleft>50%</centerleft>
@@ -1542,8 +1500,6 @@
             </control>
         </definition>
     </include>
-
-
     <include name="Object_MenuBar_TextList">
         <param name="control" default="list" />
         <param name="itemlayout_w" default="240" />
@@ -1626,7 +1582,6 @@
             </control>
         </definition>
     </include>
-
     <include name="_Object_MenuBar_Group_Texture">
         <param name="overlay" default="true" />
         <param name="colordiffuse" default="dialog_bg_100" />
@@ -1649,7 +1604,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_MenuBar_Group_Texture">
         <param name="overlay" default="true" />
         <param name="colordiffuse" default="dialog_bg_100" />
@@ -1671,7 +1625,6 @@
             </include>
         </definition>
     </include>
-
     <include name="Object_MenuBar_Group">
         <param name="id" default="300" />
         <param name="overlay" default="true" />
@@ -1688,7 +1641,7 @@
                     <param name="windowopen_condition" value="!Window.Previous(1114)" />
                 </include>
                 <include content="Animation_FadeOut" condition="$PARAM[animations]">
-                    <param name="windowclose_condition" value="!Window.Next(1114)" />
+                    <param name="windowclose_condition" value="!$EXP[Exp_WindowNext1114]" />
                 </include>
                 <include content="Object_Width" condition="$PARAM[altwidth_condition]">
                     <param name="width">$PARAM[altwidth]</param>
@@ -1753,7 +1706,6 @@
             </include>
         </definition>
     </include>
-
     <include name="Object_MenuHeader">
         <param name="icon" default="special://skin/extras/icons/kodi.png" />
         <param name="label" default="$LOCALIZE[33063]" />
@@ -1793,7 +1745,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_Keyboard_Button">
         <param name="control" default="button" />
         <definition>
@@ -1805,7 +1756,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_ColorSwatch">
         <control type="label">
             <align>center</align>
@@ -1834,7 +1784,6 @@
             </control>
         </control>
     </include>
-
     <include name="Object_Overlay">
         <param name="windowanimation" default="true" />
         <definition>
@@ -1849,7 +1798,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_Separator">
         <param name="colordiffuse" default="dialog_fg_12" />
         <param name="horizontal" default="false" />
@@ -1868,7 +1816,6 @@
             </include>
         </definition>
     </include>
-
     <include name="Object_Separator_V">
         <include content="Object_Separator">
             <param name="colordiffuse" value="$PARAM[colordiffuse]" />
@@ -1876,7 +1823,6 @@
             <nested />
         </include>
     </include>
-
     <include name="Object_FakeSpinner">
         <param name="colordiffuse" default="dialog_fg" />
         <definition>
@@ -1918,7 +1864,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_SelectBox">
         <param name="indicator" default="false" />
         <param name="focusbounce" default="false" />
@@ -1952,7 +1897,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_IsSelected_Checkmark">
         <param name="color_off" default="dialog_fg_30" />
         <param name="color_on" default="dialog_fg_70" />
@@ -1974,7 +1918,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Object_IsSelected_Checkmark_Focus">
         <include content="Object_IsSelected_Checkmark">
             <param name="color_off" value="$VAR[ColorSelected]" />
@@ -1982,7 +1925,6 @@
             <param name="selected">$PARAM[selected]</param>
         </include>
     </include>
-
     <include name="Object_ListItem_Iconic">
         <param name="color" default="dialog_fg_70" />
         <param name="item_h" default="grid_x16" />
@@ -2065,28 +2007,22 @@
             </control>
         </definition>
     </include>
-
-
     <include name="Object_ItemIcon">
         <param name="fadetime">0</param>
         <param name="icon">$INFO[ListItem.Icon]</param>
         <param name="is_keep">$EXP[Exp_IsPVRItem]</param>
         <param name="icon_keep">$INFO[ListItem.Icon]</param>
         <param name="icon_keep_bordersize">30</param>
-
         <param name="is_genre">$EXP[Exp_IsGenre]</param>
         <param name="icon_genre">$VAR[Image_GenreIcon]</param>
         <param name="icon_genre_bordersize">60</param>
         <param name="icon_genre_fallback">resource://resource.images.moviegenreicons.transparent/Drama.png</param>
-
         <param name="is_other">[$EXP[Exp_IsStudio] | $EXP[Exp_IsCountry]]</param>
         <param name="icon_other">$VAR[Image_OtherIcon]</param>
         <param name="icon_other_bordersize">40</param>
         <param name="icon_other_fallback">DefaultFolder.png</param>
-
         <param name="icon_default_bordersize">0</param>
         <param name="icon_default_aspectratio">scale</param>
-
         <param name="selected">False</param>
         <definition>
             <control type="image">

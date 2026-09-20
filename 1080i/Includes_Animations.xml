@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
     <include name="Animation_Background_FadeInOut">
         <definition>
-            <animation type="WindowOpen" reversible="false" condition="[![Window.IsVisible(1120) | Window.ISVisible(1121) | Window.ISVisible(1122) | Window.IsVisible(1114) | Window.IsVisible(Home)] | ![Window.Previous(1120) | Window.Previous(1121) | Window.Previous(1122) | Window.Previous(1114) | Window.Previous(Home)]] + !$EXP[Exp_HasBackgroundVideo] + ![$EXP[Exp_SettingsDialogs] + $EXP[Exp_SettingsDialogs_Prev]]">
+            <animation type="WindowOpen" reversible="false" condition="[![Window.IsVisible(1120) | Window.ISVisible(1121) | Window.ISVisible(1122) | Window.IsVisible(1114) | $EXP[Exp_WindowVisible_Home]] | ![Window.Previous(1120) | Window.Previous(1121) | Window.Previous(1122) | Window.Previous(1114) | Window.Previous(Home)]] + !$EXP[Exp_HasBackgroundVideo] + ![$EXP[Exp_SettingsDialogs] + $EXP[Exp_SettingsDialogs_Prev]]">
                 <effect type="fade" start="0" end="100" time="400" delay="0" tween="sine" easing="out"/>
             </animation>
-            <animation type="WindowClose" reversible="false" condition="[![Window.IsVisible(1120) | Window.ISVisible(1121) | Window.ISVisible(1122) | Window.IsVisible(1114) | Window.IsVisible(Home)] | ![Window.Next(1120) | Window.Next(1121) | Window.Next(1122) | Window.Next(1114) | Window.Next(Home)]] + !$EXP[Exp_HasBackgroundVideo] + ![$EXP[Exp_SettingsDialogs] + $EXP[Exp_SettingsDialogs_Next]]">
+            <animation type="WindowClose" reversible="false" condition="[![Window.IsVisible(1120) | Window.ISVisible(1121) | Window.ISVisible(1122) | Window.IsVisible(1114) | $EXP[Exp_WindowVisible_Home]] | ![Window.Next(1120) | Window.Next(1121) | Window.Next(1122) | $EXP[Exp_WindowNext1114] | Window.Next(Home)]] + !$EXP[Exp_HasBackgroundVideo] + ![$EXP[Exp_SettingsDialogs] + $EXP[Exp_SettingsDialogs_Next]]">
                 <effect type="fade" start="100" end="0" time="400" delay="0" tween="sine" easing="out"/>
             </animation>
         </definition>
     </include>
-
     <include name="Animation_ConditionalFade">
         <animation effect="fade" start="100" end="$PARAM[end]" condition="$PARAM[condition]">Conditional</animation>
     </include>
-
     <include name="Animation_OSD_Seekbar_NoCodecs">
-        <animation effect="slide" start="0" end="0,80" time="300" tween="sine" easing="out" reversible="false" condition="![Window.IsVisible(videoosd) | Window.IsVisible(musicosd) | Window.IsVisible(script-cu-lrclyrics-main.xml) | $EXP[Exp_OSD_ExpandInfo]]">Conditional</animation>
-        <animation effect="slide" end="0" start="0,80" time="300" tween="sine" easing="out" reversible="false" condition="[Window.IsVisible(videoosd) | Window.IsVisible(musicosd) | Window.IsVisible(script-cu-lrclyrics-main.xml) | $EXP[Exp_OSD_ExpandInfo]]">Conditional</animation>
+        <animation effect="slide" start="0" end="0,80" time="300" tween="sine" easing="out" reversible="false" condition="![$EXP[Exp_WindowVisible_VideoOSD] | Window.IsVisible(musicosd) | Window.IsVisible(script-cu-lrclyrics-main.xml) | $EXP[Exp_OSD_ExpandInfo]]">Conditional</animation>
+        <animation effect="slide" end="0" start="0,80" time="300" tween="sine" easing="out" reversible="false" condition="[$EXP[Exp_WindowVisible_VideoOSD] | Window.IsVisible(musicosd) | Window.IsVisible(script-cu-lrclyrics-main.xml) | $EXP[Exp_OSD_ExpandInfo]]">Conditional</animation>
     </include>
-
     <include name="Animation_OSD_ExpandInfo">
         <animation effect="slide" start="0" end="0,-320" time="300" tween="sine" easing="out" reversible="false" condition="$EXP[Exp_OSD_ExpandInfo]">Conditional</animation>
         <animation effect="slide" end="0" start="0,-320" time="400" tween="sine" easing="inout" reversible="false" condition="!$EXP[Exp_OSD_ExpandInfo]">Conditional</animation>
     </include>
-
     <include name="Animation_Foreground_FadeInOut">
         <animation type="WindowOpen" reversible="false">
             <effect type="fade" start="0" end="100" time="400" delay="0" tween="sine" easing="out"/>
@@ -34,7 +29,6 @@
             <effect type="fade" start="100" end="0" time="400" delay="0" tween="sine" easing="out"/>
         </animation>
     </include>
-
     <include name="Animation_WindowTransition_FadeInOut">
         <animation type="WindowOpen" reversible="false">
             <effect type="fade" start="0" end="100" time="400" delay="400" tween="sine" easing="out"/>
@@ -51,7 +45,6 @@
             <effect type="fade" start="100" end="0" time="400" delay="0" tween="sine" easing="out"/>
         </animation>
     </include>
-
     <include name="Animation_Foreground_SlideUp">
         <param name="delay">0</param>
         <definition>
@@ -70,14 +63,12 @@
             <effect type="slide" start="0,160" end="0" time="400" delay="200" tween="cubic" easing="out" />
         </animation>
     </include>
-
     <include name="Animation_FocusBounce">
         <animation type="Focus" reversible="false">
             <effect type="zoom" start="96.5" end="100" time="150" tween="sine" easing="inout" center="auto"/>
             <effect type="fade" start="20" end="100" time="150" tween="back" easing="out"/>
         </animation>
     </include>
-
     <include name="Animation_Foreground_Visible_FadeInOut">
         <animation type="Visible" reversible="false">
             <effect type="fade" start="0" end="100" time="1200" delay="600" />
@@ -86,7 +77,6 @@
             <effect type="fade" start="100" end="0" delay="0" time="300" />
         </animation>
     </include>
-
     <include name="Animation_LeftRight">
         <animation type="Conditional" reversible="false" condition="$PARAM[visible]">
             <effect type="fade" start="0" end="100" delay="0" time="300" tween="sine" easing="out"/>
@@ -103,7 +93,6 @@
         <animation type="Conditional" reversible="false" condition="$PARAM[visible] + String.IsEqual(Window(Home).Property(AnimationDirection),Up)">
             <effect type="slide" start="0,-320" end="0" delay="0" time="400" tween="cubic" easing="out" />
         </animation>
-
         <animation type="Hidden" reversible="false">
             <effect type="fade" start="100" end="0" delay="300" time="300" tween="sine" easing="out" />
         </animation>
@@ -123,7 +112,6 @@
             <effect type="slide" end="0,320" start="0" time="400" tween="cubic" easing="out" />
         </animation>
     </include>
-
     <!-- Standard Animations -->
     <include name="Animation_FadeIn">
         <animation type="Visible" reversible="false">
@@ -133,7 +121,6 @@
             <effect type="fade" start="0" end="100" time="300" delay="0"/>
         </animation>
     </include>
-
     <include name="Animation_FadeIn_Delay">
         <animation type="Visible" reversible="false">
             <effect type="fade" start="0" end="100" time="300" delay="150"/>
@@ -142,7 +129,6 @@
             <effect type="fade" start="0" end="100" time="300" delay="150"/>
         </animation>
     </include>
-
     <include name="Animation_FadeIn_LongDelay">
         <animation type="Visible" reversible="false">
             <effect type="fade" start="0" end="100" time="400" delay="800"/>
@@ -154,7 +140,6 @@
             <effect type="fade" start="100" end="0" time="150" delay="0"/>
         </animation>
     </include>
-
     <include name="Animation_FadeOut">
         <param name="hidden_condition" default="true" />
         <param name="windowclose_condition" default="true" />
@@ -167,13 +152,11 @@
             </animation>
         </definition>
     </include>
-
     <include name="Animation_Fullscreen_Media">
         <animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
         <animation effect="fade" end="0" start="100" time="300">WindowClose</animation>
         <animation effect="fade" start="0" end="100" time="300">VisibleChange</animation>
     </include>
-
     <!-- Dialog Animations -->
     <include name="Animation_SlideIn_Dialog_Conditional">
         <param name="delay">150</param>
@@ -202,7 +185,6 @@
             </animation>
         </definition>
     </include>
-
     <include name="Animation_SlideIn_Dialog_Left">
         <param name="visible_delay" default="150" />
         <param name="visible_condition" default="true" />
@@ -219,7 +201,6 @@
             </animation>
         </definition>
     </include>
-
     <include name="Animation_Overlay_FadeIn">
         <param name="delay" default="0" />
         <definition>
@@ -227,8 +208,6 @@
             <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
         </definition>
     </include>
-
-
     <include name="Animation_DialogInfo_Recommendations">
         <param name="condition">[Window.IsActive(script-tmdbhelper-recommendations.xml) | ControlGroup(6000).HasFocus()]</param>
         <definition>
@@ -236,7 +215,6 @@
             <animation effect="fade" start="0" end="100" delay="400" time="800" tween="sine" easing="out" reversible="false" condition="!$PARAM[condition]">Conditional</animation>
         </definition>
     </include>
-
     <include name="Animation_Recommendations_Visible">
         <animation type="Visible" reversible="false">
             <effect type="fade" start="0" end="100" delay="400" time="400" tween="sine" easing="out"/>
@@ -247,7 +225,6 @@
             <effect type="slide" start="0" end="0,320" time="400" tween="cubic" easing="out" />
         </animation>
     </include>
-
     <include name="Animation_Recommendations_Window">
         <animation type="WindowOpen" reversible="false" condition="String.IsEmpty(Window(Home).Property(TMDbHelper.Recommendations.HideInfo))">
             <effect type="fade" start="0" end="100" delay="300" time="400" tween="sine" easing="out"/>
@@ -266,11 +243,9 @@
             <effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="300" />
         </animation>
     </include>
-
     <include name="Animation_WindowTransition_Settings">
         <param name="windowopen">!$EXP[Exp_SettingsDialogs_Prev]</param>
         <param name="windowclose">!$EXP[Exp_SettingsDialogs_Next]</param>
-
         <param name="windowopen_left">false</param>
         <param name="windowopen_right">false</param>
         <param name="windowclose_left">false</param>
@@ -303,7 +278,6 @@
             </animation>
         </definition>
     </include>
-
     <include name="Animation_Common">
         <animation type="Visible" reversible="false">
             <effect type="fade" start="0" end="100" time="300" delay="300" tween="sine" easing="in" />
@@ -314,7 +288,6 @@
             <effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="300" />
         </animation>
     </include>
-
     <include name="Animation_Left_Delay">
         <param name="windowopen_condition">true</param>
         <definition>
@@ -340,7 +313,6 @@
             </animation>
         </definition>
     </include>
-
     <include name="Animation_Right_Delay">
         <param name="windowopen_condition">true</param>
         <definition>
@@ -366,7 +338,6 @@
             </animation>
         </definition>
     </include>
-
     <include name="Animation_Up_Delay">
         <param name="windowanimation" default="true" />
         <definition>
@@ -392,7 +363,6 @@
             </animation>
         </definition>
     </include>
-
     <include name="Animation_Reposition">
         <param name="slide_x">0</param>
         <param name="slide_y">-grid_x08</param>
@@ -401,5 +371,4 @@
             <animation effect="slide" end="$PARAM[slide_x],$PARAM[slide_y]" condition="!Container($PARAM[id]).IsUpdating + Integer.IsLess(Container($PARAM[id]).NumItems,$PARAM[numitems]) + !Integer.IsEqual(Container($PARAM[id]).NumItems,0)">Conditional</animation>
         </definition>
     </include>
-
 </includes>

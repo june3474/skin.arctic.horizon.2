@@ -4,8 +4,6 @@
     <views>50</views>
     <menucontrol>9000</menucontrol>
     <include>Action_Blur_Onload</include>
-
-
     <onload>SetFocus(6000,0,absolute)</onload>
     <onload condition="String.IsEqual(Container.FolderPath,addons://recently_updated/)">SetFocus(6000,1,absolute)</onload>
     <onload condition="String.IsEqual(Container.FolderPath,addons://dependencies/) + Integer.IsEqual(Container(6301).NumItems,0)">SetFocus(6000,2,absolute)</onload>
@@ -74,7 +72,6 @@
                     <content sortby="label">addons://repos/</content>
                 </include>
             </control>
-
             <control type="group">
                 <control type="group">
                     <left>addonbrowser_category_w</left>
@@ -96,7 +93,6 @@
                         </include>
                     </control>
                 </control>
-
             </control>
         </include>
         <include>View_Furniture_Top</include>
@@ -105,7 +101,6 @@
             <param name="visible" value="!$EXP[Exp_OverlayDialogs]" />
             <param name="use_mouse_focus">true</param>
         </include>
-
         <control type="list" id="6301">
             <width>1</width>
             <height>1</height>
@@ -114,7 +109,5 @@
             <focusedlayout width="1" height="1" />
             <content>addons://outdated/</content>
         </control>
-
     </controls>
-
 </window>

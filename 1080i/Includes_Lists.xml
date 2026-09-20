@@ -27,7 +27,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Button_Wall">
         <param name="item_h">80</param>
         <param name="itemlayout_h">120</param>
@@ -57,7 +56,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Apps_Row">
         <param name="movement">5</param>
         <param name="item_h">140</param>
@@ -82,7 +80,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Reviews_Row">
         <param name="movement">1</param>
         <param name="item_h">view_poster_item_h</param>
@@ -105,7 +102,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Tags_Wall">
         <param name="controltype">panel</param>
         <param name="itemlayout_h">160</param>
@@ -130,9 +126,7 @@
             </include>
         </definition>
     </include>
-
     <!-- Unfixed -->
-
     <include name="List_EPGGrid">
         <param name="channelheight">grid_x08</param>
         <param name="channelwidth">480</param>
@@ -196,7 +190,6 @@
             </control>
         </definition>
     </include>
-
     <include name="List_BigPoster">
         <definition>
             <include content="List_Poster_Row">
@@ -257,7 +250,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_DialogSelect">
         <param name="item_height">grid_x08</param>
         <param name="detailed">false</param>
@@ -279,7 +271,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_MediaList">
         <param name="item_h">grid_x08</param>
         <param name="itemlayout_h">grid_x08</param>
@@ -303,7 +294,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_PlayList">
         <param name="item_h">grid_x12</param>
         <param name="itemlayout_h">grid_x12</param>
@@ -328,7 +318,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_AddonBrowser">
         <param name="item_w">240</param>
         <param name="item_h">300</param>
@@ -350,7 +339,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_AddonCategories">
         <param name="itemlayout_include">Layout_Iconic</param>
         <param name="width">440</param>
@@ -377,7 +365,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Infolist">
         <param name="orientation">vertical</param>
         <param name="controltype">fixedlist</param>
@@ -401,8 +388,6 @@
             </include>
         </definition>
     </include>
-
-
     <include name="List_PVRRecordings">
         <param name="orientation">vertical</param>
         <param name="controltype">list</param>
@@ -429,7 +414,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Banner_Row">
         <param name="movement">0</param>
         <definition>
@@ -450,7 +434,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_FeaturePoster_Row">
         <definition>
             <include content="List_Core">
@@ -473,7 +456,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_FeatureLandscape_Row">
         <param name="offset_y">grid_x08</param>
         <param name="offset_x">grid_x08</param>
@@ -498,7 +480,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_FeatureBanner_Row">
         <param name="offset_y">grid_x08</param>
         <param name="offset_x">grid_x08</param>
@@ -522,7 +503,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Poster_Row">
         <param name="movement">6</param>
         <param name="focusedlayout_special">false</param>
@@ -546,7 +526,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Poster_Wall">
         <param name="offset_y">view_top</param>
         <param name="item_w">view_poster_item_w</param>
@@ -570,7 +549,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_BigLandscape_Row">
         <param name="movement">2</param>
         <definition>
@@ -593,7 +571,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_SmallLandscape_Row">
         <param name="movement">4</param>
         <definition>
@@ -617,7 +594,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Landscape_Row">
         <param name="movement">3</param>
         <definition>
@@ -640,7 +616,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_BigLandscape_Wall">
         <param name="offset_y">view_top</param>
         <param name="item_w">560</param>
@@ -664,7 +639,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Landscape_Wall">
         <param name="offset_y">view_top</param>
         <param name="item_w">410</param>
@@ -689,7 +663,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Square_Row">
         <param name="movement">5</param>
         <param name="item_w">260</param>
@@ -715,7 +688,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_BigSquare_Row">
         <param name="movement">4</param>
         <param name="item_w">view_poster_item_h</param>
@@ -744,7 +716,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Square_Wall">
         <param name="offset_y">view_top</param>
         <param name="item_w">260</param>
@@ -767,7 +738,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_BigSquare_Wall">
         <param name="offset_y">view_top</param>
         <param name="item_w">view_poster_item_h</param>
@@ -793,7 +763,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Banner_Wall">
         <param name="offset_y">view_top</param>
         <param name="item_w">860</param>
@@ -816,7 +785,6 @@
             </include>
         </definition>
     </include>
-
     <include name="List_Core">
         <param name="orientation">horizontal</param>
         <param name="controltype">list</param>

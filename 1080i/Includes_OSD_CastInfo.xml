@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
     <include name="OSD_CastInfo_ExpandGroup">
         <control type="group">
             <height>360</height>
@@ -10,7 +9,6 @@
             <nested />
         </control>
     </include>
-
     <include name="OSD_CastInfo_HintText">
         <control type="group">
             <nested />
@@ -32,12 +30,11 @@
             </control>
         </control>
     </include>
-
     <include name="OSD_CastInfo_Information">
         <control type="group">
             <width>190</width>
             <height>grid_x28</height>
-            <visible>!VideoPlayer.Content(livetv)</visible>
+            <visible>!$EXP[Exp_VideoPlayerContentLiveTV]</visible>
             <control type="image">
                 <include>Texture_Shadow_40</include>
                 <aspectratio scalediffuse="false">scale</aspectratio>
@@ -48,13 +45,13 @@
             <right>0</right>
             <width>grid_x24</width>
             <height>grid_x24</height>
-            <visible>VideoPlayer.Content(livetv)</visible>
+            <visible>$EXP[Exp_VideoPlayerContentLiveTV]</visible>
             <aspectratio scalediffuse="false" aligny="center" align="center">keep</aspectratio>
             <texture background="true" diffuse="diffuse/square_w320_h320.png">$VAR[Image_OSD_PosterImage]</texture>
         </control>
         <control type="grouplist">
             <top>0</top>
-            <include content="Object_Left" condition="!VideoPlayer.Content(livetv)">
+            <include content="Object_Left" condition="!$EXP[Exp_VideoPlayerContentLiveTV]">
                 <param name="left">230</param>
             </include>
             <orientation>vertical</orientation>
@@ -126,7 +123,6 @@
             </control>
         </control>
     </include>
-
     <include name="OSD_CastInfo_DirectorWriter">
         <control type="grouplist">
             <top>310</top>
@@ -165,7 +161,6 @@
             </include>
         </control>
     </include>
-
     <include name="OSD_CastInfo_NavButtons">
         <control type="grouplist" id="6530">
             <top>310</top>
@@ -202,7 +197,6 @@
             </include>
         </control>
     </include>
-
     <include name="OSD_CastInfo_Details">
         <control type="group">
             <top>0</top>
@@ -259,5 +253,4 @@
             </control>
         </control>
     </include>
-
 </includes>

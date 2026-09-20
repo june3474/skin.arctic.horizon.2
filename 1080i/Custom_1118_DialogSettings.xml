@@ -4,7 +4,6 @@
     <onunload>ClearProperty(CustomDialogSettingsItems,Home)</onunload>
     <controls>
         <include>Object_Overlay</include>
-
         <include content="Dialog_Background">
             <include>Animation_SlideIn_Dialog</include>
             <include>Dimension_DialogSelect</include>
@@ -27,7 +26,6 @@
                         </control>
                     </control>
                 </control>
-
                 <control type="group">
                     <right>dialog_button_w</right>
                     <control type="group">

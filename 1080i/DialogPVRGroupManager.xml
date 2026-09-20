@@ -3,12 +3,10 @@
     <defaultcontrol always="true">29</defaultcontrol>
     <controls>
         <include>Object_Overlay</include>
-
         <include content="Dialog_Background">
             <include>Animation_SlideIn_Dialog</include>
             <include>Dimension_Info</include>
             <include>Dialog_Overlay_Buttons</include>
-
             <!-- Left / Middle Group -->
             <control type="group">
                 <right>dialog_buttongroup_w</right>
@@ -114,8 +112,6 @@
                     </control>
                 </control>
             </control>
-
-
             <!-- Right Buttons -->
             <control type="group">
                 <right>0</right>
@@ -159,13 +155,11 @@
                 </include>
             </control>
         </include>
-
         <include content="Furniture_Top_Left">
             <param name="id" value="1" />
             <param name="label" value="$LOCALIZE[19048] - $VAR[Label_PVRChannelMgrHeader]$INFO[Container(13).NumItems, (,)]" />
         </include>
         <include>Furniture_Top_Right</include>
-
         <control type="label" id="20">
             <visible>false</visible>
             <width>1</width>

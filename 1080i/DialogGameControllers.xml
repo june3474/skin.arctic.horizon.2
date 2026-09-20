@@ -71,7 +71,6 @@
                         <height>grid_x08</height>
                     </control>
                 </control>
-
                 <control type="group">
                     <right>640</right>
                     <left>400</left>
@@ -87,19 +86,13 @@
                         <align>center</align>
                     </control>
                 </control>
-
-
             </include>
         </include>
-
-
         <!-- Headers -->
         <include content="Furniture_Top_Left">
             <param name="label" value="$LOCALIZE[35058]" />
         </include>
         <include>Furniture_Top_Right</include>
-
-
         <!-- Button Template -->
         <include content="Dialog_Settings_Button">
             <param name="id" value="7" />
@@ -108,24 +101,20 @@
             <align>center</align>
             <width>240</width>
         </include>
-
         <!-- Button Template -->
         <include content="Dialog_Settings_Button">
             <param name="id" value="10" />
             <param name="control" value="button" />
             <width>400</width>
         </include>
-
         <!-- Separator Template -->
         <control type="image" id="9">
             <visible>false</visible>
         </control>
-
         <!-- Label Template -->
         <include content="Dialog_Settings_Label">
             <param name="id" value="14" />
             <param name="control" value="label" />
         </include>
-
     </controls>
 </window>

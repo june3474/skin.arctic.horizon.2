@@ -8,7 +8,6 @@
             <description>visualisation</description>
             <visible>Visualisation.Enabled</visible>
         </control>
-
         <control type="multiimage">
             <aspectratio>scale</aspectratio>
             <randomize>true</randomize>
@@ -20,7 +19,6 @@
             <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(Visualisation.AnimateSlideshow)">Conditional</animation>
             <visible>!Skin.HasSetting(Visualisation.HideSlideshow)</visible>
         </control>
-
         <control type="multiimage">
             <randomize>true</randomize>
             <timeperimage>4000</timeperimage>
@@ -31,7 +29,6 @@
             <colordiffuse>9fffffff</colordiffuse>
             <visible>Skin.HasSetting(Visualisation.EnableColours)</visible>
         </control>
-
         <control type="group" id="3334">
             <top>-70</top>
             <visible>Skin.HasSetting(Visualisation.EnableScrollingText)</visible>

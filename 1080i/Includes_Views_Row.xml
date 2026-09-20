@@ -23,7 +23,6 @@
             <include condition="$EXP[Exp_View_58_Include]">View_058_BigPoster_Row</include>
         </include>
     </include>
-
     <include name="View_Row_WallSwitch">
         <control type="group">
             <include>Animation_View_Switch</include>
@@ -58,7 +57,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_050_Square_Row">
         <include content="View_Row_Include">
             <param name="id">50</param>
@@ -102,7 +100,6 @@
     <include name="View_058_BigPoster_Row">
         <control type="group">
             <visible>Control.IsVisible(58)</visible>
-
             <include content="List_BigPoster">
                 <param name="id">58</param>
                 <viewtype label="$LOCALIZE[31172]">wrap</viewtype>
@@ -115,7 +112,6 @@
                 <visible>$EXP[Exp_View_Special]</visible>
                 <visible>$EXP[Exp_View_58]</visible>
             </include>
-
             <control type="group">
                 <visible>$EXP[Exp_ShowBigPosterInfo]</visible>
                 <animation effect="fade" start="0" end="100" time="400" delay="400" reversible="false">Visible</animation>
@@ -131,11 +127,8 @@
                     <include>DialogInfo_VideoDetails</include>
                 </control>
             </control>
-
         </control>
     </include>
-
-
     <include name="View_Row_Include">
         <control type="group">
             <visible>!Control.IsVisible($PARAM[id]4)</visible>

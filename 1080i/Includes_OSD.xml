@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
     <include name="OSD_Music_Title">
         <param name="font">font_info_black</param>
         <definition>
@@ -13,7 +12,6 @@
             </control>
         </definition>
     </include>
-
     <include name="OSD_PlaySpeed_Label">
         <param name="width">52</param>
         <param name="selected">false</param>
@@ -31,7 +29,6 @@
             </control>
         </definition>
     </include>
-
     <include name="OSD_Menu_Back">
         <control type="group">
             <include>Dialog_Background</include>
@@ -46,7 +43,6 @@
             <bottom>200</bottom>
         </control>
     </include>
-
     <include name="OSD_Codecs_FPS">
         <control type="group">
             <width>48</width>
@@ -72,7 +68,6 @@
             </control>
         </control>
     </include>
-
     <include name="OSD_Codecs_Mono">
         <definition>
             <control type="grouplist">
@@ -111,7 +106,6 @@
                     <param name="color_fg_70">$PARAM[color_fg_70]</param>
                     <param name="directory">monochrome</param>
                 </include>
-
                 <!-- Audio Codec -->
                 <include content="Object_Control">
                     <param name="control">group</param>
@@ -138,7 +132,6 @@
             </control>
         </definition>
     </include>
-
     <include name="OSD_Stream_Selector_Layout">
         <param name="selected" default="false" />
         <param name="color_fg" default="dialog_fg_70" />
@@ -163,7 +156,6 @@
                     <font>font_tiny_bold</font>
                     <textcolor>$PARAM[color_fg]</textcolor>
                 </control>
-
                 <control type="image">
                     <right>120</right>
                     <top>-1</top>
@@ -174,7 +166,6 @@
                     <texture colordiffuse="$PARAM[color_fg]">flags/cc.png</texture>
                     <animation effect="fade" end="33" condition="String.IsEmpty(ListItem.Property(isimpaired))">Conditional</animation>
                 </control>
-
                 <control type="image">
                     <right>60</right>
                     <width>grid_x08</width>
@@ -191,7 +182,6 @@
                     <texture colordiffuse="$PARAM[color_fg]">buttons/check-off.png</texture>
                     <visible>!$PARAM[enabled]</visible>
                 </control>
-
                 <control type="image">
                     <right>0</right>
                     <width>grid_x08</width>
@@ -202,7 +192,6 @@
             </control>
         </definition>
     </include>
-
     <include name="OSD_Stream_Selector">
         <param name="width" default="1040" />
         <param name="enabled" default="true" />
@@ -274,7 +263,6 @@
                         <content>plugin://script.skinvariables?info=get_player_streams&amp;stream_type=$PARAM[stream_type]&amp;reload=$INFO[Window.Property(UID)]</content>
                         <onclick condition="$PARAM[toggle] + !String.IsEmpty(ListItem.Property(iscurrent))">Action(ShowSubtitles)</onclick>
                         <onclick condition="![$PARAM[toggle] + !String.IsEmpty(ListItem.Property(iscurrent))]">Runscript(script.skinvariables,$PARAM[method]=$INFO[ListItem.Property(index)],reload_property=UID)</onclick>
-
                     </control>
                 </control>
                 <control type="image">
@@ -288,7 +276,6 @@
             </control>
         </definition>
     </include>
-
     <include name="OSD_Stream_Selector_Loading">
         <control type="group">
             <bottom>20</bottom>
@@ -306,7 +293,6 @@
             </control>
         </control>
     </include>
-
     <include name="OSD_Button_HintLabel">
         <label>[CR][CR][CR]$PARAM[label]</label>
         <textcolor>main_fg_90</textcolor>
@@ -317,7 +303,6 @@
         <aligny>top</aligny>
         <textoffsetx>0</textoffsetx>
     </include>
-
     <include name="OSD_Button">
         <param name="size" default="60" />
         <param name="bordersize" default="6" />
@@ -377,7 +362,6 @@
             </control>
         </definition>
     </include>
-
     <include name="OSD_Progress_Details">
         <include content="Info_Title_Label_Hidden">
             <param name="label">$VAR[Label_OSD_Title]</param>
@@ -414,7 +398,6 @@
             </control>
         </control>
     </include>
-
     <include name="OSD_Progress_Labels">
         <control type="label">
             <height>40</height>
@@ -428,7 +411,6 @@
             <font>font_main</font>
         </control>
     </include>
-
     <include name="OSD_Progress_BarControls">
         <control type="progress" description="cache">
             <width>100%</width>
@@ -438,11 +420,10 @@
             <lefttexture colordiffuse="panel_fg_12">progress/progress-left.png</lefttexture>
             <midtexture colordiffuse="panel_fg_12">progress/progress-end.png</midtexture>
             <righttexture colordiffuse="panel_fg_12">progress/progress-right.png</righttexture>
-            <visible>Player.Playing | Player.Paused | Player.Caching</visible>
+            <visible>Player.Playing | $EXP[Exp_PlayerPaused] | $EXP[Exp_PlayerCaching]</visible>
             <visible>!Player.Seeking</visible>
             <visible>Player.HasMedia</visible>
         </control>
-
         <control type="progress" id="499">
             <width>100%</width>
             <height>12</height>
@@ -450,7 +431,6 @@
             <visible>Player.HasMedia + !Pvr.IsPlayingTv</visible>
             <texturebg colordiffuse="panel_fg_20" border="4">progress/progress-bg.png</texturebg>
         </control>
-
         <control type="progress">
             <description>Progressbar</description>
             <width>100%</width>
@@ -465,7 +445,6 @@
             </include>
             <visible>Player.HasMedia + !Pvr.IsPlayingTv</visible>
         </control>
-
         <control type="progress" id="498">
             <width>100%</width>
             <height>12</height>
@@ -487,7 +466,6 @@
             </include>
             <visible>Pvr.IsPlayingTv</visible>
         </control>
-
         <control type="progress" id="401">
             <visible>Player.HasMedia</visible>
             <animation effect="fade" start="100" end="0" condition="!Player.Seeking" reversible="false" delay="300" time="0">Conditional</animation>
@@ -496,14 +474,12 @@
             <right>-40</right>
             <height>112</height>
             <centertop>50%</centertop>
-
             <texturebg colordiffuse="00ffffff">progress/slider_bg.png</texturebg>
             <righttexture colordiffuse="panel_fg_100">progress/slider_nib.png</righttexture>
             <lefttexture />
             <midtexture />
             <visible>Player.SeekEnabled + !Pvr.IsPlayingTv + !Player.ChannelPreviewActive</visible>
         </control>
-
         <control type="ranges">
             <width>100%</width>
             <height>12</height>
@@ -518,7 +494,6 @@
             <righttexture colordiffuse="panel_fg_50">progress/marker.png</righttexture>
             <info>Player.Chapters</info>
         </control>
-
         <control type="slider" id="402">
             <visible>Player.HasMedia</visible>
             <animation effect="fade" start="100" end="0" condition="!Player.Seeking" reversible="false" delay="300" time="0">Conditional</animation>
@@ -533,11 +508,7 @@
             <textureslidernibfocus colordiffuse="panel_fg_100">progress/slider_nib.png</textureslidernibfocus>
             <visible>Player.SeekEnabled + Pvr.IsPlayingTv + !Player.ChannelPreviewActive</visible>
         </control>
-
-
-
     </include>
-
     <include name="OSD_Progress_Bar">
         <control type="group">
             <nested />
@@ -552,8 +523,6 @@
             </control>
         </control>
     </include>
-
-
     <include name="OSD_Codecs">
         <param name="infohide" default="true" />
         <param name="align" default="left" />
@@ -574,7 +543,6 @@
                     <param name="iconheight">44</param>
                     <param name="visible">!String.IsEmpty(VideoPlayer.VideoResolution)</param>
                 </include>
-
                 <!-- Codec / Aspect -->
                 <include content="Info_Codecs_StackedText">
                     <param name="toplabel">$INFO[VideoPlayer.VideoCodec]</param>
@@ -583,13 +551,11 @@
                     <visible>!String.IsEmpty(VideoPlayer.VideoCodec)</visible>
                     <visible>!String.IsEmpty(VideoPlayer.VideoAspect)</visible>
                 </include>
-
                 <!-- FPS Rate -->
                 <include content="OSD_Codecs_FPS">
                     <param name="color_fg_70">panel_fg_100</param>
                     <param name="directory">color</param>
                 </include>
-
                 <!-- AudioCodec -->
                 <include content="Info_Codecs_MonoIcon">
                     <param name="colordiffuse">panel_fg_100</param>
@@ -599,7 +565,6 @@
                     <param name="iconheight">48</param>
                     <param name="visible">!String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 </include>
-
                 <!-- Audio Channels -->
                 <include content="Info_Codec_AudioChannels">
                     <param name="type">VideoPlayer</param>
@@ -607,7 +572,6 @@
                     <param name="iconcolor">panel_fg_90</param>
                     <param name="imagecolor">dfce953a</param>
                 </include>
-
                 <!-- 3d Stereoscopic -->
                 <include content="Info_Codecs_MonoIcon">
                     <param name="colordiffuse">panel_fg_100</param>
@@ -617,7 +581,6 @@
                     <param name="iconheight">56</param>
                     <param name="visible">VideoPlayer.IsStereoscopic</param>
                 </include>
-
                 <!-- RipSource -->
                 <include content="Info_Codecs_MonoIcon">
                     <param name="colordiffuse">panel_fg_100</param>
@@ -627,7 +590,6 @@
                     <param name="iconheight">56</param>
                     <param name="visible">[String.Contains(Player.FileNameAndPath,2160p) | String.Contains(Player.FileNameAndPath,UHD) | String.Contains(Player.FileNameAndPath,UltraHD) | String.Contains(Player.FileNameAndPath,Ultra-HD) | String.Contains(Player.FileNameAndPath,4K) | String.Contains(Player.FileNameAndPath,blu-ray) | String.Contains(Player.FileNameAndPath,bluray) | String.Contains(Player.FileNameAndPath,bdrip) | String.Contains(Player.FileNameAndPath,bd25) | String.Contains(Player.FileNameAndPath,bd50) | String.Contains(Player.FileNameAndPath,hddvd) | String.Contains(Player.FileNameAndPath,hd-dvd) | String.Contains(Player.FileNameAndPath,dvd) | String.Contains(Player.FileNameAndPath,hdtv) | String.Contains(Player.FileNameAndPath,pdtv) | String.Contains(Player.FileNameAndPath,dsr) | String.Contains(Player.FileNameAndPath,sdtv) | String.Contains(Player.FileNameAndPath,web-dl) | String.Contains(Player.FileNameAndPath,webdl) | String.Contains(Player.FileNameAndPath,WEBRip) | String.EndsWith(Player.FileNameAndPath,.strm) | [String.IsEmpty(VideoPlayer.VideoCodec) + String.IsEmpty(VideoPlayer.AudioCodec)]]</param>
                 </include>
-
                 <!-- HDR -->
                 <include content="Info_Codecs_MonoIcon">
                     <param name="colordiffuse">panel_fg_100</param>
@@ -637,12 +599,9 @@
                     <param name="iconheight">56</param>
                     <param name="visible">!String.IsEmpty(VideoPlayer.HdrType)</param>
                 </include>
-
             </control>
         </definition>
     </include>
-
-
     <include name="OSD_TempoControl">
         <param name="textcolor">dialog_fg_70</param>
         <param name="progresscolor">dialog_fg_12</param>
@@ -802,18 +761,17 @@
                     <animation effect="slide" end="260" condition="$PARAM[istempo] + String.IsEqual(Player.PlaySpeed,1.30)">Conditional</animation>
                     <animation effect="slide" end="312" condition="$PARAM[istempo] + String.IsEqual(Player.PlaySpeed,1.40)">Conditional</animation>
                     <animation effect="slide" end="364" condition="$PARAM[istempo] + String.IsEqual(Player.PlaySpeed,1.50)">Conditional</animation>
-
-                    <animation effect="slide" end="-8" condition="!$PARAM[istempo] + Player.Rewinding32x">Conditional</animation>
-                    <animation effect="slide" end="30" condition="!$PARAM[istempo] + Player.Rewinding16x">Conditional</animation>
-                    <animation effect="slide" end="68" condition="!$PARAM[istempo] + Player.Rewinding8x">Conditional</animation>
-                    <animation effect="slide" end="106" condition="!$PARAM[istempo] + Player.Rewinding4x">Conditional</animation>
-                    <animation effect="slide" end="144" condition="!$PARAM[istempo] + Player.Rewinding2x">Conditional</animation>
-                    <animation effect="slide" end="182" condition="!$PARAM[istempo] + !Player.Rewinding + !Player.Forwarding">Conditional</animation>
-                    <animation effect="slide" end="220" condition="!$PARAM[istempo] + Player.Forwarding2x">Conditional</animation>
-                    <animation effect="slide" end="258" condition="!$PARAM[istempo] + Player.Forwarding4x">Conditional</animation>
-                    <animation effect="slide" end="296" condition="!$PARAM[istempo] + Player.Forwarding8x">Conditional</animation>
-                    <animation effect="slide" end="334" condition="!$PARAM[istempo] + Player.Forwarding16x">Conditional</animation>
-                    <animation effect="slide" end="372" condition="!$PARAM[istempo] + Player.Forwarding32x">Conditional</animation>
+                    <animation effect="slide" end="-8" condition="!$PARAM[istempo] + $EXP[Exp_PlayerRewinding]32x">Conditional</animation>
+                    <animation effect="slide" end="30" condition="!$PARAM[istempo] + $EXP[Exp_PlayerRewinding]16x">Conditional</animation>
+                    <animation effect="slide" end="68" condition="!$PARAM[istempo] + $EXP[Exp_PlayerRewinding]8x">Conditional</animation>
+                    <animation effect="slide" end="106" condition="!$PARAM[istempo] + $EXP[Exp_PlayerRewinding]4x">Conditional</animation>
+                    <animation effect="slide" end="144" condition="!$PARAM[istempo] + $EXP[Exp_PlayerRewinding]2x">Conditional</animation>
+                    <animation effect="slide" end="182" condition="!$PARAM[istempo] + !$EXP[Exp_PlayerRewinding] + !$EXP[Exp_PlayerForwarding]">Conditional</animation>
+                    <animation effect="slide" end="220" condition="!$PARAM[istempo] + $EXP[Exp_PlayerForwarding]2x">Conditional</animation>
+                    <animation effect="slide" end="258" condition="!$PARAM[istempo] + $EXP[Exp_PlayerForwarding]4x">Conditional</animation>
+                    <animation effect="slide" end="296" condition="!$PARAM[istempo] + $EXP[Exp_PlayerForwarding]8x">Conditional</animation>
+                    <animation effect="slide" end="334" condition="!$PARAM[istempo] + $EXP[Exp_PlayerForwarding]16x">Conditional</animation>
+                    <animation effect="slide" end="372" condition="!$PARAM[istempo] + $EXP[Exp_PlayerForwarding]32x">Conditional</animation>
                     <control type="image">
                         <include content="Object_ColorDiffuse" condition="$PARAM[selected]">
                             <param name="colordiffuse">$VAR[ColorSelected]</param>
@@ -836,11 +794,10 @@
             </control>
         </definition>
     </include>
-
     <include name="OSD_PVRChannelSwitch">
         <control type="group">
-            <visible>Player.ShowInfo | Window.IsVisible(DialogFullScreenInfo.xml)</visible>
-            <visible>!Window.IsVisible(videoosd)</visible>
+            <visible>$EXP[Exp_PlayerShowInfo] | Window.IsVisible(DialogFullScreenInfo.xml)</visible>
+            <visible>!$EXP[Exp_WindowVisible_VideoOSD]</visible>
             <animation type="Visible" reversible="false">
                 <effect type="fade" start="0" end="100" time="300" delay="300"/>
             </animation>
@@ -884,7 +841,6 @@
                         <param name="focusbounce" value="true" />
                     </include>
                 </control>
-
                 <control type="grouplist">
                     <top>280</top>
                     <orientation>vertical</orientation>
@@ -932,10 +888,8 @@
             </control>
         </control>
     </include>
-
     <include name="OSD_VideoSeekBar">
         <control type="group">
-
             <!-- Progress Bar Group -->
             <control type="group">
                 <include>OSD_Progress_Bar</include>
@@ -946,10 +900,9 @@
                 <visible>!$EXP[Exp_OSD_PVRChannelSwitch]</visible>
                 <animation effect="fade" start="0" end="100" delay="300" time="300">VisibleChange</animation>
             </control>
-
             <!-- Top Left Label -->
             <control type="group">
-                <visible>[VideoPlayer.Content(episodes) + !String.IsEmpty(VideoPlayer.Title)] | [VideoPlayer.Content(movies) + !String.IsEmpty(Player.Chapter) + !String.IsEqual(Player.Chapter,00)] | [VideoPlayer.Content(livetv) + !String.IsEmpty(VideoPlayer.ChannelNumberLabel)] | [VideoPlayer.Content(files) + !String.IsEmpty(VideoPlayer.Studio)]</visible>
+                <visible>[$EXP[Exp_VideoPlayerContentEpisodes] + !String.IsEmpty(VideoPlayer.Title)] | [$EXP[Exp_VideoPlayerContentMovies] + !String.IsEmpty(Player.Chapter) + !String.IsEqual(Player.Chapter,00)] | [$EXP[Exp_VideoPlayerContentLiveTV] + !String.IsEmpty(VideoPlayer.ChannelNumberLabel)] | [VideoPlayer.Content(files) + !String.IsEmpty(VideoPlayer.Studio)]</visible>
                 <include content="Object_ShadowSpot">
                     <include>Dimension_HeaderTitleShadow</include>
                 </include>
@@ -959,46 +912,38 @@
             </control>
         </control>
     </include>
-
     <include name="OSD_MusicSeekBar">
         <control type="group">
-
             <animation effect="slide" start="0" end="0,-400" time="300" tween="sine" easing="out" reversible="false" condition="[$EXP[Exp_OSD_ExpandInfo]]">Conditional</animation>
             <animation effect="slide" end="0" start="0,-400" time="400" tween="sine" easing="inout" reversible="false" condition="![$EXP[Exp_OSD_ExpandInfo]]">Conditional</animation>
-
             <!-- Progress Bar Group -->
             <control type="group">
                 <include>OSD_Progress_Bar</include>
                 <include>OSD_Progress_Labels</include>
-
                 <control type="group">
                     <width>320</width>
                     <height>320</height>
                     <bottom>view_top</bottom>
                     <left>view_pad</left>
-
                     <control type="group">
                         <animation effect="zoom" start="0,0,320,320" end="0,-360,460,460" time="400" tween="cubic" easing="out" reversible="false" condition="[Window.IsVisible(script-cu-lrclyrics-main.xml) | [!String.IsEmpty(Window(Home).Property(OSDArtistDetails)) + !Window.IsVisible(1142)]]">Conditional</animation>
                         <animation effect="zoom" end="0,0,320,320" start="0,-360,460,460" time="400" tween="cubic" easing="out" reversible="false" condition="![Window.IsVisible(script-cu-lrclyrics-main.xml) | [!String.IsEmpty(Window(Home).Property(OSDArtistDetails)) + !Window.IsVisible(1142)]]">Conditional</animation>
-
                         <control type="image">
                             <bottom>50%</bottom>
                             <width>320</width>
                             <height>320</height>
                             <bordersize>20</bordersize>
                             <texture background="true">$INFO[Player.Art(album.discart)]</texture>
-                            <animation effect="rotate" condition="!Player.Paused + ![Window.IsVisible(script-cu-lrclyrics-main.xml) | [!String.IsEmpty(Window(Home).Property(OSDArtistDetails)) + !Window.IsVisible(1142)]]" start="0" end="360" loop="true" time="50000" center="auto" reversible="false">Conditional</animation>
+                            <animation effect="rotate" condition="!$EXP[Exp_PlayerPaused] + ![Window.IsVisible(script-cu-lrclyrics-main.xml) | [!String.IsEmpty(Window(Home).Property(OSDArtistDetails)) + !Window.IsVisible(1142)]]" start="0" end="360" loop="true" time="50000" center="auto" reversible="false">Conditional</animation>
                             <visible>![Window.IsVisible(script-cu-lrclyrics-main.xml) | [!String.IsEmpty(Window(Home).Property(OSDArtistDetails)) + !Window.IsVisible(1142)]]</visible>
                             <animation effect="slide" start="0" end="0,160" time="400" tween="cubic" easing="out" reversible="false">Hidden</animation>
                             <animation effect="slide" end="0" start="0,160" time="400" tween="cubic" easing="out" reversible="false">Visible</animation>
                         </control>
-
                         <include content="Object_BigPoster">
                             <param name="diffuse">diffuse/square_w440_h440.png</param>
                             <param name="icon">$INFO[Player.Icon]</param>
                         </include>
                     </control>
-
                     <control type="group">
                         <left>360</left>
                         <animation effect="slide" start="0" end="-360" time="400" tween="cubic" easing="out" reversible="false" condition="[Window.IsVisible(script-cu-lrclyrics-main.xml) | [!String.IsEmpty(Window(Home).Property(OSDArtistDetails)) + !Window.IsVisible(1142)]]">Conditional</animation>
@@ -1007,10 +952,10 @@
                             <height>137</height>
                             <bottom>40</bottom>
                             <align>bottom</align>
-                            <include content="OSD_Music_Title" condition="!Skin.HasSetting(UseLightFont)">
+                            <include content="OSD_Music_Title" condition="!$EXP[Exp_SkinSetting_UseLightFont]">
                                 <param name="font">font_info_black</param>
                             </include>
-                            <include content="OSD_Music_Title" condition="Skin.HasSetting(UseLightFont)">
+                            <include content="OSD_Music_Title" condition="$EXP[Exp_SkinSetting_UseLightFont]">
                                 <param name="font">font_info_light</param>
                             </include>
                         </control>
@@ -1024,7 +969,6 @@
                         </control>
                     </control>
                 </control>
-
                 <control type="grouplist">
                     <visible>Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
                     <visible>!Window.IsActive(musicosd)</visible>
@@ -1049,7 +993,6 @@
                         <onclick>Close</onclick>
                         <onclick>runscript(script.cu.lrclyrics)</onclick>
                     </include>
-
                     <control type="label">
                         <height>60</height>
                         <aligny>center</aligny>
@@ -1059,7 +1002,6 @@
                         <width>auto</width>
                     </control>
                 </control>
-
                 <include>Animation_OSD_Seekbar_NoCodecs</include>
             </control>
         </control>

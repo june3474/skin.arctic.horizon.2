@@ -3,11 +3,8 @@
     <defaultcontrol always="true">50</defaultcontrol>
     <views>50,51,52</views>
     <controls>
-
         <include>Defs_TMDbHelper_Loader</include>
         <include>Background_Main</include>
-
-
         <include content="Dialog_Background">
             <include>Dimension_Info</include>
             <include content="Animation_WindowTransition_Settings">
@@ -16,7 +13,6 @@
             </include>
             <visible>!$EXP[Exp_InfoDialogs]</visible>
             <include>Animation_Common</include>
-
             <control type="group">
                 <width>addonbrowser_category_w</width>
                 <top>grid_x04</top>
@@ -62,7 +58,6 @@
                     </include>
                 </control>
             </control>
-
             <control type="group">
                 <left>addonbrowser_category_w</left>
                 <include>Dialog_Overlay</include>
@@ -104,10 +99,7 @@
                     </include>
                 </control>
             </control>
-
         </include>
-
-
         <include>View_Furniture_Top</include>
     </controls>
 </window>

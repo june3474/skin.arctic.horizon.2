@@ -36,8 +36,6 @@
     <expression name="Exp_View_580_Include">False</expression>
     <expression name="Exp_View_581_Include">False</expression>
     <expression name="Exp_View_590_Include">False</expression>
-
-
     <include name="skinshortcuts-template-powermenu">
         <include content="Dialog_Menu_Button">
             <param name="id" value="9099" />

@@ -3,7 +3,6 @@
     <include name="View_MediaWindows_ID">
         <views>50,500,501,502,504,507,508,51,510,511,512,514,517,52,520,521,522,524,527,54,540,550,551,552,557,558,56,560,57,570,572,574,58,580,581,590</views>
     </include>
-
     <include name="View_Furniture_Top">
         <param name="powermenu_button">false</param>
         <definition>
@@ -31,7 +30,6 @@
             </control>
         </definition>
     </include>
-
     <include name="View_Furniture_Scrollbar_V">
         <param name="onright">50</param>
         <param name="onleft">menu</param>
@@ -65,7 +63,6 @@
             </control>
         </definition>
     </include>
-
     <include name="View_Furniture_Scrollbars">
         <include content="View_Furniture_Scrollbar_V">
             <top>view_top</top>
@@ -123,7 +120,7 @@
                 <ondown condition="Skin.String(Rows.OnDown,Trailer) + !String.IsEmpty(ListItem.Trailer)">PlayMedia($ESCINFO[ListItem.Trailer],playlist_type_hint=1)</ondown>
                 <ondown condition="Skin.String(Rows.OnDown,Trailer) + String.IsEmpty(ListItem.Trailer) + !String.IsEmpty(Container(99950).ListItem.Trailer)">PlayMedia($ESCINFO[Container(99950).ListItem.Trailer],playlist_type_hint=1)</ondown>
             </include>
-            <include content="Object_Control" condition="!Skin.HasSetting(DisableAlphabetScrollbar)">
+            <include content="Object_Control" condition="!$EXP[Exp_SkinSetting_DisableAlphabetScrollbar]">
                 <param name="control" value="grouplist" />
                 <visible>$EXP[Exp_AlphabetVisible]</visible>
                 <orientation>horizontal</orientation>
@@ -160,7 +157,6 @@
             </include>
         </include>
     </include>
-
     <include name="View_Furniture_Discover">
         <control type="group">
             <visible>![$EXP[Exp_View_Special]]</visible>
@@ -196,7 +192,6 @@
                 <onfocus>SetProperty(TMDbHelper.WidgetContainer,591)</onfocus>
                 <visible>!$EXP[Exp_View_Special]</visible>
             </include>
-
             <include content="Furniture_Bottombar_Group">
                 <include content="Furniture_Gutters">
                     <control type="grouplist">
@@ -219,11 +214,8 @@
                     </control>
                 </include>
             </include>
-
         </control>
-
     </include>
-
     <include name="View_Visibility_Common">
         <param name="animation_include">Animation_Common</param>
         <param name="visible_infodialogs">!$EXP[Exp_InfoDialogs]</param>
@@ -235,12 +227,10 @@
             <include>$PARAM[animation_include]</include>
         </definition>
     </include>
-
     <include name="View_Main_MyPlaylist">
         <control type="group">
             <visible>Control.IsVisible(50)</visible>
             <include>Animation_Foreground_SlideUp</include>
-
             <include content="View_List_NewTemplate">
                 <param name="id">50</param>
                 <param name="width">460</param>
@@ -258,7 +248,6 @@
                 <param name="scrollbar_id">63</param>
                 <param name="spacing">60</param>
             </include>
-
             <control type="group">
                 <visible>String.IsEqual(Container(50).ListItem.DBType,song)</visible>
                 <width>infodialog_left_w</width>
@@ -271,7 +260,6 @@
                     <height>infodialog_poster_w</height>
                 </include>
             </control>
-
             <control type="group">
                 <visible>!String.IsEqual(Container(50).ListItem.DBType,song)</visible>
                 <width>infodialog_left_w</width>
@@ -283,14 +271,12 @@
                     <height>infodialog_poster_h</height>
                 </include>
             </control>
-
             <control type="group">
                 <include>Furniture_Bottom_Left</include>
                 <include>Furniture_Bottom_Right</include>
             </control>
         </control>
     </include>
-
     <include name="View_Main_Standard">
         <control type="group">
             <include>Animation_Foreground_FadeInOut</include>
@@ -298,7 +284,7 @@
             <include>View_Furniture_Combined_Top</include>
             <control type="group">
                 <visible>$EXP[Exp_RowViews] | $EXP[Exp_CombinedViews]</visible>
-                <include condition="!Skin.String(BackgroundStyle,Fanart) + Skin.String(ForegroundStyle,ClearArt)">View_ClearArt</include>
+                <include condition="!$EXP[Exp_BackgroundStyle_Fanart] + Skin.String(ForegroundStyle,ClearArt)">View_ClearArt</include>
             </control>
         </control>
         <control type="group">
@@ -313,9 +299,8 @@
             </control>
         </control>
     </include>
-
     <include name="View_ClearArt">
-        <include content="Object_Control" condition="!Skin.String(BackgroundStyle,Fanart)">
+        <include content="Object_Control" condition="!$EXP[Exp_BackgroundStyle_Fanart]">
             <param name="control" value="image" />
             <bottom>divider_bottom</bottom>
             <right>view_pad</right>
@@ -326,7 +311,6 @@
             <texture background="true">$VAR[Image_ClearArt]</texture>
         </include>
     </include>
-
     <include name="View_Main">
         <param name="include_views" default="View_Main_Standard" />
         <definition>
@@ -354,16 +338,12 @@
                 <visible>!$EXP[Exp_CombinedViews]</visible>
             </control>
             <include content="Background_Main">
-
             </include>
-
             <control type="group">
                 <include>View_Visibility_Common</include>
                 <include>$PARAM[include_views]</include>
             </control>
-
             <include>View_Furniture_Top</include>
-
             <control type="group">
                 <visible>!$EXP[Exp_ScrollViews]</visible>
                 <visible>!$EXP[Exp_AlphabetVisible]</visible>
@@ -374,8 +354,6 @@
                 <include>Furniture_Bottom_Left</include>
                 <include>Furniture_Bottom_Right</include>
             </control>
-
-
         </definition>
     </include>
 </includes>

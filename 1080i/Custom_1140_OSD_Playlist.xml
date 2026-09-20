@@ -5,12 +5,9 @@
     <include>Animation_WindowTransition_FadeInOut</include>
     <controls>
         <include content="OSD_CastInfo_ExpandGroup">
-
             <visible>!Window.IsActive(pvrchannelguide)</visible>
             <visible>!Window.IsActive(videobookmarks)</visible>
             <include>Animation_VisibleTransition_FadeInOut</include>
-
-
             <!-- Episodes List -->
             <include content="List_Core">
                 <param name="orientation" value="horizontal" />
@@ -23,12 +20,12 @@
                 <param name="itemlayout_include" value="OSD_Episodes_Layout" />
                 <param name="offset_y" value="40" />
                 <param name="offset_x">40</param>
-                <include content="Object_ContentDynamic" condition="VideoPlayer.Content(livetv)">
+                <include content="Object_ContentDynamic" condition="$EXP[Exp_VideoPlayerContentLiveTV]">
                     <param name="sortby">lastplayed</param>
                     <param name="sortorder">descending</param>
                     <param name="content">pvr://channels/tv/*</param>
                 </include>
-                <include content="Object_ContentDynamic" condition="!VideoPlayer.Content(livetv)">
+                <include content="Object_ContentDynamic" condition="!$EXP[Exp_VideoPlayerContentLiveTV]">
                     <param name="content">$VAR[Path_OSD_Episodes]</param>
                 </include>
                 <focusposition>0</focusposition>
@@ -36,12 +33,11 @@
                 <height>360</height>
                 <top>-40</top>
                 <onup>Close</onup>
-                <ondown condition="!VideoPlayer.Content(livetv)">ActivateWindow(videobookmarks)</ondown>
-                <ondown condition="VideoPlayer.Content(livetv)">ActivateWindow(pvrchannelguide)</ondown>
+                <ondown condition="!$EXP[Exp_VideoPlayerContentLiveTV]">ActivateWindow(videobookmarks)</ondown>
+                <ondown condition="$EXP[Exp_VideoPlayerContentLiveTV]">ActivateWindow(pvrchannelguide)</ondown>
                 <left>-40</left>
                 <width>view_osd_landscape_list_w</width>
             </include>
-
             <!-- Arrows and Busy -->
             <include content="OSD_Episodes_Arrows">
                 <param name="id">6401</param>
@@ -52,12 +48,9 @@
                     <visible>Container(6401).IsUpdating + Integer.IsEqual(Container(6401).NumItems,0)</visible>
                 </include>
             </include>
-
             <include content="OSD_Episodes_Info_Group">
                 <include>OSD_Episodes_Info_Basic</include>
             </include>
-
-
         </include>
     </controls>
 </window>

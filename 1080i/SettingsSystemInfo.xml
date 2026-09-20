@@ -81,8 +81,6 @@
                             <description>Privacy</description>
                         </include>
                     </control>
-
-
                     <include content="Dialog_SettingsCategory_RightGroup">
                         <param name="scrollbar_onleft" value="9001" />
                         <param name="info_condition" value="false" />
@@ -239,18 +237,13 @@
                                 <textoffsetx>grid_x04</textoffsetx>
                                 <height>40</height>
                             </control>
-
                         </control>
                     </include>
-
                 </include>
             </include>
         </include>
-
-
         <include content="View_Furniture_Top">
             <param name="powermenu_button">true</param>
         </include>
     </controls>
-
 </window>

@@ -15,7 +15,6 @@
             <width>1440</width>
             <include>Dimension_Context</include>
             <include>Dialog_ContextMenu_Header</include>
-
             <!-- Poster Image -->
             <control type="group">
                 <include content="Dialog_Background">
@@ -41,7 +40,6 @@
                     </control>
                 </include>
             </control>
-
             <!-- Menu -->
             <control type="group">
                 <right>0</right>
@@ -69,6 +67,5 @@
                 </include>
             </control>
         </control>
-
     </controls>
 </window>

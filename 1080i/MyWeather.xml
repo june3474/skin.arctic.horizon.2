@@ -3,26 +3,20 @@
     <defaultcontrol always="true">7000</defaultcontrol>
     <menucontrol>9000</menucontrol>
     <controls>
-
         <include>Background_Main</include>
         <!-- <include>Object_Overlay</include> -->
-
         <include content="Weather">
             <include>Animation_Up_Delay</include>
         </include>
-
         <include>Furniture_Top_Left</include>
-
         <control type="group">
             <visible>Weather.IsFetched</visible>
             <include>Furniture_Top_Right</include>
         </control>
-
         <control type="group">
             <visible>!Weather.IsFetched</visible>
             <include>Furniture_Busy</include>
         </control>
-
         <control type="button" id="7000">
             <include>Dimension_Info</include>
             <texturefocus />
@@ -34,13 +28,11 @@
             <onright>SetFocus(9000)</onright>
             <onleft>SetFocus(9000)</onleft>
         </control>
-
         <include content="Object_Options_Menu">
             <param name="grouplist_items" value="Items_Weather_Settings" />
             <param name="onback" value="7000" />
             <param name="use_mouse_focus">true</param>
         </include>
-
         <include content="Object_Overlay">
             <visible>Control.HasFocus(5000)</visible>
             <include>Animation_FadeIn</include>
@@ -52,7 +44,5 @@
             <param name="header" value="$INFO[Weather.Conditions]" />
             <param name="content" value="Items_Weather_Screenshots" />
         </include>
-
     </controls>
-
 </window>

@@ -16,7 +16,6 @@
                 <param name="id" value="8001" />
                 <label>$VAR[Label_ContextMenu_Title]</label>
             </include>
-
             <!-- Square Image -->
             <control type="group">
                 <include content="Dialog_Background">
@@ -29,7 +28,6 @@
                     </include>
                 </include>
             </control>
-
             <!-- Menu -->
             <control type="group">
                 <right>0</right>
@@ -64,6 +62,5 @@
                 </control>
             </control>
         </control>
-
     </controls>
 </window>

@@ -2,9 +2,7 @@
 <window type="dialog" id="1145">
     <defaultcontrol always="true">450</defaultcontrol>
     <controls>
-
         <include>Object_Overlay</include>
-
         <include content="Dialog_Background">
             <include>Animation_SlideIn_Dialog</include>
             <include>Dimension_Favourites</include>
@@ -34,7 +32,6 @@
                     <left>-40</left>
                     <content>favourites://</content>
                 </include>
-
                 <include content="Dialog_Scrollbar">
                     <param name="id" value="61" />
                     <onright>9000</onright>
@@ -43,7 +40,6 @@
                 </include>
             </control>
         </include>
-
         <include>Furniture_Top_Right</include>
     </controls>
 </window>

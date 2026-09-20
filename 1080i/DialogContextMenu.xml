@@ -9,8 +9,6 @@
         <include content="Object_Overlay">
             <param name="delay" value="300" />
         </include>
-
-
         <control type="group">
             <include content="Animation_SlideIn_Dialog">
                 <param name="windowopen_delay" value="600" />
@@ -41,7 +39,6 @@
                         </include>
                     </include>
                 </control>
-
                 <!-- No Image -->
                 <control type="group">
                     <left>context_icon_w</left>
@@ -52,7 +49,6 @@
                         <include>Texture_Dialog</include>
                     </control>
                 </control>
-
                 <!-- Menu -->
                 <control type="group">
                     <right>0</right>
@@ -84,7 +80,6 @@
                         <onfocus condition="Control.IsVisible(1019)">SetFocus(1019)</onfocus>
                         <onfocus condition="Control.IsVisible(1020)">SetFocus(1020)</onfocus>
                     </control>
-
                     <!-- Quick Nav -->
                     <control type="grouplist">
                         <top>120</top>
@@ -99,7 +94,6 @@
                             <right>0</right>
                         </include>
                     </control>
-
                     <!-- Main Menu -->
                     <control type="grouplist" id="996">
                         <top>200</top>
@@ -134,7 +128,6 @@
                 </control>
             </control>
         </control>
-
         <include content="Dialog_Settings_Button">
             <param name="id" value="1000" />
             <param name="control" value="button" />

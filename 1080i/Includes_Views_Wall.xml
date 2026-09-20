@@ -15,7 +15,6 @@
             <include condition="$EXP[Exp_View_550_Include]">View_550_InfoWall_Poster_Vertical</include>
         </include>
     </include>
-
     <include name="View_Wall_Vertical">
         <include content="$PARAM[include]">
             <param name="id" value="$PARAM[id]" />
@@ -34,7 +33,6 @@
             <onfocus>ClearProperty(TMDbHelper.WidgetContainer)</onfocus>
         </include>
     </include>
-
     <include name="View_520_Wall_Poster_Vertical">
         <control type="group">
             <visible>Control.IsVisible(520)</visible>
@@ -46,7 +44,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_Wall_MediaInfo">
         <param name="flipside">false</param>
         <definition>
@@ -80,7 +77,6 @@
             </control>
         </definition>
     </include>
-
     <include name="View_550_InfoWall_Poster_Vertical">
         <param name="flipside">false</param>
         <definition>
@@ -110,7 +106,6 @@
             </control>
         </definition>
     </include>
-
     <include name="View_580_Wall_BigPoster_Vertical">
         <param name="flipside">true</param>
         <definition>
@@ -148,7 +143,6 @@
             </control>
         </definition>
     </include>
-
     <include name="View_560_Wall_BigSquare_Vertical">
         <control type="group">
             <visible>Control.IsVisible(560)</visible>
@@ -160,7 +154,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_570_Wall_BigLandscape_Vertical">
         <control type="group">
             <visible>Control.IsVisible(570)</visible>
@@ -172,7 +165,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_510_Wall_Landscape_Vertical">
         <control type="group">
             <visible>Control.IsVisible(510)</visible>
@@ -184,7 +176,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_500_Wall_Square_Vertical">
         <control type="group">
             <visible>Control.IsVisible(500)</visible>
@@ -195,7 +186,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_540_Wall_Tags_Vertical">
         <control type="group">
             <visible>Control.IsVisible(540)</visible>
@@ -213,7 +203,6 @@
             </include>
         </control>
     </include>
-
     <include name="View_54_Wall_Submenu_Vertical">
         <control type="group">
             <visible>Control.IsVisible(54)</visible>
@@ -237,5 +226,4 @@
             </include>
         </control>
     </include>
-
 </includes>

@@ -3,7 +3,6 @@
     <defaultcontrol always="true">9801</defaultcontrol>
     <include>Animation_WindowTransition_FadeInOut</include>
     <controls>
-
         <control type="group">
             <left>view_pad</left>
             <height>480</height>

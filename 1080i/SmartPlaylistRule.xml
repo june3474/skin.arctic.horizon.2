@@ -11,7 +11,6 @@
                 <param name="id" value="7900" />
                 <label>$LOCALIZE[21422]</label>
             </include>
-
             <!-- Left Options -->
             <control type="group">
                 <top>grid_x04</top>
@@ -31,7 +30,6 @@
                         <param name="control" value="button" />
                     </include>
                 </control>
-
                 <control type="group">
                     <height>grid_x08</height>
                     <bottom>0</bottom>
@@ -79,7 +77,6 @@
                     </control>
                 </control>
             </control>
-
             <!-- Right Buttons -->
             <include content="Dialog_Group">
                 <control type="group">
@@ -99,9 +96,7 @@
                     </control>
                 </control>
             </include>
-
         </include>
-
         <include>Furniture_Top</include>
     </controls>
 </window>

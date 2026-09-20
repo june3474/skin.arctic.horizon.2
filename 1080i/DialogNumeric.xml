@@ -58,7 +58,6 @@
                                 <ondown>16</ondown>
                             </include>
                         </control>
-
                         <control type="grouplist" description="Row 2">
                             <orientation>horizontal</orientation>
                             <itemgap>keyboard_pad</itemgap>
@@ -86,7 +85,6 @@
                                 <ondown>13</ondown>
                             </include>
                         </control>
-
                         <control type="grouplist" description="Row 3">
                             <orientation>horizontal</orientation>
                             <itemgap>keyboard_pad</itemgap>
@@ -114,13 +112,11 @@
                                 <ondown>20</ondown>
                             </include>
                         </control>
-
                         <control type="grouplist" description="Row 4">
                             <orientation>horizontal</orientation>
                             <itemgap>keyboard_pad</itemgap>
                             <height>grid_x08</height>
                             <onright>22</onright>
-
                             <include content="Object_Keyboard_Button" description="Number">
                                 <param name="id" value="10" />
                                 <label>$NUMBER[0]</label>
@@ -167,7 +163,6 @@
                         </include>
                     </control>
                 </control>
-
             </include>
         </include>
     </controls>

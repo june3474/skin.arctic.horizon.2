@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog">
-    <include content="Object_DefaultControl" condition="!Skin.HasSetting(DialogInfo.FocusButtons)">
+    <include content="Object_DefaultControl" condition="!$EXP[Exp_DialogInfoFocusButtons]">
         <param name="always">true</param>
         <param name="defaultcontrol">5000</param>
     </include>
-    <include content="Object_DefaultControl" condition="Skin.HasSetting(DialogInfo.FocusButtons)">
+    <include content="Object_DefaultControl" condition="$EXP[Exp_DialogInfoFocusButtons]">
         <param name="always">true</param>
         <param name="defaultcontrol">4000</param>
     </include>
     <menucontrol>4000</menucontrol>
     <controls>
-
         <include>Defs_TMDbHelper_Loader</include>
-
         <include content="DialogInfo_MainGroup">
             <include content="DialogInfo_ButtonGroup">
                 <param name="include">Items_DialogMusicInfo_MenuBar</param>
@@ -30,34 +28,28 @@
                 <include content="DialogInfo_RightGroup">
                     <!-- Info -->
                     <control type="group">
-                        <visible>!Control.HasFocus(7001) | !Player.HasVideo</visible>
+                        <visible>!Control.HasFocus(7001) | !$EXP[Exp_PlayerHasVideo]</visible>
                         <visible>!Control.HasFocus(7003)</visible>
-
                         <animation effect="fade" start="0" end="100" time="400" delay="400" reversible="false">Visible</animation>
                         <animation effect="fade" start="100" end="0" time="200" reversible="false">Hidden</animation>
-
-
                         <control type="group">
                             <visible>!Control.HasFocus(61)</visible>
-
                             <!-- Music Info -->
                             <include content="Info_Panel">
                                 <param name="plotheight" value="info_plot_large_h" />
                                 <param name="details">![Control.HasFocus(9801) | Control.HasFocus(9802)]</param>
                             </include>
-
                             <!-- Track Details -->
                             <include content="DialogInfo_MusicTracks" condition="String.IsEqual(ListItem.DBType,album)">
                                 <param name="id">50</param>
                                 <visible>![Control.HasFocus(9801) | Control.HasFocus(9802)]</visible>
                             </include>
-                            <include content="DialogInfo_MusicTracks" condition="String.IsEqual(ListItem.DBType,artist)">
+                            <include content="DialogInfo_MusicTracks" condition="$EXP[Exp_StringIsEqual_ListItemDBType_Artist]">
                                 <param name="id">5050</param>
                                 <param name="detailed">true</param>
                                 <content target="music" sortby="playcount" sortorder="descending">$INFO[ListItem.Artist,musicdb://songs/?xsp=%7B%22order%22%3A%7B%22direction%22%3A%22ascending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22sorttitle%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22artist%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22,%22%5D%7D%5D%7D%2C%22type%22%3A%22songs%22%7D]</content>
                                 <visible>![Control.HasFocus(9801) | Control.HasFocus(9802)]</visible>
                             </include>
-
                             <control type="group">
                                 <visible>Control.HasFocus(9801) | Control.HasFocus(9802)</visible>
                                 <include>Animation_FadeIn_Delay</include>
@@ -105,39 +97,30 @@
                             </control>
                         </control>
                     </control>
-
                     <!-- Trailer and Plot -->
                     <include>DialogInfo_VideoTrailer</include>
                     <include content="DialogInfo_PlotBox">
                         <param name="label">$VAR[Label_Plot]</param>
                     </include>
                     <include>DialogInfo_ArtworkGallery</include>
-
                 </include>
             </include>
         </include>
-
-
         <include content="DialogInfo_Furniture">
             <param name="downarrow_visible">false</param>
         </include>
-
         <include content="Object_Options_Menu">
             <param name="grouplist_items" value="Items_DialogMusicInfo_Options" />
             <param name="visible" value="!$EXP[Exp_OverlayDialogs]" />
             <param name="onback" value="5000" />
             <param name="use_mouse_focus">true</param>
         </include>
-
         <include>DialogInfo_VideoTrailerFullscreen</include>
-
         <!-- <include content="Object_Hidden_Button">
             <param name="id">7002</param>
             <onfocus>SetFocus(5000)</onfocus>
         </include> -->
-
         <include>DialogInfo_FilePathInfo</include>
-
         <control type="group">
             <visible>!Integer.IsEqual(Container(6204).NumItems,0)</visible>
             <visible>ControlGroup(6000).HasFocus()</visible>
@@ -155,6 +138,5 @@
                 <label>$INFO[Container(6202).ListItem.Label,[B],[/B]]$INFO[Container(6202).ListItem.Label2, (,) ]$INFO[Container(6204).NumNonFolderItems, • , $LOCALIZE[134]]</label>
             </include>
         </control>
-
     </controls>
 </window>

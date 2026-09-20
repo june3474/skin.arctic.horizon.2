@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
     <include name="Background_ExtraFanart">
-        <include content="Object_Control" condition="Skin.HasSetting(Background.ExtraFanart)">
+        <include content="Object_Control" condition="$EXP[Exp_SkinSetting_BackgroundExtraFanart]">
             <param name="control">fadelabel</param>
             <param name="id">99998</param>
             <description>Randomizer for plugin-free multiple fanart</description>
@@ -38,10 +37,9 @@
             <visible>$EXP[Exp_HasExtraFanart]</visible>
         </include>
     </include>
-
     <include name="Background_BusyLoader">
         <control type="group">
-            <visible>Window.IsVisible(DialogBusy.xml) | [[Window.IsVisible(1190) | Window.IsVisible(1191)] + !$EXP[Exp_InfoDialogs]]</visible>
+            <visible>$EXP[Exp_WindowVisible_DialogBusy] | [[Window.IsVisible(1190) | Window.IsVisible(1191)] + !$EXP[Exp_InfoDialogs]]</visible>
             <animation effect="fade" start="0" end="100" time="5000" tween="cubic" easing="inout" reversible="true">Visible</animation>
             <animation effect="fade" start="100" end="0" time="1000" tween="cubic" easing="inout" reversible="true">Hidden</animation>
             <include content="Background_Image">
@@ -57,7 +55,6 @@
             </control>
         </control>
     </include>
-
     <include name="Background_FlixArt">
         <param name="flixart_size_w">flixart_size_w</param>
         <param name="flixart_size_h">flixart_size_h</param>
@@ -73,14 +70,12 @@
                     <height>$PARAM[flixart_size_h]</height>
                     <width>$PARAM[flixart_size_w]</width>
                     <aspectratio scalediffuse="true">scale</aspectratio>
-
-                    <include content="Object_Texture" condition="[Skin.String(BackgroundStyle,Blur) | Skin.String(BackgroundStyle,Image)]">
+                    <include content="Object_Texture" condition="$EXP[Exp_BackgroundStyle_BlurOrImage]">
                         <param name="texture">$VAR[Image_Foreground_FlixArt]</param>
                         <param name="background">true</param>
                         <param name="diffuse">diffuse/flixart_hard.png</param>
                     </include>
-
-                    <include content="Object_Texture" condition="![Skin.String(BackgroundStyle,Blur) | Skin.String(BackgroundStyle,Image)]">
+                    <include content="Object_Texture" condition="[$EXP[Exp_ForegroundStyle_KeyArt] | $EXP[Exp_ForegroundStyle_FlixArt]]">
                         <param name="texture">$VAR[Image_Foreground_FlixArt]</param>
                         <param name="background">true</param>
                         <param name="diffuse">diffuse/flixart_soft.png</param>
@@ -89,7 +84,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Background_KeyArt">
         <include content="Object_Control">
             <param name="control" value="image" />
@@ -97,37 +91,32 @@
             <width>50%</width>
             <fadetime>400</fadetime>
             <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
-
-            <include content="Object_Texture" condition="[Skin.String(BackgroundStyle,Blur) | Skin.String(BackgroundStyle,Image)]">
+            <include content="Object_Texture" condition="$EXP[Exp_BackgroundStyle_BlurOrImage]">
                 <param name="texture">$VAR[Image_Foreground_FlixArt]</param>
                 <param name="background">true</param>
                 <param name="diffuse">diffuse/flixart_hard.png</param>
             </include>
-
-            <include content="Object_Texture" condition="![Skin.String(BackgroundStyle,Blur) | Skin.String(BackgroundStyle,Image)]">
+            <include content="Object_Texture" condition="!$EXP[Exp_BackgroundStyle_BlurOrImage]">
                 <param name="texture">$VAR[Image_Foreground_FlixArt]</param>
                 <param name="background">true</param>
                 <param name="diffuse">diffuse/flixart_soft.png</param>
             </include>
         </include>
     </include>
-
     <include name="Background_Blur">
         <param name="flixart_size_w">flixart_size_w</param>
         <param name="flixart_size_h">flixart_size_h</param>
         <definition>
             <control type="group">
                 <include>Background_NotVideo</include>
-
                 <!-- Standard Blur -->
-                <include content="Object_Control" condition="!Skin.String(ForegroundStyle,FlixArt) + !Skin.String(ForegroundStyle,KeyArt)">
+                <include content="Object_Control" condition="!$EXP[Exp_ForegroundStyle_FlixArt] + !$EXP[Exp_ForegroundStyle_KeyArt]">
                     <param name="control" value="image" />
                     <fadetime>600</fadetime>
                     <texture background="true">$INFO[Container(99950).ListItem.Art(blurimage)]</texture>
                 </include>
-
                 <!-- KeyArt (Offset Blur) -->
-                <include content="Object_Control" condition="Skin.String(ForegroundStyle,KeyArt)" >
+                <include content="Object_Control" condition="$EXP[Exp_ForegroundStyle_KeyArt]" >
                     <param name="control" value="group" />
                     <control type="image">
                         <right>75%</right>
@@ -142,11 +131,9 @@
                         <texture background="true">$VAR[Image_Background_Blur]</texture>
                     </control>
                 </include>
-
                 <!-- FlixArt (Quadrant Blur) -->
-                <include content="Object_Control" condition="Skin.String(ForegroundStyle,FlixArt)" >
+                <include content="Object_Control" condition="$EXP[Exp_ForegroundStyle_FlixArt]" >
                     <param name="control" value="group" />
-
                     <!-- Left -->
                     <control type="group">
                         <right>$PARAM[flixart_size_w]</right>
@@ -165,7 +152,6 @@
                             <texture background="true" flipx="true" flipy="true">$VAR[Image_Background_Blur]</texture>
                         </control>
                     </control>
-
                     <!-- Right -->
                     <control type="group">
                         <right>0</right>
@@ -184,14 +170,10 @@
                             <texture background="true" flipx="false" flipy="true">$VAR[Image_Background_Blur]</texture>
                         </control>
                     </control>
-
                 </include>
             </control>
         </definition>
     </include>
-
-
-
     <include name="Background_StartUp">
         <include content="Object_Control">
             <param name="control">multiimage</param>
@@ -201,7 +183,6 @@
             <fadetime>600</fadetime>
         </include>
     </include>
-
     <include name="Background_Fanart">
         <control type="image">
             <fadetime>600</fadetime>
@@ -210,7 +191,6 @@
             <include>Background_NotVideo</include>
         </control>
     </include>
-
     <include name="Background_Image">
         <param name="texture" default="$VAR[Image_SimpleBackground]" />
         <param name="colordiffuse">main_flix</param>
@@ -222,7 +202,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Background_Stretch">
         <param name="texture" default="$VAR[Image_Background_Stretch]" />
         <definition>
@@ -237,15 +216,13 @@
             </control>
         </definition>
     </include>
-
     <include name="Background_None">
-        <include condition="![Skin.String(ForegroundStyle,KeyArt) | Skin.String(ForegroundStyle,FlixArt)]">Background_Image</include>
-        <include condition="[Skin.String(ForegroundStyle,KeyArt) | Skin.String(ForegroundStyle,FlixArt)]" content="Background_Image">
+        <include condition="![$EXP[Exp_ForegroundStyle_KeyArt] | $EXP[Exp_ForegroundStyle_FlixArt]]">Background_Image</include>
+        <include condition="[$EXP[Exp_ForegroundStyle_KeyArt] | $EXP[Exp_ForegroundStyle_FlixArt]]" content="Background_Image">
             <param name="texture">background/bg.jpg</param>
             <param name="colordiffuse">$VAR[Background_Main_ColorDiffuse]</param>
         </include>
     </include>
-
     <include name="Background_NotVideo">
         <param name="fade_end" default="0" />
         <definition>
@@ -254,7 +231,6 @@
             <animation effect="fade" start="0" end="100" time="400" tween="sine" easing="out" reversible="false">Visible</animation>
         </definition>
     </include>
-
     <include name="Background_Video">
         <include content="Object_Control" condition="!Skin.HasSetting(UseBackgroundVideo)">
             <param name="control" value="videowindow" />
@@ -268,9 +244,8 @@
             <description>On-screen videowindow for background video</description>
         </include>
     </include>
-
     <include name="Background_ForegroundArtwork">
-        <include content="Object_Control" condition="Skin.String(ForegroundStyle,KeyArt)">
+        <include content="Object_Control" condition="$EXP[Exp_ForegroundStyle_KeyArt]">
             <param name="control">group</param>
             <include>Background_NotVideo</include>
             <include content="View_Visibility_Common">
@@ -280,7 +255,7 @@
             </include>
             <include>Background_KeyArt</include>
         </include>
-        <include content="Object_Control" condition="Skin.String(ForegroundStyle,FlixArt)">
+        <include content="Object_Control" condition="$EXP[Exp_ForegroundStyle_FlixArt]">
             <param name="control">group</param>
             <include>Background_NotVideo</include>
             <include content="View_Visibility_Common">
@@ -291,9 +266,8 @@
             <include>Background_FlixArt</include>
         </include>
     </include>
-
     <variable name="Background_Main_ColorDiffuse">
-        <value condition="Skin.HasSetting(UseBackgroundVideo) + Player.HasVideo">black</value>
+        <value condition="Skin.HasSetting(UseBackgroundVideo) + $EXP[Exp_PlayerHasVideo]">black</value>
         <value>main_bg_100</value>
     </variable>
     <include name="Background_Main">
@@ -309,11 +283,11 @@
             <include content="Object_Control" condition="!$PARAM[plain_background]">
                 <param name="control" value="group" />
                 <include>Animation_Background_FadeInOut</include>
-                <include condition="Skin.String(BackgroundStyle,None)">Background_None</include>
-                <include condition="Skin.String(BackgroundStyle,Image)">Background_Stretch</include>
-                <include condition="Skin.String(BackgroundStyle,Fanart)">Background_Fanart</include>
-                <include condition="Skin.String(BackgroundStyle,Blur)">Background_Blur</include>
-                <include condition="!Skin.String(BackgroundStyle,Fanart)">Background_ForegroundArtwork</include>
+                <include condition="$EXP[Exp_BackgroundStyle_None]">Background_None</include>
+                <include condition="$EXP[Exp_BackgroundStyle_Image]">Background_Stretch</include>
+                <include condition="$EXP[Exp_BackgroundStyle_Fanart]">Background_Fanart</include>
+                <include condition="$EXP[Exp_BackgroundStyle_Blur]">Background_Blur</include>
+                <include condition="!$EXP[Exp_BackgroundStyle_Fanart]">Background_ForegroundArtwork</include>
                 <include condition="System.HasAddon(resource.images.arctic.waves)">Background_BusyLoader</include>
                 <nested />
             </include>
@@ -323,5 +297,4 @@
             </control>
         </definition>
     </include>
-
 </includes>

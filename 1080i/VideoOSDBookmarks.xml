@@ -18,7 +18,6 @@
                     <texture colordiffuse="panel_fg_70">special://skin/extras/icons/image.png</texture>
                 </control>
             </control>
-
             <!-- Episodes List -->
             <include content="List_Core">
                 <param name="orientation" value="horizontal" />
@@ -41,17 +40,14 @@
                 <onup>Close</onup>
                 <ondown>2</ondown>
             </include>
-
             <include content="OSD_Episodes_Arrows">
                 <param name="id">11</param>
                 <width>view_osd_landscape_arrows_w</width>
                 <height>view_osd_landscape_item_h</height>
             </include>
-
             <include content="OSD_Episodes_Info_Group">
                 <param name="label">$LOCALIZE[298][COLOR=$VAR[ColorHighlight]]  •  [/COLOR]$INFO[Container(11).CurrentItem,, $LOCALIZE[1443] ]$INFO[Container(11).NumItems,, ]</param>
                 <onup>11</onup>
-
                 <include content="OSD_Button">
                     <param name="icon" value="special://skin/extras/icons/plus.png" />
                     <param name="visible" value="Control.IsEnabled(2)" />
@@ -70,13 +66,11 @@
                     <param name="id" value="4" />
                     <param name="groupid" value="9004" />
                 </include>
-
                 <include content="OSD_Episodes_Info_Basic">
                     <param name="icon">$VAR[Image_OSD_Bookmarks_Circle]</param>
                     <param name="label">[COLOR=panel_fg_100][B]$INFO[VideoPlayer.Season,S,]$INFO[VideoPlayer.Episode,E, ]$INFO[VideoPlayer.Title,, ~ ][/B][/COLOR]$INFO[VideoPlayer.Plot]</param>
                 </include>
             </include>
-
         </include>
     </controls>
 </window>

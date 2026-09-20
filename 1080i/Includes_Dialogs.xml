@@ -26,8 +26,6 @@
             </control>
         </definition>
     </include>
-
-
     <include name="Dialog_Context_Image">
         <param name="right" default="context_icon_w" />
         <param name="icon" default="$VAR[Image_ContextPoster]" />
@@ -55,7 +53,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_Nib">
         <param name="nib_pos">70</param>
         <param name="use_side_nib">false</param>
@@ -68,7 +65,6 @@
             </include>
         </definition>
     </include>
-
     <include name="Dialog_Nib_T">
         <param name="nib_pos">70</param>
         <definition>
@@ -81,7 +77,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_Nib_L">
         <param name="nib_pos">70</param>
         <definition>
@@ -94,7 +89,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_AddonInfo_Details">
         <control type="group">
             <left>40</left>
@@ -113,7 +107,6 @@
             </control>
         </control>
     </include>
-
     <include name="Dialog_ContextMenu_Header">
         <include content="Dialog_Header">
             <param name="id" value="7000" />
@@ -121,7 +114,6 @@
             <label>$VAR[Label_ContextMenu_Title]</label>
         </include>
     </include>
-
     <include name="Dialog_SettingsCategory_Background">
         <include content="Dialog_Background">
             <param name="overlay" value="false" />
@@ -143,7 +135,6 @@
             <nested />
         </include>
     </include>
-
     <include name="Dialog_SettingsCategory_ChangerGroup">
         <param name="changer_onright" default="3" />
         <definition>
@@ -157,7 +148,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_SettingsCategory_LeftGroup">
         <param name="header_condition" default="true" />
         <param name="header_label" default="$LOCALIZE[166]" />
@@ -174,7 +164,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_SettingsCategory_RightGroup">
         <param name="scrollbar_onleft" default="5" />
         <param name="info_id" default="6" />
@@ -217,7 +206,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_Group">
         <param name="control" default="group" />
         <definition>
@@ -230,7 +218,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_Info_Screenshots">
         <param name="header" default="$LOCALIZE[20008]" />
         <param name="header_id" default="5000" />
@@ -290,7 +277,6 @@
             </include>
         </definition>
     </include>
-
     <include name="Dialog_Overlay_Settings">
         <control type="group">
             <left>grid_x08</left>
@@ -303,7 +289,6 @@
             </control>
         </control>
     </include>
-
     <include name="Dialog_Overlay_Buttons">
         <control type="group">
             <right>0</right>
@@ -312,14 +297,12 @@
             <include>Object_Separator</include>
         </control>
     </include>
-
     <include name="Dialog_Group_NoHeader">
         <include content="Dialog_Group">
             <nested />
             <top>grid_x04</top>
         </include>
     </include>
-
     <include name="Dialog_Header">
         <param name="id" default="1" />
         <definition>
@@ -333,7 +316,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_Textbox">
         <param name="id" default="9" />
         <definition>
@@ -344,7 +326,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_Button_Grouplist_Bottom">
         <control type="grouplist">
             <nested />
@@ -357,7 +338,6 @@
             <itemgap>grid_x04</itemgap>
         </control>
     </include>
-
     <include name="Dialog_Lang_Button">
         <include content="Dialog_Settings_Button">
             <param name="id" value="$PARAM[id]" />
@@ -461,10 +441,8 @@
                 <aspectratio align="right">keep</aspectratio>
                 <texture>$INFO[Window(Home).Property($PARAM[language].Language),flags/color/language/,.png]</texture>
             </control>
-
         </control>
     </include>
-
     <include name="Dialog_Menu_Button">
         <param name="bordersize" default="10" />
         <param name="flipside">false</param>
@@ -519,7 +497,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_Settings_Button">
         <param name="control" default="button" />
         <definition>
@@ -535,7 +512,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_Settings_Label">
         <param name="control" default="label" />
         <definition>
@@ -549,7 +525,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_Settings_Level">
         <control type="group">
             <bottom>0</bottom>
@@ -583,9 +558,8 @@
             </control>
         </control>
     </include>
-
     <include name="Dialog_Settings_InfoText">
-        <param name="visible" default="!Control.HasFocus(300)" />
+        <param name="visible" default="!$EXP[Exp_ControlHasFocus_300]" />
         <definition>
             <control type="group">
                 <bottom>0</bottom>
@@ -619,11 +593,9 @@
                     <label>$LOCALIZE[19055]</label>
                     <visible>String.IsEmpty(Control.GetLabel($PARAM[id]))</visible>
                 </control>
-
             </control>
         </definition>
     </include>
-
     <include name="Dialog_Settings_Changer">
         <param name="id" default="30000" />
         <definition>
@@ -635,7 +607,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_Settings_Changer_Button">
         <param name="width">80</param>
         <definition>
@@ -663,7 +634,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_Overlay">
         <param name="flipx" default="false" />
         <param name="flipy" default="false" />
@@ -676,7 +646,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_Overlay_V">
         <include content="Dialog_Overlay">
             <param name="texture" value="common/dialog_overlay_v.png" />
@@ -686,8 +655,6 @@
             <nested />
         </include>
     </include>
-
-
     <include name="Dialog_Outline">
         <include content="Object_Control">
             <param name="control" value="image" />
@@ -710,7 +677,6 @@
             <include condition="$PARAM[outline]">Dialog_Outline</include>
         </definition>
     </include>
-
     <include name="Dialog_Scrollbar">
         <param name="id" default="61" />
         <definition>
@@ -722,13 +688,10 @@
             </control>
         </definition>
     </include>
-
     <variable name="Dialog_Discover_Year_Content">
         <value condition="String.IsEqual(Window.Property(TMDbType),movie)">$INFO[Skin.String(Discover_MinYear),&amp;primary_release_date.gte=,-01-01]$INFO[Skin.String(Discover_MaxYear),&amp;primary_release_date.lte=,-01-01]</value>
         <value condition="String.IsEqual(Window.Property(TMDbType),tv)">$INFO[Skin.String(Discover_MinYear),&amp;first_air_date.gte=,-01-01]$INFO[Skin.String(Discover_MaxYear),&amp;first_air_date.lte=,-01-01]</value>
     </variable>
-
-
     <include name="Dialog_ImageViewer">
         <param name="listid" default="5006" />
         <param name="buttonid" default="9506" />
@@ -751,7 +714,6 @@
                 <control type="group">
                     <animation effect="slide" tween="quadratic" end="-1920" start="0" time="400" condition="!Container($PARAM[listid]).OnNext" reversible="false">Conditional</animation>
                     <animation effect="slide" tween="quadratic" end="1920" start="0" time="400" condition="!Container($PARAM[listid]).OnPrevious" reversible="false">Conditional</animation>
-
                     <control type="image">
                         <left>-1920</left>
                         <width>1920</width>
@@ -770,9 +732,8 @@
                         <texture background="true">$INFO[Container($PARAM[listid]).ListItem(1).$PARAM[art]]</texture>
                     </control>
                 </control>
-
                 <control type="group">
-                    <visible>System.IdleTime(3)</visible>
+                    <visible>$EXP[Exp_SystemIdleTime3]</visible>
                     <animation effect="fade" start="0" end="100" time="500" reversible="false">Visible</animation>
                     <control type="image">
                         <width>120</width>
@@ -791,7 +752,6 @@
             </control>
         </definition>
     </include>
-
     <include name="Dialog_MusicInfoAlbumArt">
         <param name="discart_top" default="272" />
         <param name="discart_spin" default="true" />
@@ -819,5 +779,4 @@
             </control>
         </definition>
     </include>
-
 </includes>

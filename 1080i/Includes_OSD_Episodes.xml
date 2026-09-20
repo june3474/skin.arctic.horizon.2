@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
     <include name="OSD_Episodes_Layout">
         <param name="selected">false</param>
         <param name="diffuse">diffuse/landscape_w356_h200.png</param>
@@ -17,7 +16,7 @@
                         <param name="selected" value="$PARAM[selected]" />
                         <param name="shadow_colordiffuse" value="$PARAM[shadow_colordiffuse]" />
                     </include>
-                    <include content="Object_Control" condition="$PARAM[selected] + Skin.HasSetting(Widgets.OpaqueFocus)">
+                    <include content="Object_Control" condition="$PARAM[selected] + $EXP[Exp_SkinSetting_WidgetsOpaqueFocus]">
                         <param name="control">image</param>
                         <texture colordiffuse="$VAR[ColorMainItem]" diffuse="$PARAM[diffuse]">common/white.png</texture>
                     </include>
@@ -82,7 +81,7 @@
                     <texture>indicator/playwhite.png</texture>
                     <animation effect="fade" start="0" end="100" delay="400" time="200">Visible</animation>
                 </control>
-                <include content="Object_Control" condition="!$PARAM[selected] + Skin.HasSetting(Glass.BorderOutline)">
+                <include content="Object_Control" condition="!$PARAM[selected] + $EXP[Exp_SkinSetting_GlassBorderOutline]">
                     <param name="control" value="image" />
                     <texture colordiffuse="overlay_line" border="12">common/box-outline.png</texture>
                 </include>
@@ -93,7 +92,6 @@
             </control>
         </definition>
     </include>
-
     <include name="OSD_Episodes_Arrows">
         <control type="group">
             <nested />
@@ -118,7 +116,6 @@
             </control>
         </control>
     </include>
-
     <include name="OSD_Episodes_Info_Group">
         <param name="label">$VAR[Label_OSD_Episodes_Title]</param>
         <definition>
@@ -141,7 +138,6 @@
             </control>
         </definition>
     </include>
-
     <include name="OSD_Episodes_Info_Basic">
         <param name="icon">$VAR[Image_OSD_Episodes]</param>
         <param name="label">[COLOR=panel_fg_100][B]$INFO[Container(6401).ListItem.Season,S,]$INFO[Container(6401).ListItem.Episode,E, ]$INFO[Container(6401).ListItem.Title,, ~ ][/B][/COLOR]$INFO[Container(6401).ListItem.Plot]</param>
@@ -156,11 +152,11 @@
                 </control>
                 <control type="image">
                     <bordersize>2</bordersize>
-                    <include content="Object_AspectRatio" condition="VideoPlayer.Content(livetv)">
+                    <include content="Object_AspectRatio" condition="$EXP[Exp_VideoPlayerContentLiveTV]">
                         <param name="scalediffuse">false</param>
                         <param name="aspectratio">keep</param>
                     </include>
-                    <include content="Object_AspectRatio" condition="!VideoPlayer.Content(livetv)">
+                    <include content="Object_AspectRatio" condition="!$EXP[Exp_VideoPlayerContentLiveTV]">
                         <param name="scalediffuse">false</param>
                         <param name="aspectratio">scale</param>
                     </include>
@@ -178,5 +174,4 @@
             </control>
         </definition>
     </include>
-
 </includes>

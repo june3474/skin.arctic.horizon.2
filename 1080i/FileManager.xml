@@ -33,7 +33,6 @@
                     <left>40</left>
                     <right>40</right>
                 </include>
-
                 <include content="List_AddonCategories">
                     <param name="id" value="20" />
                     <param name="detailed" value="true" />
@@ -86,7 +85,6 @@
                     <pagecontrol>61</pagecontrol>
                     <onright>61</onright>
                 </include>
-
                 <include content="Dialog_Scrollbar">
                     <param name="id" value="61" />
                     <right>0</right>
@@ -97,7 +95,5 @@
         <include content="View_Furniture_Top">
             <param name="powermenu_button">true</param>
         </include>
-
     </controls>
-
 </window>
