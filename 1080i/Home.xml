@@ -83,8 +83,9 @@
                 <control type="image">
                     <width>1920</width>
                     <height>1080</height>
-                    <texture background="true" fallback="background/fallback.jpg">
-                        $VAR[Image_FullscreenWidget_Artwork]</texture>
+                    <texture background="true">
+                      $VAR[Image_FullscreenWidget_Artwork]
+                    </texture>
                     <aspectratio>scale</aspectratio>
                     <fadetime>300</fadetime>
                 </control>
@@ -93,8 +94,9 @@
                     <left>1920</left>
                     <width>1920</width>
                     <height>1080</height>
-                    <texture background="true" fallback="background/fallback.jpg">
-                        $VAR[Image_FullscreenWidget_Artwork+1]</texture>
+                    <texture background="true">
+                      $VAR[Image_FullscreenWidget_Artwork+1]
+                    </texture>
                     <aspectratio>scale</aspectratio>
                     <visible>Container(301).OnNext</visible>
                     <animation effect="fade" start="100" end="0" delay="300" time="1"
@@ -104,8 +106,9 @@
                     <left>-1920</left>
                     <width>1920</width>
                     <height>1080</height>
-                    <texture background="true" fallback="background/fallback.jpg">
-                        $VAR[Image_FullscreenWidget_Artwork-1]</texture>
+                    <texture background="true">
+                      $VAR[Image_FullscreenWidget_Artwork-1]
+                    </texture>
                     <aspectratio>scale</aspectratio>
                     <visible>Container(301).OnPrevious</visible>
                     <animation effect="fade" start="100" end="0" delay="300" time="1"
