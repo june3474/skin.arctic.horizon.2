@@ -38,6 +38,12 @@
     </variable>
     <variable name="Image_SimpleBackground">
         <value condition="!String.IsEmpty(Skin.String(Background.Image))">$INFO[Skin.String(Background.Image)]</value>
+        <value condition="[Window.IsMedia + !String.IsEmpty(ListItem.Property(mypicsdb))] | [Window.Is(home) + !String.IsEmpty(Container(301).ListItem.Property(mypicsdb))]">special://skin/extras/backgrounds/fallbacks/pictures.jpg</value>
+        <!-- combined view, 5X2: Combined Buttons, 5X3: Combined Content -->
+        <value condition="Window.IsMedia + String.IsEqual(ListItem.DBtype,musicvideo)">special://skin/extras/backgrounds/fallbacks/home-video_2.jpg</value>
+        <value condition="Window.IsMedia + [Control.HasFocus(502) | Control.HasFocus(503)] + String.IsEqual(Container(503).ListItem.DBtype,musicvideo)">special://skin/extras/backgrounds/fallbacks/home-video_2.jpg</value>
+        <value condition="Window.IsMedia + [Control.HasFocus(512) | Control.HasFocus(513)] + String.IsEqual(Container(513).ListItem.DBtype,musicvideo)">special://skin/extras/backgrounds/fallbacks/home-video_2.jpg</value>
+        <value condition="Window.IsMedia + [Control.HasFocus(522) | Control.HasFocus(523)] + String.IsEqual(Container(523).ListItem.DBtype,musicvideo)">special://skin/extras/backgrounds/fallbacks/home-video_2.jpg</value>
         <value>background/blur2.png</value>
     </variable>
     <variable name="Image_CropLogo">
@@ -79,6 +85,7 @@
         <value condition="!$EXP[Exp_StringIsEmpty_Container300ListItemPropertyWidgetPath] + $EXP[Exp_TMDBWidget_Container301] + $EXP[Exp_HasBackgroundFanart] + !String.IsEmpty(Container(301).ListItem.Art(fanart))">$INFO[Container(301).ListItem.Art(fanart)]</value>
         <value condition="$EXP[Exp_StringIsEmpty_Container300ListItemPropertyWidgetPath] + $EXP[Exp_TMDBWidget_Container301] + $EXP[Exp_HasBackgroundFanart] + !String.IsEmpty(Container(301).ListItem.Property(fanart))">$INFO[Container(301).ListItem.Property(fanart)]</value>
         <value condition="$EXP[Exp_HasBackgroundFanart] + !String.IsEmpty(ListItem.EPGEventIcon) + !Skin.HasSetting(PVR.DisableEPGEventIconFanart)">$INFO[ListItem.EPGEventIcon]</value>
+        <!-- combined view, 5X2: Combined Buttons, 5X3: Combined Content -->
         <value condition="$EXP[Exp_WindowIsMedia] + Control.IsVisible(502) + Control.HasFocus(503) + !String.IsEmpty(Container(503).ListItem.Art(fanart))">$INFO[Container(503).ListItem.Art(fanart)]</value>
         <value condition="$EXP[Exp_WindowIsMedia] + Control.IsVisible(512) + Control.HasFocus(513) + !String.IsEmpty(Container(513).ListItem.Art(fanart))">$INFO[Container(513).ListItem.Art(fanart)]</value>
         <value condition="$EXP[Exp_WindowIsMedia] + Control.IsVisible(522) + Control.HasFocus(523) + !String.IsEmpty(Container(523).ListItem.Art(fanart))">$INFO[Container(523).ListItem.Art(fanart)]</value>
@@ -117,25 +124,32 @@
         <value condition="!String.IsEmpty(Container(301).ListItem.Art(fanart))">$INFO[Container(301).ListItem.Art(fanart)]</value>
         <value condition="!String.IsEmpty(Container(301).ListItem.PicturePath)">$INFO[Container(301).ListItem.PicturePath]</value>
         <value condition="!String.IsEmpty(Container(301).ListItem.EPGEventIcon) + !Skin.HasSetting(PVR.DisableEPGEventIconFanart)">$INFO[Container(301).ListItem.EPGEventIcon]</value>
-        <value condition="$EXP[Exp_StringIsEqual_Container301ListItemDBType_Movie] | $EXP[Exp_StringIsEqual_Container301ListItemDBType_Set]">special://skin/extras/backgrounds/fallbacks/film.jpg</value>
-        <value condition="$EXP[Exp_StringIsEqual_Container301ListItemDBType_Artist] | $EXP[Exp_StringIsEqual_Container301ListItemDBType_Album] | $EXP[Exp_StringIsEqual_Container301ListItemDBType_Song] | $EXP[Exp_StringIsEqual_Container301ListItemDBType_MusicVideo]">special://skin/extras/backgrounds/fallbacks/music.jpg</value>
-        <value condition="$EXP[Exp_StringIsEqual_Container301ListItemDBType_TVShow] | $EXP[Exp_StringIsEqual_Container301ListItemDBType_Season] | $EXP[Exp_StringIsEqual_Container301ListItemDBType_Episode] | $EXP[Exp_StringIsEqual_Container301ListItemDBType_Video]">special://skin/extras/backgrounds/fallbacks/tv.jpg</value>
+        <value condition="$EXP[Exp_StringIsEqual_Container301ListItemDBType_Movie] | $EXP[Exp_StringIsEqual_Container301ListItemDBType_Set]">special://skin/extras/backgrounds/fallbacks/movies.jpg</value>
+        <value condition="$EXP[Exp_StringIsEqual_Container301ListItemDBType_Artist] | $EXP[Exp_StringIsEqual_Container301ListItemDBType_Album] | $EXP[Exp_StringIsEqual_Container301ListItemDBType_Song]">special://skin/extras/backgrounds/fallbacks/music.jpg</value>
+        <value condition="$EXP[Exp_StringIsEqual_Container301ListItemDBType_MusicVideo]">special://skin/extras/backgrounds/fallbacks/home-video.jpg</value>
+        <value condition="$EXP[Exp_StringIsEqual_Container301ListItemDBType_TVShow] | $EXP[Exp_StringIsEqual_Container301ListItemDBType_Season] | $EXP[Exp_StringIsEqual_Container301ListItemDBType_Episode] | $EXP[Exp_StringIsEqual_Container301ListItemDBType_Video]">special://skin/extras/backgrounds/fallbacks/tvshows.jpg</value>
+        <value condition="!String.IsEmpty(Container(301).ListItem.Property(mypicsdb)) | String.IsEqual(Container(300).ListItem.Property(widgetTarget),pictures) | String.IsEqual(Container(300).ListItem.Property(widgetType),picture)">special://skin/extras/backgrounds/fallbacks/pictures.jpg</value>
+        <value>special://skin/extras/backgrounds/fallbacks/default.jpg</value>
     </variable>
     <variable name="Image_FullscreenWidget_Artwork+1">
         <value condition="!String.IsEmpty(Container(301).ListItem(1).Art(fanart))">$INFO[Container(301).ListItem(1).Art(fanart)]</value>
         <value condition="!String.IsEmpty(Container(301).ListItem(1).PicturePath)">$INFO[Container(301).ListItem(1).PicturePath]</value>
         <value condition="!String.IsEmpty(Container(301).ListItem(1).EPGEventIcon) + !Skin.HasSetting(PVR.DisableEPGEventIconFanart)">$INFO[Container(301).ListItem(1).EPGEventIcon]</value>
-        <value condition="$EXP[Exp_StringIsEqual_Container301ListItem1DBType_Movie] | $EXP[Exp_StringIsEqual_Container301ListItem1DBType_Set]">special://skin/extras/backgrounds/fallbacks/film.jpg</value>
+        <value condition="$EXP[Exp_StringIsEqual_Container301ListItem1DBType_Movie] | $EXP[Exp_StringIsEqual_Container301ListItem1DBType_Set]">special://skin/extras/backgrounds/fallbacks/movies.jpg</value>
         <value condition="$EXP[Exp_StringIsEqual_Container301ListItem1DBType_Artist]| $EXP[Exp_StringIsEqual_Container301ListItem1DBType_Album] | $EXP[Exp_StringIsEqual_Container301ListItem1DBType_Song] | $EXP[Exp_StringIsEqual_Container301ListItem1DBType_MusicVideo]">special://skin/extras/backgrounds/fallbacks/music.jpg</value>
-        <value condition="$EXP[Exp_StringIsEqual_Container301ListItem1DBType_TVShow] | $EXP[Exp_StringIsEqual_Container301ListItem1DBType_Season] | $EXP[Exp_StringIsEqual_Container301ListItem1DBType_Episode] | $EXP[Exp_StringIsEqual_Container301ListItem1DBType_Video]">special://skin/extras/backgrounds/fallbacks/tv.jpg</value>
+        <value condition="$EXP[Exp_StringIsEqual_Container301ListItem1DBType_TVShow] | $EXP[Exp_StringIsEqual_Container301ListItem1DBType_Season] | $EXP[Exp_StringIsEqual_Container301ListItem1DBType_Episode] | $EXP[Exp_StringIsEqual_Container301ListItem1DBType_Video]">special://skin/extras/backgrounds/fallbacks/tvshows.jpg</value>
+        <value condition="!String.IsEmpty(Container(301).ListItem.Property(mypicsdb)) | String.IsEqual(Container(300).ListItem.Property(widgetTarget),pictures) | String.IsEqual(Container(300).ListItem.Property(widgetType),picture)">special://skin/extras/backgrounds/fallbacks/pictures.jpg</value>
+        <value>special://skin/extras/backgrounds/fallbacks/default.jpg</value>
     </variable>
     <variable name="Image_FullscreenWidget_Artwork-1">
         <value condition="!String.IsEmpty(Container(301).ListItem(-1).Art(fanart))">$INFO[Container(301).ListItem(-1).Art(fanart)]</value>
         <value condition="!String.IsEmpty(Container(301).ListItem(-1).PicturePath)">$INFO[Container(301).ListItem(-1).PicturePath]</value>
         <value condition="!String.IsEmpty(Container(301).ListItem(-1).EPGEventIcon) + !Skin.HasSetting(PVR.DisableEPGEventIconFanart)">$INFO[Container(301).ListItem(-1).EPGEventIcon]</value>
-        <value condition="$EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_Movie] | $EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_Set]">special://skin/extras/backgrounds/fallbacks/film.jpg</value>
+        <value condition="$EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_Movie] | $EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_Set]">special://skin/extras/backgrounds/fallbacks/movies.jpg</value>
         <value condition="$EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_Artist] | $EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_Album] | $EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_Song] | $EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_MusicVideo]">special://skin/extras/backgrounds/fallbacks/music.jpg</value>
-        <value condition="$EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_TVShow] | $EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_Season] | $EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_Episode] | $EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_Video]">special://skin/extras/backgrounds/fallbacks/tv.jpg</value>
+        <value condition="$EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_TVShow] | $EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_Season] | $EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_Episode] | $EXP[Exp_StringIsEqual_Container301ListItemMinus1DBType_Video]">special://skin/extras/backgrounds/fallbacks/tvshows.jpg</value>
+        <value condition="!String.IsEmpty(Container(301).ListItem.Property(mypicsdb)) | String.IsEqual(Container(300).ListItem.Property(widgetTarget),pictures) | String.IsEqual(Container(300).ListItem.Property(widgetType),picture)">special://skin/extras/backgrounds/fallbacks/pictures.jpg</value>
+        <value>special://skin/extras/backgrounds/fallbacks/default.jpg</value>
     </variable>
     <variable name="Image_DiscArt">
         <value condition="!String.IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
