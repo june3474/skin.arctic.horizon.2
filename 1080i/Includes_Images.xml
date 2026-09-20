@@ -84,6 +84,7 @@
         <value condition="$EXP[Exp_HasBackgroundFanart] + $EXP[Exp_HasFanartArt]">$INFO[ListItem.Art(fanart)]</value>
         <value condition="!$EXP[Exp_StringIsEmpty_Container300ListItemPropertyWidgetPath] + $EXP[Exp_TMDBWidget_Container301] + $EXP[Exp_HasBackgroundFanart] + !String.IsEmpty(Container(301).ListItem.Art(fanart))">$INFO[Container(301).ListItem.Art(fanart)]</value>
         <value condition="$EXP[Exp_StringIsEmpty_Container300ListItemPropertyWidgetPath] + $EXP[Exp_TMDBWidget_Container301] + $EXP[Exp_HasBackgroundFanart] + !String.IsEmpty(Container(301).ListItem.Property(fanart))">$INFO[Container(301).ListItem.Property(fanart)]</value>
+        <value condition="Window.Is(pictures)">$INFO[ListItem.FileNameAndPath]</value>
         <value condition="$EXP[Exp_HasBackgroundFanart] + !String.IsEmpty(ListItem.EPGEventIcon) + !Skin.HasSetting(PVR.DisableEPGEventIconFanart)">$INFO[ListItem.EPGEventIcon]</value>
         <!-- combined view, 5X2: Combined Buttons, 5X3: Combined Content -->
         <value condition="$EXP[Exp_WindowIsMedia] + Control.IsVisible(502) + Control.HasFocus(503) + !String.IsEmpty(Container(503).ListItem.Art(fanart))">$INFO[Container(503).ListItem.Art(fanart)]</value>
