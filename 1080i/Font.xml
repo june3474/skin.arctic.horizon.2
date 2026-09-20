@@ -18,12 +18,12 @@
         <font>
             <name>font_info_black</name>
             <filename>RobotoCondensed-Black.ttf</filename>
-            <size>112</size>
+            <size>98</size>
         </font>
         <font>
             <name>font_info_light</name>
             <filename>RobotoCondensed-Light.ttf</filename>
-            <size>112</size>
+            <size>98</size>
         </font>
         <font>
             <name>font_info_black_doublerow</name>
@@ -225,12 +225,12 @@
         <font>
             <name>font_info_black</name>
             <filename>RobotoNotoCondensed-Black.ttf</filename>
-            <size>112</size>
+            <size>98</size>
         </font>
         <font>
             <name>font_info_light</name>
             <filename>RobotoNotoCondensed-Light.ttf</filename>
-            <size>112</size>
+            <size>98</size>
         </font>
         <font>
             <name>font_info_black_doublerow</name>
@@ -433,13 +433,13 @@
             <name>font_info_black</name>
             <filename>resource://resource.font.robotocjksc/RobotoCJKSC-Bold.ttf</filename>
             <aspect>0.89</aspect>
-            <size>112</size>
+            <size>98</size>
         </font>
         <font>
             <name>font_info_light</name>
             <filename>resource://resource.font.robotocjksc/RobotoCJKSC-Light.ttf</filename>
             <aspect>0.89</aspect>
-            <size>112</size>
+            <size>98</size>
         </font>
         <font>
             <name>font_info_black_doublerow</name>
